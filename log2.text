@@ -1,0 +1,175 @@
+현재 브랜치 develop
+커밋하도록 정하지 않은 변경 사항:
+  (무엇을 커밋할지 바꾸려면 "git add/rm <파일>..."을 사용하십시오)
+  (작업 디렉토리의 변경을 무시하려면 "git restore <file>..."을 사용하시오)
+	수정함:        setupProgram/artifacts.xml
+	수정함:        setupProgram/configuration/config.ini
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.contributions.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.contributors.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.extraData.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.mainData.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.manager/.fileTable.7
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.namespaces.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.orphans.1
+	삭제함:        setupProgram/configuration/org.eclipse.core.runtime/.table.1
+	수정함:        setupProgram/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
+	삭제함:        setupProgram/configuration/org.eclipse.osgi/.manager/.fileTable.1
+	삭제함:        setupProgram/configuration/org.eclipse.osgi/.manager/.fileTable.2
+	수정함:        setupProgram/configuration/org.eclipse.osgi/210/data/cache.timestamps
+	수정함:        setupProgram/configuration/org.eclipse.osgi/210/data/listener_1925729951/artifacts.jar
+	수정함:        setupProgram/configuration/org.eclipse.osgi/210/data/timestamps692698184
+	삭제함:        setupProgram/configuration/org.eclipse.osgi/framework.info.1
+	수정함:        setupProgram/configuration/org.eclipse.update/platform.xml
+	수정함:        setupProgram/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/.data/.settings/org.eclipse.equinox.p2.artifact.repository.prefs
+	수정함:        setupProgram/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/.data/.settings/org.eclipse.equinox.p2.metadata.repository.prefs
+
+추적하지 않는 파일:
+  (커밋할 사항에 포함하려면 "git add <파일>..."을 사용하십시오)
+	log.text
+	log2.text
+	setupProgram/configuration/org.eclipse.core.runtime/.contributions.2
+	setupProgram/configuration/org.eclipse.core.runtime/.contributors.2
+	setupProgram/configuration/org.eclipse.core.runtime/.extraData.2
+	setupProgram/configuration/org.eclipse.core.runtime/.mainData.2
+	setupProgram/configuration/org.eclipse.core.runtime/.manager/.fileTable.9
+	setupProgram/configuration/org.eclipse.core.runtime/.manager/.tmp2958878866972217768.instance
+	setupProgram/configuration/org.eclipse.core.runtime/.namespaces.2
+	setupProgram/configuration/org.eclipse.core.runtime/.orphans.2
+	setupProgram/configuration/org.eclipse.core.runtime/.table.2
+	setupProgram/configuration/org.eclipse.epp.mpc.ui/
+	setupProgram/configuration/org.eclipse.equinox.app/.manager/.tmp3727507517643143742.instance
+	setupProgram/configuration/org.eclipse.osgi/.manager/.fileTable.10
+	setupProgram/configuration/org.eclipse.osgi/.manager/.fileTable.11
+	setupProgram/configuration/org.eclipse.osgi/100/
+	setupProgram/configuration/org.eclipse.osgi/120/
+	setupProgram/configuration/org.eclipse.osgi/129/
+	setupProgram/configuration/org.eclipse.osgi/151/
+	setupProgram/configuration/org.eclipse.osgi/152/
+	setupProgram/configuration/org.eclipse.osgi/166/
+	setupProgram/configuration/org.eclipse.osgi/176/
+	setupProgram/configuration/org.eclipse.osgi/202/data/-1354523669/
+	setupProgram/configuration/org.eclipse.osgi/217/
+	setupProgram/configuration/org.eclipse.osgi/246/
+	setupProgram/configuration/org.eclipse.osgi/248/
+	setupProgram/configuration/org.eclipse.osgi/254/
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/icons/full/help.png
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/icons/full/message_error.png
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/icons/full/message_info.png
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/icons/full/message_warning.png
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/org/eclipse/jface/action/
+	setupProgram/configuration/org.eclipse.osgi/269/0/.cp/org/eclipse/jface/wizard/
+	setupProgram/configuration/org.eclipse.osgi/302/
+	setupProgram/configuration/org.eclipse.osgi/305/
+	setupProgram/configuration/org.eclipse.osgi/307/
+	setupProgram/configuration/org.eclipse.osgi/341/
+	setupProgram/configuration/org.eclipse.osgi/372/
+	setupProgram/configuration/org.eclipse.osgi/393/
+	setupProgram/configuration/org.eclipse.osgi/398/
+	setupProgram/configuration/org.eclipse.osgi/400/0/.cp/libswt-webkit-gtk-4944r26.so
+	setupProgram/configuration/org.eclipse.osgi/400/0/.cp/webkitextensions4944r26/
+	setupProgram/configuration/org.eclipse.osgi/403/
+	setupProgram/configuration/org.eclipse.osgi/409/
+	setupProgram/configuration/org.eclipse.osgi/416/
+	setupProgram/configuration/org.eclipse.osgi/422/
+	setupProgram/configuration/org.eclipse.osgi/423/
+	setupProgram/configuration/org.eclipse.osgi/425/
+	setupProgram/configuration/org.eclipse.osgi/426/
+	setupProgram/configuration/org.eclipse.osgi/427/
+	setupProgram/configuration/org.eclipse.osgi/430/
+	setupProgram/configuration/org.eclipse.osgi/431/
+	setupProgram/configuration/org.eclipse.osgi/437/
+	setupProgram/configuration/org.eclipse.osgi/441/
+	setupProgram/configuration/org.eclipse.osgi/442/
+	setupProgram/configuration/org.eclipse.osgi/445/
+	setupProgram/configuration/org.eclipse.osgi/449/
+	setupProgram/configuration/org.eclipse.osgi/479/
+	setupProgram/configuration/org.eclipse.osgi/481/
+	setupProgram/configuration/org.eclipse.osgi/484/
+	setupProgram/configuration/org.eclipse.osgi/523/
+	setupProgram/configuration/org.eclipse.osgi/538/
+	setupProgram/configuration/org.eclipse.osgi/542/
+	setupProgram/configuration/org.eclipse.osgi/546/
+	setupProgram/configuration/org.eclipse.osgi/567/
+	setupProgram/configuration/org.eclipse.osgi/597/
+	setupProgram/configuration/org.eclipse.osgi/598/
+	setupProgram/configuration/org.eclipse.osgi/603/
+	setupProgram/configuration/org.eclipse.osgi/604/
+	setupProgram/configuration/org.eclipse.osgi/609/
+	setupProgram/configuration/org.eclipse.osgi/614/
+	setupProgram/configuration/org.eclipse.osgi/62/
+	setupProgram/configuration/org.eclipse.osgi/624/
+	setupProgram/configuration/org.eclipse.osgi/632/
+	setupProgram/configuration/org.eclipse.osgi/636/
+	setupProgram/configuration/org.eclipse.osgi/641/
+	setupProgram/configuration/org.eclipse.osgi/681/
+	setupProgram/configuration/org.eclipse.osgi/687/
+	setupProgram/configuration/org.eclipse.osgi/693/
+	setupProgram/configuration/org.eclipse.osgi/710/
+	setupProgram/configuration/org.eclipse.osgi/713/
+	setupProgram/configuration/org.eclipse.osgi/725/
+	setupProgram/configuration/org.eclipse.osgi/framework.info.10
+	setupProgram/configuration/org.eclipse.update/history/
+	setupProgram/features/com.vmware.vfabric.ide.eclipse.tcserver_4.1.0.202004300904-RELEASE/
+	setupProgram/features/org.aspectj_1.9.6.202103162301/
+	setupProgram/features/org.eclipse.ajdt_2.2.4.202103162301/
+	setupProgram/features/org.eclipse.contribution.weaving_2.2.4.202103162301/
+	setupProgram/features/org.eclipse.contribution.xref_2.2.4.202103162301/
+	setupProgram/features/org.eclipse.equinox.weaving.sdk_1.2.0.202103162301/
+	setupProgram/features/org.eclipse.mylyn.commons.identity_1.17.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.commons.notifications_1.17.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.commons.repositories_1.17.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.commons_3.25.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.context_feature_3.25.2.v20200828-1617/
+	setupProgram/features/org.eclipse.mylyn.discovery_3.25.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.ide_feature_3.25.2.v20200828-1617/
+	setupProgram/features/org.eclipse.mylyn.java_feature_3.25.2.v20200828-1617/
+	setupProgram/features/org.eclipse.mylyn.monitor_3.25.2.v20200813-0821/
+	setupProgram/features/org.eclipse.mylyn.tasks.ide_3.25.2.v20200814-0512/
+	setupProgram/features/org.eclipse.mylyn.team_feature_3.25.2.v20200828-1617/
+	setupProgram/features/org.eclipse.mylyn_feature_3.25.2.v20200814-0512/
+	setupProgram/features/org.eclipse.wst.common_core.feature_3.22.0.v202103232321/
+	setupProgram/features/org.eclipse.wst.common_ui.feature_3.22.0.v202103232321/
+	setupProgram/features/org.eclipse.wst.xml_core.feature_3.22.0.v202103232331/
+	setupProgram/features/org.eclipse.wst.xml_ui.feature_3.22.0.v202103232331/
+	setupProgram/features/org.eclipse.wst.xml_userdoc.feature_3.18.0.v202004271556/
+	setupProgram/features/org.springframework.ide.eclipse.ajdt.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.aop.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.autowire.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.batch.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.data.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.integration.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.maven.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.mylyn.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.security.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springframework.ide.eclipse.webflow.feature_3.9.17.202106211030-RELEASE/
+	setupProgram/features/org.springsource.ide.eclipse.dashboard_3.9.17.202106210631-RELEASE/
+	setupProgram/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/1626011629482.profile.gz
+	setupProgram/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/1626011630784.profile.gz
+	setupProgram/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/1626012958234.profile.gz
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/-1733940681
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/-2335940
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/-415897262
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/-495564209
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/-82700095
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/1754844970
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/1760573130
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/1799884377
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/1831252884
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/941029746
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeArtifacts-1897837093.xml
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeArtifacts-517329692.xml
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeArtifacts1646576716.xml
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeContent-1897837093.xml
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeContent-517329692.xml
+	setupProgram/p2/org.eclipse.equinox.p2.repository/cache/compositeContent1646576716.xml
+	setupProgram/plugins/javax.xml.rpc_1.1.0.v201209140446/
+	setupProgram/plugins/javax.xml.soap_1.2.0.v201005080501/
+	setupProgram/plugins/org.apache.axis_1.4.0.v201411182030/
+	setupProgram/plugins/org.apache.commons.discovery_0.2.0.v201004190315/
+	setupProgram/plugins/org.springsource.ide.eclipse.commons.browser_3.9.17.202106210631-RELEASE/
+	setupProgram/plugins/org.springsource.ide.eclipse.commons.gettingstarted_3.9.17.202106210631-RELEASE/
+	working/
+
+커밋할 변경 사항을 추가하지 않았습니다 ("git add" 및/또는 "git commit -a"를
+사용하십시오)

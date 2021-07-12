@@ -1,0 +1,5 @@
+requires.0.namespace = org.eclipse.equinox.p2.iu
+requires.0.name = com.sun.xml.bind
+requires.0.range = [2.2.0, 2.3.0)
+requires.0.greedy = true
+requires.0.optional = true

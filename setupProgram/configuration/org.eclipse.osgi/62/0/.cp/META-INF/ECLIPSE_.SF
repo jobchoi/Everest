@@ -1,0 +1,42 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 1PHPuHjta8l5awblHHo5ae/QScFbU
+ q5sQwwtxxiSvNo=
+SHA-256-Digest-Manifest: 2q4cUjJRlLWG2rzIk0lwHvgS/2Jw53i1jvLetpEd8S8=
+Created-By: 1.8.0_51 (Oracle Corporation)
+
+Name: org/aopalliance/aop/AspectException.class
+SHA-256-Digest: uMJf7j/0GQIOfsZ6VfoYnm/6kGF37Jh3csdIWRLFK7U=
+
+Name: org/aopalliance/intercept/ConstructorInterceptor.class
+SHA-256-Digest: NrwZNRGyx2uQMlDrftwZziB7Kq2HGg9tWCXifH04ATE=
+
+Name: about.html
+SHA-256-Digest: tpRxFhLES7RuEXtWGWliHINuqZQ9k17xph+rUFyZuYI=
+
+Name: org/aopalliance/intercept/MethodInvocation.class
+SHA-256-Digest: O0cFy3jpyfNQ/Bzjal2SSip8imuYu+nJw3FjK0myxzE=
+
+Name: org/aopalliance/intercept/MethodInterceptor.class
+SHA-256-Digest: ZCGzhdxniLYTjYGv/pYNMEZxU343eIGQn7wH8qGbtso=
+
+Name: org/aopalliance/intercept/Interceptor.class
+SHA-256-Digest: a///i//23v05aPfPwKItUoP136ZiW3dZMD6PvLWNGMk=
+
+Name: org/aopalliance/intercept/Joinpoint.class
+SHA-256-Digest: YB79TG/mo8WTrPONwt0F6sKhNqPONYpQ8YyhtTi5u/0=
+
+Name: org/aopalliance/intercept/Invocation.class
+SHA-256-Digest: MHls/nWXSMMAdbmUhspCHbva4X3dpdYHvtK25eynlJ0=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA-256-Digest: nVFbE+xPsZ0R6o42BjhisuChLV6ClocS4/AwHsmtIgU=
+
+Name: org/aopalliance/aop/Advice.class
+SHA-256-Digest: zgFlQuMDJroUoLCacPR5ASGeIzjHMcaUjRopR0KkVZ4=
+
+Name: org/aopalliance/intercept/ConstructorInvocation.class
+SHA-256-Digest: AI21gZtA4iSacuPPYQcjmBPnxYm9k3Ka6iPTYiFihbI=
+
+Name: META-INF/eclipse.inf
+SHA-256-Digest: rEULrt3GCNggFeuBb9QugPCG48TouWYgzDw3Q1PhCCQ=
+
