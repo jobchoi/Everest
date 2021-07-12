@@ -73,6 +73,14 @@
     </object>
    </void>
    <void method="put">
+    <string>com.remainsoftware.oas3.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#4556629</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>org.eclipse.m2e.lemminx.feature</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -330,6 +338,14 @@
     </object>
    </void>
    <void method="put">
+    <string>com.zfabrik.eclipsoid.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#5378797</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>org.eclipse.m2e.wtp.jsf.feature</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -361,6 +377,22 @@
      </void>
      <void method="add">
       <string>https://marketplace.eclipse.org#2963400</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>org.freejava.dependencyviewer.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#170795</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>de.yatta.eclipse.launcher.client.export</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#3972196</string>
      </void>
     </object>
    </void>
@@ -1011,6 +1043,14 @@
     </object>
    </void>
    <void method="put">
+    <string>https://marketplace.eclipse.org#4556629</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.remainsoftware.oas3.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>https://marketplace.eclipse.org#1778478</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -1030,6 +1070,14 @@
      </void>
      <void method="add">
       <string>com.ibm.wdt.webtools.top.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#5378797</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.zfabrik.eclipsoid.feature</string>
      </void>
     </object>
    </void>
@@ -1221,6 +1269,14 @@
     </object>
    </void>
    <void method="put">
+    <string>https://marketplace.eclipse.org#170795</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>org.freejava.dependencyviewer.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>https://marketplace.eclipse.org#3759385</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -1257,6 +1313,14 @@
     <object class="java.util.ArrayList">
      <void method="add">
       <string>com.genuitec.eclipse.codetogether.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#3972196</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>de.yatta.eclipse.launcher.client.export</string>
      </void>
     </object>
    </void>
