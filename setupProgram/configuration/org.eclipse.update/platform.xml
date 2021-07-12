@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1626012959895" transient="false" version="3.0">
+<config date="1626102005661" transient="false" version="3.0">
 	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
 		<feature id="org.eclipse.wst.common_ui.feature" version="3.22.0.v202103232321" url="features/org.eclipse.wst.common_ui.feature_3.22.0.v202103232321/">
 		</feature>
@@ -14,6 +14,8 @@
 		<feature id="org.jboss.tools.maven.apt.feature" version="1.5.2.201812241535" url="features/org.jboss.tools.maven.apt.feature_1.5.2.201812241535/" plugin-identifier="org.jboss.tools.maven.apt.core">
 		</feature>
 		<feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" version="0.2.2.202102092209" url="features/org.eclipse.wildwebdeveloper.embedder.node.feature_0.2.2.202102092209/">
+		</feature>
+		<feature id="org.eclipse.wst.web_userdoc.feature" version="3.18.0.v202004271556" url="features/org.eclipse.wst.web_userdoc.feature_3.18.0.v202004271556/">
 		</feature>
 		<feature id="org.eclipse.justj.openjdk.hotspot.jre.full" version="16.0.1.v20210528-1205" url="features/org.eclipse.justj.openjdk.hotspot.jre.full_16.0.1.v20210528-1205/">
 		</feature>
@@ -49,6 +51,8 @@
 		</feature>
 		<feature id="org.eclipse.equinox.p2.discovery.feature" version="1.2.900.v20210418-1743" url="features/org.eclipse.equinox.p2.discovery.feature_1.2.900.v20210418-1743/">
 		</feature>
+		<feature id="org.eclipse.wst.web_ui.feature" version="3.22.0.v202105181958" url="features/org.eclipse.wst.web_ui.feature_3.22.0.v202105181958/" plugin-identifier="org.eclipse.wst.web.ui">
+		</feature>
 		<feature id="org.eclipse.linuxtools.jdt.docker.launcher.feature" version="5.3.0.202106080017" url="features/org.eclipse.linuxtools.jdt.docker.launcher.feature_5.3.0.202106080017/">
 		</feature>
 		<feature id="org.eclipse.tm.terminal.control.feature" version="10.3.0.202105240049" url="features/org.eclipse.tm.terminal.control.feature_10.3.0.202105240049/" plugin-identifier="org.eclipse.tm.terminal.control">
@@ -73,11 +77,15 @@
 		</feature>
 		<feature id="org.eclipse.wst.server_adapters.feature" version="3.2.900.v202106111324" url="features/org.eclipse.wst.server_adapters.feature_3.2.900.v202106111324/">
 		</feature>
+		<feature id="org.eclipse.wst.json_core.feature" version="1.1.8.v201909302219" url="features/org.eclipse.wst.json_core.feature_1.1.8.v201909302219/">
+		</feature>
 		<feature id="org.springframework.ide.eclipse.integration.feature" version="3.9.17.202106211030-RELEASE" url="features/org.springframework.ide.eclipse.integration.feature_3.9.17.202106211030-RELEASE/" plugin-identifier="org.springframework.ide.eclipse">
 		</feature>
 		<feature id="org.eclipse.mylyn.discovery" version="3.25.2.v20200813-0821" url="features/org.eclipse.mylyn.discovery_3.25.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
 		</feature>
 		<feature id="org.eclipse.help" version="2.3.600.v20210611-1600" url="features/org.eclipse.help_2.3.600.v20210611-1600/" plugin-identifier="org.eclipse.help.base">
+		</feature>
+		<feature id="org.eclipse.wst.json_ui.feature" version="1.1.10.v202103121626" url="features/org.eclipse.wst.json_ui.feature_1.1.10.v202103121626/" plugin-identifier="org.eclipse.wst.json.ui">
 		</feature>
 		<feature id="org.springframework.tooling.concourse.ls.feature" version="4.11.0.202106150606" url="features/org.springframework.tooling.concourse.ls.feature_4.11.0.202106150606/">
 		</feature>
@@ -108,6 +116,8 @@
 		<feature id="org.eclipse.mylyn.commons.identity" version="1.17.2.v20200813-0821" url="features/org.eclipse.mylyn.commons.identity_1.17.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
 		</feature>
 		<feature id="org.eclipse.emf.ecore" version="2.24.0.v20210405-0628" url="features/org.eclipse.emf.ecore_2.24.0.v20210405-0628/">
+		</feature>
+		<feature id="org.eclipse.wst.web_core.feature" version="3.22.0.v202103232331" url="features/org.eclipse.wst.web_core.feature_3.22.0.v202103232331/">
 		</feature>
 		<feature id="net.mihai-nita.ansicon" version="1.4.4.202102080044" url="features/net.mihai-nita.ansicon_1.4.4.202102080044/" plugin-identifier="net.mihai-nita.ansicon.plugin">
 		</feature>
@@ -204,6 +214,8 @@
 		<feature id="m2e.chromatic.feature" version="1.0.1.20210504-1034" url="features/m2e.chromatic.feature_1.0.1.20210504-1034/">
 		</feature>
 		<feature id="org.eclipse.mylyn_feature" version="3.25.2.v20200814-0512" url="features/org.eclipse.mylyn_feature_3.25.2.v20200814-0512/" plugin-identifier="org.eclipse.mylyn.tasks.core">
+		</feature>
+		<feature id="org.eclipse.wst.web_js_support.feature" version="3.22.0.v202103232331" url="features/org.eclipse.wst.web_js_support.feature_3.22.0.v202103232331/">
 		</feature>
 		<feature id="org.eclipse.egit.gitflow.feature" version="5.12.0.202106070339-r" url="features/org.eclipse.egit.gitflow.feature_5.12.0.202106070339-r/" plugin-identifier="org.eclipse.egit.gitflow">
 		</feature>
