@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	first Page Test
+	<h1>Dash Board</h1>
+	
 </body>
 </html>
