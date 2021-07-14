@@ -1,0 +1,18 @@
+Signature-Version: 1.0
+Created-By: 11.0.11 (AdoptOpenJDK)
+SHA-256-Digest-Manifest: YEvOL5O6qxp+H0j2ABytejdQ0WJEK319UGTDuMJxxVg=
+SHA-256-Digest-Manifest-Main-Attributes: O/jhiz/kF1v46q63re/2Ebqcihn+vqP
+ 3dECoLHMhLqA=
+
+Name: p2.inf
+SHA-256-Digest: MtfLtSU+4CLiT0mcmxeZvFUiIt6NXa/dSq0JRd+PsjQ=
+
+Name: feature.xml
+SHA-256-Digest: pPtWNnr5BMnVP1vz8Mp9M4WmZviC/3Lnz1ot7buq+80=
+
+Name: license.txt
+SHA-256-Digest: ilmVbzW/LnH3cw1GODFf2nUHXSWyforuxzcxrd62EAI=
+
+Name: feature.properties
+SHA-256-Digest: RNY+h71dyLOzVF4pWfqqBbvNF0xHzJRbCszEAuSlwTM=
+

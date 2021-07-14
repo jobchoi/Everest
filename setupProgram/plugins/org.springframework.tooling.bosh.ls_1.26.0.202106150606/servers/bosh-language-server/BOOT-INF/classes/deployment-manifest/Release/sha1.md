@@ -1,1 +1,0 @@
-The SHA1 of the release tarball. SHA1 is recommended when using HTTP(s) URLs.

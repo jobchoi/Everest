@@ -1,1 +1,0 @@
-*Required*. Name of a release used in the deployment.

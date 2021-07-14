@@ -1,0 +1,1920 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.5.0
+Build-Jdk-Spec: 11
+Bundle-ManifestVersion: 2
+Bundle-Name: Dockerfile Language Server Client
+Bundle-SymbolicName: org.eclipse.linuxtools.docker.editor.ls;singleton:=
+ true
+Bundle-Version: 1.0.0.202106080017
+Bundle-Vendor: Eclipse
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.lsp4e;bundle-version="0.11.0",org.eclipse.ui
+ .genericeditor;bundle-version="1.0.0",org.eclipse.ui,org.eclipse.core.c
+ ontenttype,org.eclipse.tm4e.registry;bundle-version="0.1.0",org.eclipse
+ .tm4e.ui;bundle-version="0.1.0",org.eclipse.core.runtime;bundle-version
+ ="3.13.0",org.eclipse.wildwebdeveloper.embedder.node
+Eclipse-BundleShape: dir
+Automatic-Module-Name: org.eclipse.linuxtools.docker.editor.ls
+Eclipse-SourceReferences: scm:git://git.eclipse.org/gitroot/linuxtools/o
+ rg.eclipse.linuxtools.git;path="containers/org.eclipse.linuxtools.docke
+ r.editor.ls";commitId=6e9698d8895e6ef7656c39ecdfbf5ceda32595a3
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageWrit
+ er.d.ts
+SHA-256-Digest: N8D9SOsEP9w5VDVxZYVYeBX2OvxmFZWI247WwlpfBjY=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/conf
+ iguration.d.ts
+SHA-256-Digest: dmLWmU0oyeu+YbiMw1w9cFgENR7tvzY98w6p/oxJYdw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/lib/esm/m
+ ain.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-ast/lib/comment.d.ts
+SHA-256-Digest: mKeg+UH8Xfd9KADOy/Ubo3VHdGXxGY2DIVjiRjmYo+8=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/run.d
+ .ts
+SHA-256-Digest: OJTSLcDkD4qSr7NhY0CF80jsIVLb69aL03daW5++xUE=
+
+Name: language-server/node_modules/dockerfile-utils/lib/dockerFormatter.
+ d.ts
+SHA-256-Digest: mrdD3huC9a6jf+Py7gizaPPLfgjxoye8x3sKuE5/sX4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/variable.js
+SHA-256-Digest: Xm8Mq0CnNdZuKVt6R9qF/bm89/qoVR+RUvDbR7iA21g=
+
+Name: language-server/node_modules/vscode-languageserver/node.cmd
+SHA-256-Digest: +tdHQBjbXj7zi5c3TYL7O1xWoWruQj9IK2cygAAH9TM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.moniker.d.ts
+SHA-256-Digest: 69cgnltkive242dygDaLPIzO9XmifCOG9/XTdvHhRTM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/line.js
+SHA-256-Digest: OyGR4MY2sBAwJGlwJs6nFxBLN50KiFdzwRKyBHqMLjk=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/imageTemplate.js
+SHA-256-Digest: e6YpmUSgPyFWjz5ak9HMB9cAUcEMF8nVoasGRCypY8g=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/lib/esm/main.js
+SHA-256-Digest: Gty3zAdWRyvBas6FDz9bbVdG6kry11rQeFuWfdB7+fE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/messages.js
+SHA-256-Digest: eKEkDT8vk1aw9oPAuvVxSR92ROiXrpb5AJDdKdFJYOY=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/lib/umd/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-utils/bin/dockerfile-utils
+SHA-256-Digest: +VC9LzYsuBTeSRjHo13abjgGc8rL11dBv67ehkiPwkg=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/README.md
+SHA-256-Digest: U7XieCGyj4so9vE/ctMb+1R5O4uhS8nQOfHVN9UHMEM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/lib/esm/main.js
+SHA-256-Digest: Gty3zAdWRyvBas6FDz9bbVdG6kry11rQeFuWfdB7+fE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/util.js
+SHA-256-Digest: yrxoPGVV4i6z280PJd3oKNxtHMTEETolF1FbHEbYM44=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.linkedEditingRange.js
+SHA-256-Digest: ZZ1JXvWiFQt+BuiyHoJaO3IIbepo9mHzkrD5LAhVc94=
+
+Name: language-server/node_modules/vscode-languageserver-types/README.md
+SHA-256-Digest: U7XieCGyj4so9vE/ctMb+1R5O4uhS8nQOfHVN9UHMEM=
+
+Name: org/eclipse/linuxtools/docker/editor/ls/InitializeLaunchConfigurat
+ ions.class
+SHA-256-Digest: 5u29LV23kZFaHrw4McyWgTv3csyHuthxRe3k6ThDSJw=
+
+Name: language-server/node_modules/dockerfile-ast/lib/jsonArgument.d.ts
+SHA-256-Digest: AnJQicf/rjSOg9JSKsiKichadVr5FC2NxM7d1Q8dmaU=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.implementation.d.ts
+SHA-256-Digest: c2I5ebK29Hua8O/qmF2RGXo8MwNGbteGFjdX8KprRbw=
+
+Name: language-server/node_modules/dockerfile-ast/lib/property.js
+SHA-256-Digest: FcxZ3pGER2d8oRUS2lnFpWOdyNW+BdpTNFiqyTKQhU4=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/connection.
+ js
+SHA-256-Digest: gM2DNXDs0fAloZN9yqrcqpBbx3xE2mAQ7RptGrBgjtE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.fileOperations.d.ts
+SHA-256-Digest: W+5rZ1saDs6dUILUOOkj8RI0NoXUvFSyCk377Qnb4yM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/lib/umd/main.js
+SHA-256-Digest: vFTQJVxlJ4WNSypsn9Nm3VvcCNYnqmqB67UrJ/4bsX0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/user.
+ d.ts
+SHA-256-Digest: q9I4oThD5Hu9GhzGg2klFiU+1pb+OOrX5uN4PVbWYps=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rDefinition.d.ts
+SHA-256-Digest: fGSlsQMLYT2Yjk1m6an8NCbLPWuZpcxYacl2GyE9SV0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/License.txt
+SHA-256-Digest: YxZpzA+SJoGoZOGV8GN/97i18fvdGEMjFbumfF06lWE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.selectionRange.d.ts
+SHA-256-Digest: 81bnmZr/6/V0XY/98MtwQmvJZtpGEWZAgJnk2sNemMI=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/lib/esm/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/arg.d
+ .ts
+SHA-256-Digest: yr11/kEM7CYOg3LnowkJyZWedDyzGDKYHYX6igZDdQo=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/util.d.ts
+SHA-256-Digest: Xz6fZ1GGFIPC3yVKu3qR6UHFQqrt7sCMEY+z9lmkrKU=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rHighlight.d.ts
+SHA-256-Digest: fiRfzonLFYAH5TkGyUoJfNKNJ6lEqNCwFRlyi5GYMZU=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/arg.j
+ s
+SHA-256-Digest: ri9HGW8wf5V3P0NVpnXLxE60gWUh7hwnmgbBgW5GsHs=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageBuff
+ er.js
+SHA-256-Digest: vHCaJF3WPn0WogQssGZOOzRw7twF6yOLT9kkyUrRyrc=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSemanticTokens.js
+SHA-256-Digest: fTd57DAkdlPmUk3PISUijLdUEmv6panFT9erJmfZlkc=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.semanticTokens.d.ts
+SHA-256-Digest: eJHHKQ8hO2ORGhORs9/gjJv6VNQB8o4WfQxXVT7ugMA=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/add.js
+SHA-256-Digest: +FqLjeM6mW+zjCOtPChFMAXlSNZWOCWPX1aUPaM1z9Q=
+
+Name: language-server/node_modules/dockerfile-ast/License.txt
+SHA-256-Digest: 3Bsm9IB/JLMJkjU5nOpYq2tGSTvcDIruDOUepS+cMFs=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/propertyInstruction.js
+SHA-256-Digest: AmM0QzV9O8OxuAoSdvC6dg+z+hzol4ZG+/UprBAeL7I=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/browser/main.d.ts
+SHA-256-Digest: N/NJTD5Oh9fw0ROX6GT3Gla3g/7uRaIcd8AaJgolCs0=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rMarkdown.d.ts
+SHA-256-Digest: F+nEfRI8yLheunkOxT+Af2lfACi9zZQMc6IKsmobCwE=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/api.
+ d.ts
+SHA-256-Digest: O0uoMi9zzFcc1X5VGZuQngS12nnQDVijog/XFGP4wIE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/flag.js
+SHA-256-Digest: /jqT5LzYrCCv6e8kRcMGfsEfIrFyP8YgtA1BPUbI5ds=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/node/main.js
+SHA-256-Digest: Col/vYWPlHEWFpBhoniPGPy5FYNkBAs+OkJDpSPMOR4=
+
+Name: language-server/node_modules/dockerfile-ast/lib/line.d.ts
+SHA-256-Digest: 8QWHTx0p9Zhp5uu25jpmagtzDEcpB+k8NjvegRdWwh4=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/node/ril.js
+SHA-256-Digest: LyXk6Hd8volQTB4vPftz1jylewmjVXLAdFCbTxNx8Bs=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/thirdp
+ artynotices.txt
+SHA-256-Digest: kmXSfPdXdapa4ZxboBhG+3Ds1RIfjDnIG+9+A/AHByw=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rFolding.d.ts
+SHA-256-Digest: DsFbkKEq6Mmd82aCg48a5TSNHKn7XUy3g+vhoGncDaw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instruction.js
+SHA-256-Digest: ELnlGi8I/w0ci+aNWKJQGMJkhxQnzIx8t8MK+b/09ks=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/user.
+ js
+SHA-256-Digest: mlb0TOY1RjiIF38L7NMlJ4BgMii13f7j9PazttRm020=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node.d
+ .ts
+SHA-256-Digest: nJjfAUXZkBGvksOX+nh/w51CzAQBlhSrVYH+vnH7MuE=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rCompletion.js
+SHA-256-Digest: hXa8oMST7E4UYXGYWQwyRZ/A7BJ4pWQO6uFOFwHlV2U=
+
+Name: language-server/node_modules/dockerfile-ast/lib/util.d.ts
+SHA-256-Digest: Xz6fZ1GGFIPC3yVKu3qR6UHFQqrt7sCMEY+z9lmkrKU=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/Dockerfile
+SHA-256-Digest: F40cB1Ld+cWd0HjsaAixyeCjdXGyrN3EITNDkHi5xF8=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/prog
+ ress.d.ts
+SHA-256-Digest: 8fI6zUqBk0U3SfadRDL18SLW1XK3k6i2MN0S/oCww9M=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/user.
+ js
+SHA-256-Digest: U4dhOgjX8uh1166ko684o9IUIGTFq9Hc6GV8m/jnEIo=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/entrypoint.d.ts
+SHA-256-Digest: 3d3Ihg8I80+76lLAa1/4rLL4RTyUx++1Pbtx/dIbLWM=
+
+Name: language-server/node_modules/dockerfile-language-service/README.md
+SHA-256-Digest: r1EbjB4n8O7WveUcoj23K6mtQqusxo9gukGVsymqbnM=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/show
+ Document.d.ts
+SHA-256-Digest: NRu/Q9WFSEgl7mxLSAWqwTf/yOijuYEq+ZlFogLbfAI=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/comment.d.ts
+SHA-256-Digest: 0Qtxyt4Y3dyJlIozVYwJUlXA7Hv7HnhEvA4UA6m54Fs=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/flagOption.js
+SHA-256-Digest: gqrxjAgqfadL+7bt5CXXeP0yDuQvA4bCArnlEdaradM=
+
+Name: language-server/node_modules/vscode-languageserver/bin/installServ
+ erIntoExtension
+SHA-256-Digest: e1/WcYdmahso2Irth5g63mBixwVi3/y/mYuZ4vwcFtg=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/dockerFormatter.js
+SHA-256-Digest: HC5Ft9uaKP/zoVmK/CCVL2xoxCF21FI9mVsqKdxG4jc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/argument.d.ts
+SHA-256-Digest: uuOg3ksBuGBO7f6tdzN7w5MyWQN7O5ETWtNxbeN2Pto=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/stops
+ ignal.d.ts
+SHA-256-Digest: 0F/HxcaM6bDIIX1nTCKz4We+SaC5tkX7riZ5H26TVtc=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.colorProvider.d.ts
+SHA-256-Digest: lNZCLTw/r5I/vf8c50V6JfmwtV6KL+D++ov6eonPZnY=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/healt
+ hcheck.d.ts
+SHA-256-Digest: 5ZfrXjDy8h+ofPv2/Mi9H5C3ReneFYKrvBBYBr8U/TI=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/packag
+ e.json
+SHA-256-Digest: gYrY7Xb0ZdQloX/kpFh9h0nGe1BkWZbG75vZRa+YXjk=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/env.j
+ s
+SHA-256-Digest: Y8UCEIQXesF7VKDWzBmWLlMQSA9T1c9j8/WA2j8sD1o=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instruction.js
+SHA-256-Digest: Oq/GAzzgSdSHWGFXbXIHnknshCxGJcH2LiIcPTCw19k=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/node/main.d.ts
+SHA-256-Digest: 3czwpIM4ysZC6Tv9tWNJTa1uBbcO8ObjYFpFTbiMpX4=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/modifiableInstruct
+ ion.d.ts
+SHA-256-Digest: iiRXZqeVU6GOg+rH06XP1zl8/V92BXG39UO/15uFn1Q=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/main.js
+SHA-256-Digest: oVyfFgyFfx9VOice2WOYmDCFsUPdK3iiTpmghY3SZPo=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/modifiableInstruction.js
+SHA-256-Digest: v8rawVad9gQkq5/ZOmODgZzA1FxMMHCecTQ8B/RUTIA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSymbols.js
+SHA-256-Digest: YCDcrLFKepb0Ye84uWLETTxlmDcBpLFzDzgNJt8+xAk=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.js
+SHA-256-Digest: BG1Cn1IlHck5eavRJ4P8Zgfv2WiMy/Hyyl6kXhJCjIA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSymbols.d.ts
+SHA-256-Digest: T5kqW/76IumCpgPvfgoOfAiVJ+nJ2YkT58iLTCps5bE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/entry
+ point.js
+SHA-256-Digest: S4z6cayOVha/qOoCxpxOv6YUyQy3+l+YWE4ulUNyS0E=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/call
+ Hierarchy.d.ts
+SHA-256-Digest: ms1VHRtfuKTqS/1l6PzIvsqJpLmPwakyGSQwglY4NWU=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.progress.js
+SHA-256-Digest: jMIj2FrMYrql9VvZv2vhpY7BzK+9oLCvmrNQabW9xAI=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/VALIDATOR.md
+SHA-256-Digest: 18j677SpvNwKA27PJMzrPkfQtlwMzwP1PhKcenBAjpU=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/healthcheck.d.ts
+SHA-256-Digest: 5ZfrXjDy8h+ofPv2/Mi9H5C3ReneFYKrvBBYBr8U/TI=
+
+Name: language-server/node_modules/dockerfile-utils/lib/dockerValidator.
+ d.ts
+SHA-256-Digest: Jl8LM55bQSIk/S04F3LCepz059V89vqWt/g0LR6JBgQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/cmd.d.ts
+SHA-256-Digest: UG8CE/je21n1yEXy/UmX1YUi7ZOW2sNxlYARBeUE8rY=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/lib/esm/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/property.js
+SHA-256-Digest: FcxZ3pGER2d8oRUS2lnFpWOdyNW+BdpTNFiqyTKQhU4=
+
+Name: language-server/node_modules/dockerfile-utils/lib/main.d.ts
+SHA-256-Digest: YPWiSn8+vdALFZer+3TkKUHK9JnFrfGnMgYMxXccgsw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/jsonArgument.js
+SHA-256-Digest: eSpXdXx6dYMTQyGPYi929gfhXx9QwAoK1o8CQtVOe9g=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rHover.js
+SHA-256-Digest: BM77/EwShfd+V/MdtU/5F50nXd6kR2T/d/z/xIAjpJU=
+
+Name: language-server/node_modules/dockerfile-ast/lib/imageTemplate.d.ts
+SHA-256-Digest: uAlM+QUMFqXSfYg/gVShb3ypII49ug6g7p311PTHfC4=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/work
+ spaceFolders.js
+SHA-256-Digest: gTVgSe4jpmqMd508wcvfJUOYZ2qWyZVzzPcRktL5CNw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/volum
+ e.d.ts
+SHA-256-Digest: UiannKOV1OpG7flpGdGmRssx+tMeKSdSkrqVXYWzy5s=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/dockerfile.js
+SHA-256-Digest: b0xokyAUV26FAzsve7fgBqft590X6K0kQVvbQkLmJCA=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/REA
+ DME.md
+SHA-256-Digest: EXwS80bF34ZsMkTfGeLPqH3wVQ+7UKgp8x7Qa/OtmAg=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/README.md
+SHA-256-Digest: U7XieCGyj4so9vE/ctMb+1R5O4uhS8nQOfHVN9UHMEM=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/semaphore.j
+ s
+SHA-256-Digest: GyA2I1GhQAPnnDpAW4ZvniGpmWB2L6HzLDVPDO6yUhc=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/cancellatio
+ n.js
+SHA-256-Digest: J3heRPVP751NZJdB/P9JH0vKy12SArpZWPBuhs1772A=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/imageTemplate.d.ts
+SHA-256-Digest: o4XayIrD6MiS6nHuUZJb1ZHIeEo/HRLI68Zw6GVZgJU=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/api.js
+SHA-256-Digest: wlyjr63b80aJ32o2M6mCm5+YNllNr2f9jS5EszVIwSk=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rCommands.d.ts
+SHA-256-Digest: ITJIYe0yPPKYEkp9rVhavZy6EZKBx2qik+POOMSoFaM=
+
+Name: icons/dockerfile.png
+SHA-256-Digest: 5XAS/LodCy+D3kTx1t3RAEF4U83pgxREXPSITlJcs+0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/parserDirective.js
+SHA-256-Digest: TDU1NoWcrMZ3x/yh4WKsuVa+do5b7IBaT67YBHnSfyQ=
+
+Name: language-server/node_modules/dockerfile-utils/VALIDATOR.md
+SHA-256-Digest: KbrfnMGTsjs1GPipqdbU/ic7uKY2B8eoHqu9q+aJW8g=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/CHA
+ NGELOG.md
+SHA-256-Digest: und5nyvf5GgY7FxHHOmZykXfDDswhNQzjrVR/SeXyb8=
+
+Name: language-server/node_modules/dockerfile-ast/CHANGELOG.md
+SHA-256-Digest: DCBBX4yr3E9BJtCU5hNlj+JrulXxNmTMckqH+HKcK9M=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.foldingRange.js
+SHA-256-Digest: fZR6y9lPh8y83JkxizWRrt93d2y8WLW/KauUYwf1xFg=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/healt
+ hcheck.js
+SHA-256-Digest: QFGS9t2af+YQ5D6i/gW1XwRVvmpjQ0zWWUKyQaZsDwI=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.foldingRange.d.ts
+SHA-256-Digest: HHdctDxe2uCntKXlQ8B7qrB/dR5czMYKIsW8P244MJw=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/Lic
+ ense.txt
+SHA-256-Digest: qj0zjcbkpM9RaOjZ+XXSNmGPO4A/Hd4U6WTaTmRmnsc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/lib/umd/m
+ ain.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/serv
+ er.js
+SHA-256-Digest: gNaTRPheQPtvjorVGpa/qHXEk9c1tzPSBWCOU3ubiZo=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/License.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/vscode-languageserver/License.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/pac
+ kage.json
+SHA-256-Digest: s3gbinnJ3SJp8GcnOfFHNjkY4KB85SJ9A6P1gb6ZQuo=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rFormatter.js
+SHA-256-Digest: Di8hSGCz4hwFqkPAg30Mtd3ISbQ/EVA4uDpl72YNEyY=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rRegistryClient.d.ts
+SHA-256-Digest: 1L3jQLcTkL9z0IFd2iasSQOerwuEOm5C7izUHRfKbd4=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/README.md
+SHA-256-Digest: U7XieCGyj4so9vE/ctMb+1R5O4uhS8nQOfHVN9UHMEM=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/add.d.ts
+SHA-256-Digest: rMTsjDr+jPeeGQsZ9mQLCCv3ONSITy88AOYDhoV4J5I=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/dockerfile-ast-0.1.0.tgz
+SHA-256-Digest: LfE6DvUkhgeaXGrEsG6oYir2NHkGDBIi7hO7B3Wg3k8=
+
+Name: language-server/node_modules/dockerfile-ast/.github/workflows/buil
+ d.yml
+SHA-256-Digest: oXvlwSSPulSXKekSzkgtXWtwPlML4cswxjwJZHYdE94=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/link
+ edEditingRange.d.ts
+SHA-256-Digest: O9L8G4d7pPnJH8oyMTM0cfP/Dt+F4Ubqr9/yvELJpEw=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/encoding.d.
+ ts
+SHA-256-Digest: 7J1ViI41P5tc3adhMI3/x+62qgt7JdMoxk03dqHPKn4=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/FORMATTER.md
+SHA-256-Digest: 1w9wulj73wbtqfIqkUbD5dblYyvaKsdoAFc3xhcDInY=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/License.txt
+SHA-256-Digest: 3Bsm9IB/JLMJkjU5nOpYq2tGSTvcDIruDOUepS+cMFs=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/CHANGELOG.md
+SHA-256-Digest: yOFyDzxddOdZ6h2NZqbUdmMNKaEROXadqxeRwYOlGGQ=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/no
+ de/main.js
+SHA-256-Digest: rRjUxDUcBXh9EE/0JRm3QEg2gPePBt0Mw4UxLV63ckg=
+
+Name: language-server/node_modules/dockerfile-ast/lib/parser.d.ts
+SHA-256-Digest: oto6i6NIpKlGpxMO0xds6+gf6ARRYd4meLk9HFHs5wc=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/label.d.ts
+SHA-256-Digest: JhPhMejnTGB5BvgDxoNI9oKt2XvC7wm1MW0fa3wlK8g=
+
+Name: language-server/node_modules/vscode-jsonrpc/README.md
+SHA-256-Digest: hzGOgKmRfUoaM5bJ0r7IBH9yg95cDS8WnOk7bMOXE7s=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/jsonInstruction.js
+SHA-256-Digest: HTvAjymuITlpJu8Nq5CFpGW0KXCWIcL+C5CDc7A43CA=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.selectionRange.js
+SHA-256-Digest: c7eT2wcRdIqaBAfdhEaACWc8tE2+Eqx7IR1GB2e5Yiw=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/lib/umd/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/vscode-jsonrpc/package.json
+SHA-256-Digest: FjoFjz+frIqftV1DH2Rr0qAnSRlRVd9iewBrASR8dfk=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/show
+ Document.js
+SHA-256-Digest: cMyBkFAumauqvT7aVDA7izKtALFcBdoE+5M9BqK7m4E=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/from.
+ d.ts
+SHA-256-Digest: SyvsdciF3ccbNBMHpMYKqdhN/p6trFU/24tbebjmyg4=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/conf
+ iguration.js
+SHA-256-Digest: 6EqS5VYLdZbSkTKiTfQuETZu+wQNV6EP+FBtZI7Ccvc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/util.d.ts
+SHA-256-Digest: FyJuWg2C2yPd6Dqwuy+5d4+YrAytmFQG+cMpLykKX00=
+
+Name: language-server/node_modules/dockerfile-ast/lib/parserDirective.js
+SHA-256-Digest: YYZhpEt19Oqhx6aBJZGTxT71Tk9jmvFBtCTZ7q+Efwk=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/disposable.
+ js
+SHA-256-Digest: qWIAPYHKpk2ztRq4571DmHAEKcy37VqkXtnVw7UKsJg=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/label
+ .d.ts
+SHA-256-Digest: Bvsdy49SopNbPljIFMkBgUdFP0R4F0kK33noyBD9REQ=
+
+Name: language-server/node_modules/dockerfile-ast/lib/jsonInstruction.d.
+ ts
+SHA-256-Digest: T2HZUgsaur6ckxauPK5kVoEn3XeQODUzccnTobFcW7M=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/ral.js
+SHA-256-Digest: xY3QzkegK4sVq3ylGane0a/xD+XYheTrt0G5tMW3KFk=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rAssist.d.ts
+SHA-256-Digest: aY4pnWeiE9VSWI8NHQBeHHnTZ0CxsFeP0o/sz91n6SY=
+
+Name: META-INF/maven/org.eclipse.linuxtools/org.eclipse.linuxtools.docke
+ r.editor.ls/pom.xml
+SHA-256-Digest: 5WhfwuNiWEn5Wrozkty3fDuqS5CUKsjHo1HopzqCjm4=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/sema
+ nticTokens.d.ts
+SHA-256-Digest: pwJDItyG5DaFxVZLQ43srXVX3mK6roCwYv7nh1LDsvQ=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/argument.js
+SHA-256-Digest: Y3BUsH4IB42MK12kD0ehXsml5tO2LHmKPzT+YaD9Y/Y=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.showDocument.d.ts
+SHA-256-Digest: cH2yDPik7hZuY4YcCn01W0RZVVXgJIVlR550X2wQNNA=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/lib/esm/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-ast/lib/jsonArgument.js
+SHA-256-Digest: eSpXdXx6dYMTQyGPYi929gfhXx9QwAoK1o8CQtVOe9g=
+
+Name: language-server/node_modules/vscode-jsonrpc/node.js
+SHA-256-Digest: IO2dBQh/pl7Zk2nDLrqtbScUxW04trWOZg7EKNEoAFQ=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.showDocument.js
+SHA-256-Digest: T8ndtdzh6v1qOqNsLNveOECaX5L4GDocMpuXUAa4PHQ=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/flag.d.ts
+SHA-256-Digest: GdA6wJbS6SlgGGebKR5eLG+q7KDH5cXq0D/N8vPFuQ0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/dockerfile.d.ts
+SHA-256-Digest: vxIVcb0ALG48QmcgCQM1H1Wrl9aiosrFf3X4Q9bSNbk=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/propertyInstruction.d.ts
+SHA-256-Digest: IM4MFhsC2Rn2TVgImql/6v/T4NYax6kYPbf0UsLn7wA=
+
+Name: language-server/node_modules/dockerfile-ast/lib/flagOption.d.ts
+SHA-256-Digest: 84SNxNFfSovALaohb22fyUAgje8phX7F3gp6MvXJLpU=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/browse
+ r.js
+SHA-256-Digest: lAaALbAyVY082L3p9o0gwGfzp+yiUa19DkRz2o1Feto=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rCommands.js
+SHA-256-Digest: n939JePvnvRVlkBevkpT95fjCIJ23bDNC2yZ9IdZ3m4=
+
+Name: META-INF/maven/org.eclipse.linuxtools/org.eclipse.linuxtools.docke
+ r.editor.ls/pom.properties
+SHA-256-Digest: ioLrlIOv1KBJIuhYStCag0NaJwrT9F6NXCiENICwUmA=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/parserDirective.js
+SHA-256-Digest: YYZhpEt19Oqhx6aBJZGTxT71Tk9jmvFBtCTZ7q+Efwk=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/from.
+ js
+SHA-256-Digest: vcUtyP4G8itsWKN/3ogR3VDVSHfn/ve1udo7W9HPU9Y=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/shell.d.ts
+SHA-256-Digest: E3bTXcjkQfnn6IP5a7LGZv23gHK9Wy45dnhnrvpBYB8=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/volum
+ e.js
+SHA-256-Digest: Pnq1n9YRrXa+0VZBdw7PNNSGXvCivlpCJXUelosGAhc=
+
+Name: language-server/node_modules/vscode-jsonrpc/thirdpartynotices.txt
+SHA-256-Digest: +WYcWe36tjXujLN63ueNKxl9k5frfv0HCtCKKioxr74=
+
+Name: language-server/node_modules/dockerfile-ast/lib/variable.js
+SHA-256-Digest: Xm8Mq0CnNdZuKVt6R9qF/bm89/qoVR+RUvDbR7iA21g=
+
+Name: language-server/package-lock.json
+SHA-256-Digest: nsF9SfoiuLyKt7T3EnYLbKH1Oju+jAM5Xb9+fkMT1KE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/imageTemplate.js
+SHA-256-Digest: th92CMt6gia2HcCgUxld1/oJM28odWzsurWEi95kTu8=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/workd
+ ir.d.ts
+SHA-256-Digest: B9yaziq5H5ol+N7K+2Dpl/RR+LNDRiVBc9UbrqpYuNU=
+
+Name: language-server/node_modules/dockerfile-ast/lib/util.js
+SHA-256-Digest: AysH+/mVd15q9xF1W76r0vC75udB+uQNq/+DaSbBZck=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instruction.d.ts
+SHA-256-Digest: Svg0Y4aZGo3fdIYp8zC7DtLEbQu6EMenY1pHZBntWtw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/jsonArgument.d.ts
+SHA-256-Digest: 4hJ+l4jChyPloCBIfQ1clq3HRUeQ2HCWkBAqzZCSKvk=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/arg.d
+ .ts
+SHA-256-Digest: TIxA3VnT09OStTaL8ILMatolbvarvh6mmvQ+VoMBMDQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/variable.d.ts
+SHA-256-Digest: oULUoWHd7eKjn/yrbkiB0aflwbn1AHDXCgwF3QeZKuc=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/user.js
+SHA-256-Digest: mlb0TOY1RjiIF38L7NMlJ4BgMii13f7j9PazttRm020=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/lib/umd/main.js
+SHA-256-Digest: vFTQJVxlJ4WNSypsn9Nm3VvcCNYnqmqB67UrJ/4bsX0=
+
+Name: language-server/node_modules/dockerfile-language-service/CHANGELOG
+ .md
+SHA-256-Digest: V0ACckqSQHvpPxOqMSIWM1pWfYhD21kTWfScZBMXwgY=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.declaration.js
+SHA-256-Digest: 57IzV6pv0rFu7uR567hCR38HJqLn2GZyIBY7Nfi3QYQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/line.d.ts
+SHA-256-Digest: 8QWHTx0p9Zhp5uu25jpmagtzDEcpB+k8NjvegRdWwh4=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/copy.
+ js
+SHA-256-Digest: 5VECJntelScWjSn/v/7le5sfs6sco/7Dcs5pxwAjkjI=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/ral.d.ts
+SHA-256-Digest: lobJrecd5T2B7j5B/3RQ0IvQj/9PVFrznjfu2iKHRdY=
+
+Name: language-server/node_modules/dockerfile-utils/License.txt
+SHA-256-Digest: 3Bsm9IB/JLMJkjU5nOpYq2tGSTvcDIruDOUepS+cMFs=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/prog
+ ress.js
+SHA-256-Digest: GIJZpVdOdj0cv3PxZG90FIqquYfzz0fVz64G2Pd3y2Q=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/resolv
+ e.d.ts
+SHA-256-Digest: Buda/iv20Fiq5Cft7MQh+sLMJudU+6Ynm7X2mBgji8Q=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/util
+ s/is.d.ts
+SHA-256-Digest: mLjlDONko9LxBJwsxeWF8SFELhiIBiFztrb21rTAuy4=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/moni
+ ker.d.ts
+SHA-256-Digest: OHptwNV6n2AtDX8vS6iLZVQMHBnYQIgVdhDKAXZ5OgM=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rHighlight.js
+SHA-256-Digest: 5+YqCazGYS9BU9mM5bzM626IdCqt7RAJ+A6LNfCrKcM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.callHierarchy.js
+SHA-256-Digest: 5rYfHKxSPfgHc2/xRiks/6LjFSbWSs/aOdF4BKZ1yno=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.workspaceFolders.js
+SHA-256-Digest: yrtF9kgOwDpybDV1cKaspQwrgvsrfJ/90q0jGFbixjo=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/files.
+ js
+SHA-256-Digest: Mk14Yc+v17wgaJQ2IDnGYVJv/fuMxEXVn1hNbsaktYo=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instruction.js
+SHA-256-Digest: ELnlGi8I/w0ci+aNWKJQGMJkhxQnzIx8t8MK+b/09ks=
+
+Name: language-server/node_modules/dockerfile-utils/.github/workflows/bu
+ ild.yml
+SHA-256-Digest: p/VwNdDp+iYQiNim2YdwIX9isu976WOVlmK5z4KnMI8=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/util
+ s/is.js
+SHA-256-Digest: YzwA+EfSGu9Quz/uwVEpDScExVBr8lBA6EDq8pE7CEk=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.semanticTokens.js
+SHA-256-Digest: 8O/h0myc+x9RvOizamF03P1wpOiccyBcUSVtTIXDzIY=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/jsonArgument.js
+SHA-256-Digest: R/cfF3/7Wx+G0MPIt4tI/Z4DVmpelXq3Q+2Vqao2tSg=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/argument.js
+SHA-256-Digest: C3ERP3Omyl4jVrhSgnDw+eFE/vc4eGMBGxZ1jcVZi0c=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/lib/umd/main.d.ts
+SHA-256-Digest: oze5cWsWxG6AqIECCcsWLTKvFsbJOzMe3MAc3OXYLro=
+
+Name: language-server/node_modules/dockerfile-ast/lib/comment.js
+SHA-256-Digest: N/5GI75EY1rCcTWdzlzwIJOOOdfKcMmAcAOU1w50FAw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/entrypoint.js
+SHA-256-Digest: r1gJhbNIRgWMISqCFT/kXrkxjyTNiaA/X8FDIxHiryg=
+
+Name: language-server/node_modules/dockerfile-ast/lib/argument.d.ts
+SHA-256-Digest: tA1ngow3mTPoe2lNdUlAPWr+poqsOSLZ10ldOB1TLH8=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/linkedMap.j
+ s
+SHA-256-Digest: 1wYWFFiJ3lU2gXIZxRyZ4Pzn76dB6LzA4qd27oXSdKw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/jsonInstruction.d.
+ ts
+SHA-256-Digest: nDbYG1p8JpjmDAJpRkIXxQPc2Qni2uWQo5cAvaFyLAA=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/flagOption.d.ts
+SHA-256-Digest: hy53z8/cTuSgB6ok0qWeSIEtv9K6aAvxO55fGM5vddg=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/onbuild.d.ts
+SHA-256-Digest: nNMsELt+3582oldefy36djlEhDf8dh5gQ0dvf8D1xeE=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rCompletion.d.ts
+SHA-256-Digest: u7vJlLNYVcIt2Q1msFLBrcNobgSoOWFs8S9lbbl4Uzo=
+
+Name: language-server/node_modules/vscode-languageserver/typings/thenabl
+ e.d.ts
+SHA-256-Digest: ZbkkPIAGjslpax+90jyaz4DVHfAvl7LXoFFDErCp/n0=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/onbui
+ ld.js
+SHA-256-Digest: PSdJxqRM8t83LLCKpM2a1fDR3ClFcUdtHkEokRegGYs=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/package.j
+ son
+SHA-256-Digest: cHGKVaUrdeQPGTBa/5dHN9IWMB+5qMatHRUGRgPLtE0=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/browser/ril.js
+SHA-256-Digest: zbwIGtx/WOEHmK0rAzSlbOCWjqIQiU801TjuC4XZ6KA=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/run.js
+SHA-256-Digest: N1yZaNnkffy3htoLNRMdBMGmdAkmB0UrE/Lkc9Hk6A4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/property.d.ts
+SHA-256-Digest: H82BNsBHhrmHNKRiRUORVaTGBYcHMjvJC4uOR7HmGPg=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/label
+ .js
+SHA-256-Digest: Oy6A+SKFnl+W3WlYdAzIlq34GZtkmx5K5ZP7mdlsdms=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rRename.d.ts
+SHA-256-Digest: TapkKlMYdOXiwq9YJTl2aXuahUNpdvD70r/CujqcXfQ=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/stops
+ ignal.d.ts
+SHA-256-Digest: mMIN56h86/uhPN89iJTKZFYWvhlOc1iBwnxoJsRajiM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/cmd.j
+ s
+SHA-256-Digest: 2xspCcHwYQD0Px2B5SOhkKFQnqozFzb0UX+dtTt2WJs=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/shell
+ .js
+SHA-256-Digest: y0osI4qKrKBuUHRwBs4Hgp7vLT41ZLE5ziIeef0tLJA=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/connection.d.ts
+SHA-256-Digest: rKDlWilhtRn4hXUX4s32CF8CS7EMaWHhIMgLdlafxNc=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/moni
+ ker.js
+SHA-256-Digest: 9LtpXd2J1Z9PJ3pO8hSFQz9sPMyr7es5zTgs7izHCpw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/stopsignal.js
+SHA-256-Digest: r9ifJzcoIBdXHHX/7V69ZwW/d+f3OBtpcN7cslZVltQ=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/call
+ Hierarchy.js
+SHA-256-Digest: +bSTRX/O8wPJQJm/EaD48xwMPXtpzDTppEVkERA8exA=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/cmd.d
+ .ts
+SHA-256-Digest: uvuvcnAhnr4ueKK4IDhEd+kD92392XliTs1Q9XFyObs=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/semaphore.d
+ .ts
+SHA-256-Digest: 6GFlOyhBFBCaaV3QYaQnt7sJzgHb4cLT51P8NCkZ+q8=
+
+Name: language-server/node_modules/dockerfile-utils/Dockerfile
+SHA-256-Digest: F40cB1Ld+cWd0HjsaAixyeCjdXGyrN3EITNDkHi5xF8=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/workd
+ ir.js
+SHA-256-Digest: 1nRa3KxXIqv7Lyi/VMefaMxfy1wPkm0OLEa+zGH+7IY=
+
+Name: language-server/node_modules/dockerfile-language-service/package.j
+ son
+SHA-256-Digest: VSNgquZLZ1yiMi+EX3xXGR2E20kr8DO0VvfuTxCT+H0=
+
+Name: language-server/node_modules/dockerfile-utils/lib/main.js
+SHA-256-Digest: bKicr+wVswJmvEVEuIoWJ3BoL4EVx9h+xGWYoPR6Wxo=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/main.d.ts
+SHA-256-Digest: smAJoVaUOljCB/7Ud9Q5pyuxJG2WISibcI2pbMq0NMU=
+
+Name: language-server/node_modules/vscode-languageserver/package.json
+SHA-256-Digest: XsFSL5AHAAz0sqsjjXFOQP1SYrrI64aegX9kqR1KqtY=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/stopsignal.d.ts
+SHA-256-Digest: mMIN56h86/uhPN89iJTKZFYWvhlOc1iBwnxoJsRajiM=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/comment.d.ts
+SHA-256-Digest: mKeg+UH8Xfd9KADOy/Ubo3VHdGXxGY2DIVjiRjmYo+8=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/line.js
+SHA-256-Digest: JGvGpzj1ij1A9wVttc9ScJfwtddzct+QoCxipTAhgik=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/package.json
+SHA-256-Digest: 3Qw1/tOVCqMMW/DeVcyiIuyhg6Z6gev8DOyf+P1wTuM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/dockerfile.js
+SHA-256-Digest: 1tzVxk96k42acTMpRP4ieobOty91r7CvS6vg+xmKvFI=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/env.js
+SHA-256-Digest: dKdIBg9GQML2qv8yyE19vn3RD0ZQeUjnsxX0UUW6O3A=
+
+Name: language-server/node_modules/dockerfile-ast/lib/dockerfile.d.ts
+SHA-256-Digest: mL/o5HppdxGOHSHeSHUIwO9HxeJE9sujKGhk5//TdrE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instruction.d.ts
+SHA-256-Digest: Zi+Dwe0ty2eaBZDdCjZ6CYkSsxhuXc8VUQ//msyEB/o=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/README.md
+SHA-256-Digest: LHDiPpRSmPZEJug7IXWUUXcKNVfnMZmTXBsrpGi3UYk=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/files.
+ d.ts
+SHA-256-Digest: pYQC3HVzjBiKdBzMqGzPiYsK+Y0wWtB1xCgXHxk6bNU=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rRegistryClient.js
+SHA-256-Digest: MMI1JISgVE4r33oq5EuoJkskoxFIg21uLKfb1uVZ6+s=
+
+Name: plugin.xml
+SHA-256-Digest: XYrhCL/+/ZsTDgBq5yZwYSJCqVbO8l89g0IeX9fVrtE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/utils/is.js
+SHA-256-Digest: Y5qqlYjqIFeLusRMlWr0SnwJkhKF30cBwF5/LKARybM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/br
+ owser/main.d.ts
+SHA-256-Digest: WbpjJsylBSU1d+nDSmAQMXkwgcbishsI7nOSH8HsvrM=
+
+Name: language-server/node_modules/vscode-languageserver-types/License.t
+ xt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/add.d
+ .ts
+SHA-256-Digest: yv4X8R9g8AK3dNvUBE89sGSsuZqs0HwJMmV2qxt9Z1o=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/dockerValidator.js
+SHA-256-Digest: //2XyTwPIKGExhC1HbLk99MclEBOg0zJtGrfERfniP0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/env.d
+ .ts
+SHA-256-Digest: WQjrpgg5Oq0oRvPXSwoy6zbRRJ/DuKGzT2jdgLAy4NM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/volum
+ e.d.ts
+SHA-256-Digest: sc5xy9rJF0xruRzITXbmKDFOU4Z7JbR9p6wAzC7OoxM=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rPlainText.d.ts
+SHA-256-Digest: /iCwS+Sph+rKg28f7GYplR9tykADobljkoDfUAHWWiw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/variable.d.ts
+SHA-256-Digest: Z1V+vfwiS93khWiYS4qiSdgEWCCYP9DfbDVHqcJAKB4=
+
+Name: language-server/node_modules/dockerfile-ast/lib/imageTemplate.js
+SHA-256-Digest: 5pWk4YascEXyPt0WyDiE3ZeeShyhrkCTvOdLtSSfutA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rAssist.js
+SHA-256-Digest: UvC4w1X4+RfvDizl3fxIMuSoUh9639PJd4aL710ckvw=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageWrit
+ er.js
+SHA-256-Digest: Mv9+cDgZIaNM4ZNK1OkFRzg/QVzii/ri1xwvLqShmTM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/shell
+ .d.ts
+SHA-256-Digest: E3bTXcjkQfnn6IP5a7LGZv23gHK9Wy45dnhnrvpBYB8=
+
+Name: language-server/node_modules/dockerfile-ast/lib/modifiableInstruct
+ ion.d.ts
+SHA-256-Digest: 6oDeHYSm3z7qZdHoCheN+zrpBSI2FRgBa3etGOANT00=
+
+Name: language-server/node_modules/dockerfile-utils/FORMATTER.md
+SHA-256-Digest: 8kqStMqwNFxq2M0ratTUG6JTmupOVHRi5p9CGhEsMv4=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/propertyInstructio
+ n.js
+SHA-256-Digest: YtqZkLW174QZJLps8RKsrol1lAcUbUF0coHu3N5Z8MU=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instruction.d.ts
+SHA-256-Digest: Zi+Dwe0ty2eaBZDdCjZ6CYkSsxhuXc8VUQ//msyEB/o=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/entry
+ point.d.ts
+SHA-256-Digest: 3d3Ihg8I80+76lLAa1/4rLL4RTyUx++1Pbtx/dIbLWM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/entry
+ point.js
+SHA-256-Digest: r1gJhbNIRgWMISqCFT/kXrkxjyTNiaA/X8FDIxHiryg=
+
+Name: language-server/node_modules/vscode-jsonrpc/browser.js
+SHA-256-Digest: lAaALbAyVY082L3p9o0gwGfzp+yiUa19DkRz2o1Feto=
+
+Name: language-server/node_modules/dockerfile-ast/lib/flag.d.ts
+SHA-256-Digest: wFEEZSd/GRyzd19mmF/Oz+B9kr8v6qG/nYV/BSgm2x8=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/package.json
+SHA-256-Digest: siok5/+7W/6FHSCCfAVM+uWPWFNgWkWx+kmsIOwtOvA=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageRead
+ er.d.ts
+SHA-256-Digest: ePv10SZb3KOy5UMj1jZ44/c/7PcMBdmIlmpoPaTN8vg=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/util
+ s/uuid.d.ts
+SHA-256-Digest: 4Cq56qj20any+oGbqY76XE9/+Dy3wawjVYPU12UFZyE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.typeDefinition.js
+SHA-256-Digest: /ENNKKdpSoSawANMd/w1ZNrKzgAC1VSzPiNz1jreMZM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.moniker.js
+SHA-256-Digest: 3QG2aqO0cE7ygQqyfaTA3SmveaY8ufwMIPM0/QA43pk=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/package.json
+SHA-256-Digest: ta45kBcBjERAkfF2fpWkXCZDriEPHlpyJr4ZR6Cvl3g=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/utils/is.d.ts
+SHA-256-Digest: 16SJiO1J7Lhb9HmHvlZSzfnLyo2c4zZkKiozUKNoqy8=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageRead
+ er.js
+SHA-256-Digest: c2AgitV5A7PTshVTpisYyrkjKJXaJF/NeWMqYmjXGbM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/env.d
+ .ts
+SHA-256-Digest: +Tm91hqmDAOutgQXZFKOypiaplpc736vAjhl0uNR6BY=
+
+Name: language-server/node_modules/dockerfile-utils/README.md
+SHA-256-Digest: ayZJSLa4OOKK9ZGLtKHi/aqy1gbb2VKMugh8+SVuY/c=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/main.d.ts
+SHA-256-Digest: 2JGzEGTAjCPQlAyLKm30ysQ+YgSeqlKJzLj1BPHONtw=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/add.d
+ .ts
+SHA-256-Digest: rMTsjDr+jPeeGQsZ9mQLCCv3ONSITy88AOYDhoV4J5I=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/flag.js
+SHA-256-Digest: hFYDAdWvjj9YGlAlwKt5P5bvCPzpxkrdcgQstNyE4Dg=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/copy.
+ d.ts
+SHA-256-Digest: WYBjxX0lQYBcem+VTGHiGz19ccjWVhSJgZfrielNpsM=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/main.
+ d.ts
+SHA-256-Digest: kzm0K8+dhDB3RSS5wo+ncmB/cOjluGImmQ6VunR/MPU=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/arg.js
+SHA-256-Digest: HlANM/D9VJKYz1Pkxt/cWJXzl5QprQ3PCgUKnt8Qki4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/comment.js
+SHA-256-Digest: N/5GI75EY1rCcTWdzlzwIJOOOdfKcMmAcAOU1w50FAw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/parser.d.ts
+SHA-256-Digest: oto6i6NIpKlGpxMO0xds6+gf6ARRYd4meLk9HFHs5wc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/parserDirective.d.
+ ts
+SHA-256-Digest: 4UBudM+2UjsNchQCAVh8qDbw5LtJOnrpDHZwY9z1XJ8=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/README.md
+SHA-256-Digest: b/TdP73Bpgl44tagX+ESDzK9iMQpOA2MrotTe5mfWVM=
+
+Name: language-server/node_modules/vscode-languageserver/README.md
+SHA-256-Digest: Zwmp2T3YuxSlwUEVzUmpZaXBZa3F4w71lS396Bz473k=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/api.js
+SHA-256-Digest: 0Y4LKRPmdvFrIce1yp++WZzOACHzr8AD7WnoVURNfwE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/argument.js
+SHA-256-Digest: C3ERP3Omyl4jVrhSgnDw+eFE/vc4eGMBGxZ1jcVZi0c=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/label
+ .d.ts
+SHA-256-Digest: JhPhMejnTGB5BvgDxoNI9oKt2XvC7wm1MW0fa3wlK8g=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/lib/esm/m
+ ain.js
+SHA-256-Digest: Gty3zAdWRyvBas6FDz9bbVdG6kry11rQeFuWfdB7+fE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/from.
+ js
+SHA-256-Digest: 72Ot34Afvy2SMW7ijqntKtKI1IEsjplZLtwi/+RmhVc=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/serv
+ er.d.ts
+SHA-256-Digest: cHj2FJ0l+hELK9JN7OZ1RSDlmEot0BSHW+9+vpEBZhc=
+
+Name: language-server/node_modules/dockerfile-ast/lib/flagOption.js
+SHA-256-Digest: gqrxjAgqfadL+7bt5CXXeP0yDuQvA4bCArnlEdaradM=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/onbui
+ ld.d.ts
+SHA-256-Digest: w9lSJZq8M6EgQbr9AbFk9ruhsGGWxzC9m4X8Lhm2XxI=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/util.js
+SHA-256-Digest: AysH+/mVd15q9xF1W76r0vC75udB+uQNq/+DaSbBZck=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/api.
+ js
+SHA-256-Digest: fdNUI63Pc3mqC1Nw0ugepTNq0fimk+D+orE7wHCNHXw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/parserDirective.d.ts
+SHA-256-Digest: GYU6EHMgF0OX+4y6yDoiV93exjUiv5PUcmRIekSCYzc=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/util
+ s/uuid.js
+SHA-256-Digest: 00FsLWOlsdkPgQiFu2yU2tL2nZVWFm9vNIa4D9BMqM8=
+
+Name: language-server/node_modules/dockerfile-ast/lib/flag.js
+SHA-256-Digest: hFYDAdWvjj9YGlAlwKt5P5bvCPzpxkrdcgQstNyE4Dg=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.implementation.js
+SHA-256-Digest: /wTGsw1yzxxtN7b+tJKHDKK9B9Ch7EwCVbB5YhojC44=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/package.json
+SHA-256-Digest: u1DPw/KLoSnZvp3lH1ERKV25gaoqRVcN6hBbq+Ahbq0=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/parser.js
+SHA-256-Digest: 0EXaocW1ZYiVEM+2j6ccrRuCSJmnoss0H0jPCtVHfbA=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.workspaceFolders.d.ts
+SHA-256-Digest: 30ughnm/2FC3h9ZiEYquPEdB3KpmHPhomnaNq0Ys/ZA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ r.js
+SHA-256-Digest: vDvtBwhjW9MCRD6VYblP5APt1HZjQrlonIiDE1dV8R0=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rFolding.js
+SHA-256-Digest: UNf4aVlQwTLDrkT8xjFZDCRaLzDVv+FdqLsgOxYLTlU=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/onbui
+ ld.d.ts
+SHA-256-Digest: nNMsELt+3582oldefy36djlEhDf8dh5gQ0dvf8D1xeE=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/work
+ spaceFolders.d.ts
+SHA-256-Digest: H7aBBr3a41RI5SeQlUYaS1TEu7Qnh81in3CSSxfpoR4=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.configuration.js
+SHA-256-Digest: i1xkXNJvBAX3F4VpdWXKC9l2wfdMPBuWJvBHY+KzQlc=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rLinks.d.ts
+SHA-256-Digest: VgGtHHEgI5LZC11lUldlE4uqTX/zQM0UjJA7lAj65C8=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/dockerValidator.d.ts
+SHA-256-Digest: tJayjuSf7vTr9iNlpLY5I7pUSDqeOWpkBh/tDEp/qNw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/dockerfile.d.ts
+SHA-256-Digest: XX9waP83eB85ObikPWcV0nWAaC4gHK19XSUNZ8mi/ts=
+
+Name: language-server/node_modules/vscode-languageserver-types/lib/esm/m
+ ain.d.ts
+SHA-256-Digest: Vc/ynomx+DacJrFtRqakEmqazrRkhq4tY95t8QWfjoM=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/label.js
+SHA-256-Digest: Oy6A+SKFnl+W3WlYdAzIlq34GZtkmx5K5ZP7mdlsdms=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSignatures.js
+SHA-256-Digest: id+yEX4SqKVpcZvI3B9WHtzi4C8gPQ8QCLP2B8L+ZvA=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/imageTemplate.d.ts
+SHA-256-Digest: sPRehpuyj8FmJuu/zxYR6rqsUI/kAd3bfLkeVtIGNp4=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/add.j
+ s
+SHA-256-Digest: +FqLjeM6mW+zjCOtPChFMAXlSNZWOCWPX1aUPaM1z9Q=
+
+Name: language-server/node_modules/vscode-jsonrpc/License.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/node/ril.d.ts
+SHA-256-Digest: npfWBMqSfugNqwUlf3qvmyyQ75hTdkntmHJXrMNs5EQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/flagOption.d.ts
+SHA-256-Digest: 84SNxNFfSovALaohb22fyUAgje8phX7F3gp6MvXJLpU=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/langu
+ ageService.js
+SHA-256-Digest: gPZJD9JuPqOG8q+SzYz5kuO63ZIop/IfU/tHKhclgSI=
+
+Name: language-server/node_modules/dockerfile-utils/lib/dockerValidator.
+ js
+SHA-256-Digest: 9go5vJpofoy5NwwrZK1MDAiThHe4pyZJ1yrkiB2/xiE=
+
+Name: language-server/node_modules/dockerfile-ast/package.json
+SHA-256-Digest: sx1MV+jctzkU2lB2UXFijl6Vi7RPDwhWITmcX1qOJXA=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node.c
+ md
+SHA-256-Digest: +tdHQBjbXj7zi5c3TYL7O1xWoWruQj9IK2cygAAH9TM=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/events.js
+SHA-256-Digest: 45YE/Gvq++pi8ctFZtS2huFE9ia89PUftqsjsQCT1FI=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/healthcheck.js
+SHA-256-Digest: 9Xw6ThLp9xixkOycFxaU9bysWs25upPZbzcDZgU0Rgw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/main.js
+SHA-256-Digest: 6fx+D8kg/7oUkWZwk176pzzkTnQSAY7Cxw45DGmjQOU=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/shell
+ .d.ts
+SHA-256-Digest: fqkC8aPmZoC6uKJzl57MpyljHQZvd3dQCXPgqD38Gy8=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rRename.js
+SHA-256-Digest: psIHwvblq4FRk+5W9ebX7QAre1R0xYYDmG9aRPMK+d0=
+
+Name: language-server/node_modules/dockerfile-utils/CHANGELOG.md
+SHA-256-Digest: bIhPDaatbaDqGY8BSmsSEuYmAWYzqiG49prQ1dZle9A=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messageBuff
+ er.d.ts
+SHA-256-Digest: +OtXChjC1B2rQLfOrvzCnn5U4+AHD0ZL4YDA1J2i9Uo=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/run.j
+ s
+SHA-256-Digest: VPJDcs70wi08+6xM+laP6rTHTEOwYluFVkVGPcVpAc4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/jsonInstruction.js
+SHA-256-Digest: g2reyjwtwQ270kpOPB5eolB2fTYLGfkidSVP26aig78=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/browser/ril.d.ts
+SHA-256-Digest: lH2lEoehs+9UG7/bZCF+Tike62C4eTabbl22Yk39ICg=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.d.ts
+SHA-256-Digest: YPX+iI9TZEJPnN9D7vATzc1oJ8vsHW0g+hkfXr6Cev0=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/License.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rMarkdown.js
+SHA-256-Digest: KSKj0G9O9Liwjk7BmILeZXFv/eNK8KTjsPP4zY1FC6I=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/connection.js
+SHA-256-Digest: 3idjsIb/PA1m6f0TDIvt1pxdM/3oAj56PY+iuX3Oy1U=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/healt
+ hcheck.js
+SHA-256-Digest: 9Xw6ThLp9xixkOycFxaU9bysWs25upPZbzcDZgU0Rgw=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/run.j
+ s
+SHA-256-Digest: N1yZaNnkffy3htoLNRMdBMGmdAkmB0UrE/Lkc9Hk6A4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/cmd.js
+SHA-256-Digest: 2xspCcHwYQD0Px2B5SOhkKFQnqozFzb0UX+dtTt2WJs=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/copy.
+ d.ts
+SHA-256-Digest: C3W5eYR2+C3nbLVrHuJOQoFqBtWfWsX/JH79zGsIARo=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/main.js
+SHA-256-Digest: j9/05Br74MyJ9ccGGePc8Ba2beIhM8Waow2bzDHXDNU=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.typeDefinition.d.ts
+SHA-256-Digest: rZH1zEWAXReslLAUKPgrGCxv8OvmND1y/SmJRUeNID0=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/jsonInstruction.d.ts
+SHA-256-Digest: T2HZUgsaur6ckxauPK5kVoEn3XeQODUzccnTobFcW7M=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/property.d.ts
+SHA-256-Digest: nTonkCQBb33MHfUr0Zq+IgacO3vZkP0UPkgLGcE3aiw=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.fileOperations.js
+SHA-256-Digest: 1NftJM+aMD/ArNrT6kQno/BAe1e5x3tWjUwT0LBV4T0=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/main.
+ js
+SHA-256-Digest: yxyqWRK+w+dh0KayX+FCVmRmCZ/uyKTZ5PguE8+czys=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/bin
+ /docker-langserver
+SHA-256-Digest: QtUxvvZuSIMofeAyra4suJJUH8F7HeDm6wAsSAOGK5Y=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rFormatter.d.ts
+SHA-256-Digest: z34YetKsG3nAx8jGu+lDm0XW+A4FPxRjSHG8cKI4lGE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/jsonInstruction.js
+SHA-256-Digest: g2reyjwtwQ270kpOPB5eolB2fTYLGfkidSVP26aig78=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/lib/esm/main.js
+SHA-256-Digest: Gty3zAdWRyvBas6FDz9bbVdG6kry11rQeFuWfdB7+fE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/main.d.ts
+SHA-256-Digest: J9sta6FsSmT67PNV6DelpyHQfwc8SsPZlWYhqWAKqHQ=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/README
+ .md
+SHA-256-Digest: k7iHX4giaJUratc7J2bzo+0CQvZ0d6g9PaXFWGRHvvM=
+
+Name: language-server/node_modules/vscode-languageserver/browser.js
+SHA-256-Digest: lAaALbAyVY082L3p9o0gwGfzp+yiUa19DkRz2o1Feto=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/is.d.ts
+SHA-256-Digest: z0RaArIm6GJYmnpNQpbcDrfiszmNJOKpEJ+uFloXnbE=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/shell.js
+SHA-256-Digest: 1tfso6ziYn5V8Zt1+Jg8ggSiuhLCbHExAJnX+jFFVkI=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/Ori
+ ginalLicense.txt
+SHA-256-Digest: mg6vGr40bJ/T9Zc70KrnP88PKobdTovVq6Lk/HCmpVw=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/stops
+ ignal.js
+SHA-256-Digest: w26L+OqXUSp1PTLY7vA9CZULpA8o9JTumBP9D+3DHQ8=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/messages.d.ts
+SHA-256-Digest: 8iIw7HwrCKj43BELrNMMkQcBy3NHsxKbnPEvbigTBlY=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/.github/workflows/build.yml
+SHA-256-Digest: oXvlwSSPulSXKekSzkgtXWtwPlML4cswxjwJZHYdE94=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node_m
+ odules/vscode-languageserver-types/License.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/dockerfile-utils/package.json
+SHA-256-Digest: /RfGSZo0NrllaVecFOGie/8A2NX0ftSC/wMbwHsSbSI=
+
+Name: language-server/node_modules/dockerfile-ast/lib/main.js
+SHA-256-Digest: 0Xg6OQE8qnooxqD6WOgbZEas2xTnGQfdR0wHU0dNkvg=
+
+Name: language-server/node_modules/dockerfile-ast/lib/propertyInstructio
+ n.js
+SHA-256-Digest: AmM0QzV9O8OxuAoSdvC6dg+z+hzol4ZG+/UprBAeL7I=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/volume.d.ts
+SHA-256-Digest: sc5xy9rJF0xruRzITXbmKDFOU4Z7JbR9p6wAzC7OoxM=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/comment.js
+SHA-256-Digest: IsunThR8+WvpxULWS/NX1lDtlnyak1+eu7GSkRpztPE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/line.d.ts
+SHA-256-Digest: HOJUtXA0+qjinbViOZCsHehPGuJf2kNN2vGS61W3uVA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ r.d.ts
+SHA-256-Digest: 3iHQ8xRSttY8J6+o/xHKsfy2aNiy+24PUXeFHew92uY=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/copy.
+ js
+SHA-256-Digest: RL7MwjgbS8vXrhB5ndIzMJCIvyTerm/gUTrklCQIU2s=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/flagOption.js
+SHA-256-Digest: RuxKFrvKIH7DwP4VPjbTyFLOeAxgFPh3XKYi+65JuuU=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/volume.js
+SHA-256-Digest: o6Cjn/xvxWuKxC7NKWIhildj0b5oWFXChZ3kPE3Q3oQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/argument.d.ts
+SHA-256-Digest: tA1ngow3mTPoe2lNdUlAPWr+poqsOSLZ10ldOB1TLH8=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/encoding.js
+SHA-256-Digest: KkKitOarAOf8Y7sqVPrK1NP2A75TpdlS/vDazwC+AV0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/bin/dockerfile-utils
+SHA-256-Digest: MIJTKbcV1jGRJ3JhSoqJ1n/qG/zt096UGGKUYyteXxg=
+
+Name: language-server/node_modules/dockerfile-utils/lib/dockerFormatter.
+ js
+SHA-256-Digest: vPCHLmCMbwA2+Om9TeIrbm0VYrm8I8uuRt4lq1+aD2w=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/env.d.ts
+SHA-256-Digest: +Tm91hqmDAOutgQXZFKOypiaplpc736vAjhl0uNR6BY=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/cmd.d
+ .ts
+SHA-256-Digest: UG8CE/je21n1yEXy/UmX1YUi7ZOW2sNxlYARBeUE8rY=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/sema
+ nticTokens.js
+SHA-256-Digest: FjrPQ4ZkKROqW7enLYmeysLw2gk/8fEUZd40Dz48+t0=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rPlainText.js
+SHA-256-Digest: slj5v1l8HDf1/FWD+Q0diTg2P88Wbth7wYjzJXoC2Co=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/file
+ Operations.d.ts
+SHA-256-Digest: oBFqC6N2JKzvSG+6Nb1VMMjCVBV5jIkIo15fcpE9I2U=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/variable.js
+SHA-256-Digest: k4u+RlSrFf1J5BXAMXTSGJAplOZWJgIgV0qq1fpy++0=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/run.d.ts
+SHA-256-Digest: 8VFBSMt+CBI0oiaxZ1luJVade/bhGFU3dyUGZ+6T0Tc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/modifiableInstruct
+ ion.js
+SHA-256-Digest: rsbZ+IzrfZpKDSqzyW8NAtFI/H0ETjssGs9p2k3Jtzs=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/browse
+ r.d.ts
+SHA-256-Digest: mRcLclfYlbsllNfbnCVaSwApoTY/5eiYSf2oMLXJl84=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/resolv
+ e.js
+SHA-256-Digest: Tjo6FGKkhJo8cVHw9boP6+WUpN3kL1t3iVPZksJmU78=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/Licens
+ e.txt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/vscode-jsonrpc/node.d.ts
+SHA-256-Digest: nJjfAUXZkBGvksOX+nh/w51CzAQBlhSrVYH+vnH7MuE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/workd
+ ir.js
+SHA-256-Digest: BahxTYCTxARzbVf21Lz/sDc493i5YbPpA/n3wJhUhk8=
+
+Name: language-server/node_modules/vscode-jsonrpc/typings/thenable.d.ts
+SHA-256-Digest: ZbkkPIAGjslpax+90jyaz4DVHfAvl7LXoFFDErCp/n0=
+
+Name: org/eclipse/linuxtools/docker/editor/ls/DockerfileLanguageServer.c
+ lass
+SHA-256-Digest: UozqlUqRMfKw3wyjTowftjdUuKsF070FJMxTV35dUIM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/env.j
+ s
+SHA-256-Digest: dKdIBg9GQML2qv8yyE19vn3RD0ZQeUjnsxX0UUW6O3A=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/line.js
+SHA-256-Digest: OyGR4MY2sBAwJGlwJs6nFxBLN50KiFdzwRKyBHqMLjk=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/disposable.
+ d.ts
+SHA-256-Digest: 8HRat44Yor768dmVFIGXMxhyLE4vM+hZI59V+pmf8rE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/CHANGELOG.md
+SHA-256-Digest: +nNJr1y1BOpRWAIzrTLlV+c3atl4aNrebNE78V+vrqI=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/arg.d.ts
+SHA-256-Digest: TIxA3VnT09OStTaL8ILMatolbvarvh6mmvQ+VoMBMDQ=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.progress.d.ts
+SHA-256-Digest: JUJlp5K98xBQ3CUkczRl06zgsXl3nh/4qXsnUqm1ZlY=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/lib/dockerFormatter.d.ts
+SHA-256-Digest: 2X/HxKxs/JgUe5nhWzWRqdC5CtV7Lgr9r0/UU7Vx1Ks=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/dockerfile.js
+SHA-256-Digest: m/CxkQDAbeU5uf93IzKbyqB3qEG7r12wXwzSosObQFM=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.colorProvider.js
+SHA-256-Digest: +wit+JtqBaICpIx7IpkCiiOtK32ZdnH4N4IABXhwPKc=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.declaration.d.ts
+SHA-256-Digest: Du9M8HcBHj0YOd+5OriUzWEc9VLCbrmVyCLo2bcdk6E=
+
+Name: language-server/node_modules/vscode-languageserver/lib/browser/mai
+ n.d.ts
+SHA-256-Digest: FCRs0BbRRgckdftkjE58pxAb6iBZctXKRBL26Xjv+HE=
+
+Name: language-server/node_modules/vscode-jsonrpc/node.cmd
+SHA-256-Digest: +tdHQBjbXj7zi5c3TYL7O1xWoWruQj9IK2cygAAH9TM=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/vscode-
+ languageserver-types/package.json
+SHA-256-Digest: S+lTsx7oOapU/euP7kAzSwtnHKvUA/Hl+Toj003RvX4=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/License.txt
+SHA-256-Digest: YxZpzA+SJoGoZOGV8GN/97i18fvdGEMjFbumfF06lWE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/parserDirective.d.
+ ts
+SHA-256-Digest: GYU6EHMgF0OX+4y6yDoiV93exjUiv5PUcmRIekSCYzc=
+
+Name: language-server/node_modules/dockerfile-language-service/License.t
+ xt
+SHA-256-Digest: acvmvIMuj+iNgvf3vGjBO2I2AJwh9TXUzfhkwdUjCkc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/onbui
+ ld.js
+SHA-256-Digest: AT6/MmfI3M5ZdRpBpkNY83w7vBcPfCT3nabI4lHGLKc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/entry
+ point.d.ts
+SHA-256-Digest: L9Y/OopxRxk+sVd4WLCxMWD4e/9BNMW0GmI7TYB1PQY=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/from.js
+SHA-256-Digest: 72Ot34Afvy2SMW7ijqntKtKI1IEsjplZLtwi/+RmhVc=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSemanticTokens.d.ts
+SHA-256-Digest: iRNLRyX+BtB9tAxiJ2mJp7r5imq1mKe3C5oaUP2Dtko=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/langu
+ ageService.d.ts
+SHA-256-Digest: c61yZUs+edqZF2wbDwarhCC/iq7UW8P2apjfcCk9gTE=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.callHierarchy.d.ts
+SHA-256-Digest: G4VmS/Vi0tIW1xuUDYCXYAtO1ib2dSjIaM7WXb5yiOY=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/main.d
+ .ts
+SHA-256-Digest: zxUysR1ex49j3E0MmFNTsoG0oJ6R019j+5q6QuNmdKs=
+
+Name: language-server/node_modules/vscode-languageserver/lib/browser/mai
+ n.js
+SHA-256-Digest: mbVUV3OfAiqJdJhcEExBSIOIyjKE9NSxcS0qfnmRtAQ=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/stops
+ ignal.js
+SHA-256-Digest: r9ifJzcoIBdXHHX/7V69ZwW/d+f3OBtpcN7cslZVltQ=
+
+Name: language-server/node_modules/dockerfile-ast/README.md
+SHA-256-Digest: b/TdP73Bpgl44tagX+ESDzK9iMQpOA2MrotTe5mfWVM=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/README.md
+SHA-256-Digest: U7XieCGyj4so9vE/ctMb+1R5O4uhS8nQOfHVN9UHMEM=
+
+Name: language-server/node_modules/dockerfile-ast/lib/parser.js
+SHA-256-Digest: 0EXaocW1ZYiVEM+2j6ccrRuCSJmnoss0H0jPCtVHfbA=
+
+Name: language-server/node_modules/vscode-languageserver/thirdpartynotic
+ es.txt
+SHA-256-Digest: TxY80HVQH+KqxYFQ3ctVVhgupgfYP3RovRuFf8yHGaI=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rSignatures.d.ts
+SHA-256-Digest: 3dH/drLnLmCvgh7T9dxpEmNvd81IZOzTTbGy3PC/IYc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/add.j
+ s
+SHA-256-Digest: 8PSI3A7w+ZupRM226QOyqbXQx52SCpIlYkDRekwCIO4=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/Doc
+ kerfile
+SHA-256-Digest: g9kNBN1V5/015YSIbdDbh7vjBxL6I4uygz5Y6Qym6NU=
+
+Name: language-server/node_modules/vscode-languageserver-types/package.j
+ son
+SHA-256-Digest: NTpGDTReGQgeYDURfriEHX7h+PDVHDLFdE9mIXv+q8w=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/License.t
+ xt
+SHA-256-Digest: 7J7oNYCEHo62h6yphn8iFQOAm6ZCbH+Hbt4X2Rufz9A=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/api.d.ts
+SHA-256-Digest: JiRbG4RSwwA0ejGzegUsMkSjY5PewD+s+ksxqNhocYQ=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/node.j
+ s
+SHA-256-Digest: IO2dBQh/pl7Zk2nDLrqtbScUxW04trWOZg7EKNEoAFQ=
+
+Name: language-server/node_modules/vscode-languageserver-types/lib/umd/m
+ ain.d.ts
+SHA-256-Digest: Vc/ynomx+DacJrFtRqakEmqazrRkhq4tY95t8QWfjoM=
+
+Name: language-server/node_modules/vscode-jsonrpc/browser.d.ts
+SHA-256-Digest: mRcLclfYlbsllNfbnCVaSwApoTY/5eiYSf2oMLXJl84=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/shell
+ .js
+SHA-256-Digest: 1tfso6ziYn5V8Zt1+Jg8ggSiuhLCbHExAJnX+jFFVkI=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/label
+ .js
+SHA-256-Digest: IMlD9pr48epZrLxhrtq8aRzdeIarwIAjkkc8G/p1bBk=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/from.d.ts
+SHA-256-Digest: a5ywvcBO2S+Cw2McvxM1kuTqNxuvmZNa4ECoYIb9AHY=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/cancellatio
+ n.d.ts
+SHA-256-Digest: QaNaIdPJwEUCKc9BvngyhfPAHt2EA5pB/9Fi1CqTpXY=
+
+Name: language-server/node_modules/vscode-languageserver-types/lib/umd/m
+ ain.js
+SHA-256-Digest: rzlJsuLY7+nH44V2iI6COw1bMGTw9iCzyjpkqJrWhJA=
+
+Name: language-server/node_modules/dockerfile-language-server-nodejs/lib
+ /server.js
+SHA-256-Digest: XliRh5a+CxzJuI9DBINDwodeFUn98Vh1vrM6+o0wljo=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/from.
+ d.ts
+SHA-256-Digest: a5ywvcBO2S+Cw2McvxM1kuTqNxuvmZNa4ECoYIb9AHY=
+
+Name: language-server/node_modules/dockerfile-ast/lib/modifiableInstruct
+ ion.js
+SHA-256-Digest: v8rawVad9gQkq5/ZOmODgZzA1FxMMHCecTQ8B/RUTIA=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/workdir.d.ts
+SHA-256-Digest: e/veQgcTeeihCLXShsyq97NOua982xhwRLT0c26/OIk=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messages.d.
+ ts
+SHA-256-Digest: WL3V/ZPzm64Z80kkrTBGCO43tsazV6V4I939JYWlbQ8=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/user.
+ d.ts
+SHA-256-Digest: 9mqOp4l40H/yFJyvs/9sGHWC3H2Kp/jN7Mu/th1nwkI=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/package.json
+SHA-256-Digest: f6YlC+yPThnkH6y4WcKau7yHQHej8Mg0xH+EbBvwiDw=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/copy.d.ts
+SHA-256-Digest: WYBjxX0lQYBcem+VTGHiGz19ccjWVhSJgZfrielNpsM=
+
+Name: language-server/node_modules/vscode-languageserver/node.js
+SHA-256-Digest: IO2dBQh/pl7Zk2nDLrqtbScUxW04trWOZg7EKNEoAFQ=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/events.d.ts
+SHA-256-Digest: th6+c02r08oQJHgHv6RYXtUciJKC5d7NFS7qhtrqc4M=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/parser.d.ts
+SHA-256-Digest: ux+lY4znHxF5b7/NtKpnnsaaa5nagF+O3FUrS70qpEA=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/cmd.j
+ s
+SHA-256-Digest: IDB3McFIlA4gIehuNAemjYrPhjnANCka4YtEHiBpYtw=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.configuration.d.ts
+SHA-256-Digest: SsxLzL3sd0xYmSqH86wnMfnTjIIVINBrTVORGJjQ4+w=
+
+Name: language-server/node_modules/vscode-languageserver-types/lib/esm/m
+ ain.js
+SHA-256-Digest: A32B4cQuOUwEErkhuaEpSieNDZPh3vL6Q/nTTuMQnCE=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/flag.d.ts
+SHA-256-Digest: wFEEZSd/GRyzd19mmF/Oz+B9kr8v6qG/nYV/BSgm2x8=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/is.js
+SHA-256-Digest: aVseEZBzKeTCcLHIIwtPeQYNG4T9sfXN1ZXUyH/oP10=
+
+Name: language-server/node_modules/dockerfile-ast/lib/propertyInstructio
+ n.d.ts
+SHA-256-Digest: IM4MFhsC2Rn2TVgImql/6v/T4NYax6kYPbf0UsLn7wA=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rLinks.js
+SHA-256-Digest: BvoEvr6QxoOvqVn7LAqX+Bxca94KE8yoRECjdVjBJYo=
+
+Name: language-server/node_modules/dockerfile-ast/lib/property.d.ts
+SHA-256-Digest: H82BNsBHhrmHNKRiRUORVaTGBYcHMjvJC4uOR7HmGPg=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/healt
+ hcheck.d.ts
+SHA-256-Digest: kQV+XI/jQi3a36fh9MVOMKXygCaAEOWdhGnw6oP0QAQ=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/link
+ edEditingRange.js
+SHA-256-Digest: 1FnEhLNaPQy/wRohfZa3Y1DjVLPFrNoNsqi1CUaMUJ8=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rHover.d.ts
+SHA-256-Digest: aGocaG95qmTm9kOtp8ceQoochhVJlI64b8UGIx63eII=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/messages.js
+SHA-256-Digest: bRB3dUr3Mhvgnxpwz7zJeNCvRzGpgN9SlqIPrSm1tM4=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/user.d.ts
+SHA-256-Digest: 9mqOp4l40H/yFJyvs/9sGHWC3H2Kp/jN7Mu/th1nwkI=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/vscode-languageserver-types/lib/umd/m
+ ain.js
+SHA-256-Digest: vFTQJVxlJ4WNSypsn9Nm3VvcCNYnqmqB67UrJ/4bsX0=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/CHANGELOG.md
+SHA-256-Digest: MfIVnUf3m8tR/eDx84UTb1GsqrzL9Cit8h9eqVjH1PI=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/modifiableInstruction.d.ts
+SHA-256-Digest: 6oDeHYSm3z7qZdHoCheN+zrpBSI2FRgBa3etGOANT00=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/browser/main.js
+SHA-256-Digest: LeYW7LMSCu5aRSBm2AxXMnNro7TvKSZhWXg0Juk+6Pk=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/jsonArgument.d.ts
+SHA-256-Digest: AnJQicf/rjSOg9JSKsiKichadVr5FC2NxM7d1Q8dmaU=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/main.d.ts
+SHA-256-Digest: Y9Qa8Wk+Z+x77ONxyz2sE3QvA4g15bcFwAc3m06bsBA=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/run.d
+ .ts
+SHA-256-Digest: 8VFBSMt+CBI0oiaxZ1luJVade/bhGFU3dyUGZ+6T0Tc=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/arg.j
+ s
+SHA-256-Digest: HlANM/D9VJKYz1Pkxt/cWJXzl5QprQ3PCgUKnt8Qki4=
+
+Name: language-server/node_modules/vscode-languageserver/lib/node/main.j
+ s
+SHA-256-Digest: CQPmd9KbTptvxAQkCSXYho/LGcrhv3Q+GJQLwca+bj4=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/api.d.ts
+SHA-256-Digest: A6kx5Psei4UaFxskaorrpXX83s3mDJFLI/Ryr1vrKbA=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/README.md
+SHA-256-Digest: MUH5qvgCWNkvL2TaM2XBqp6Tp6JUA6hS3pLb633MBz0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/parser.js
+SHA-256-Digest: DZfcLIs4712xPBWouUpe6uNbphgGSFD1yPFxtxvPFBs=
+
+Name: language-server/node_modules/vscode-languageserver/node.d.ts
+SHA-256-Digest: nJjfAUXZkBGvksOX+nh/w51CzAQBlhSrVYH+vnH7MuE=
+
+Name: language-server/node_modules/vscode-languageserver/lib/common/file
+ Operations.js
+SHA-256-Digest: hOackxxdLTcZvVtT5LNgD27w8Zlim9J86qdaSzcDhvE=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/connection.
+ d.ts
+SHA-256-Digest: fND6pYAMcw1ek4elrTEnMtldCjvVpn4mZyHzauEGipE=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/instructions/workd
+ ir.d.ts
+SHA-256-Digest: OC8EppBkvUyUNp4DOaBfhinzh/XxSjTgcYjFUx+qVbo=
+
+Name: language-server/node_modules/dockerfile-ast/node_modules/vscode-la
+ nguageserver-types/lib/umd/main.js
+SHA-256-Digest: vFTQJVxlJ4WNSypsn9Nm3VvcCNYnqmqB67UrJ/4bsX0=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/propertyInstructio
+ n.d.ts
+SHA-256-Digest: nZQ8KLCjuLmKXijL1HnvC4BkJC/mb38zCzlle6/uKOc=
+
+Name: language-server/node_modules/vscode-jsonrpc/lib/common/linkedMap.d
+ .ts
+SHA-256-Digest: BJ41EUOfEeEoW+xGR6uKrFPgwGlRuTulB1ZdvehRujE=
+
+Name: language-server/node_modules/dockerfile-ast/lib/variable.d.ts
+SHA-256-Digest: oULUoWHd7eKjn/yrbkiB0aflwbn1AHDXCgwF3QeZKuc=
+
+Name: language-server/node_modules/dockerfile-language-service/node_modu
+ les/dockerfile-utils/node_modules/dockerfile-ast/lib/property.js
+SHA-256-Digest: FlUQjrGSnYLF3rYXCUwgfrDpx2vPg03/RuqD4ZEDKNk=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/co
+ mmon/protocol.linkedEditingRange.d.ts
+SHA-256-Digest: KpeI53ifSrYD1NOYL+Wpj/UbaZuOxGU/zrMZLhRzN9w=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/no
+ de/main.d.ts
+SHA-256-Digest: 14kCK/cFOFSQ/omBG8eFAiXCB/N91watolCesdjzHxI=
+
+Name: language-server/node_modules/vscode-languageserver/browser.d.ts
+SHA-256-Digest: mRcLclfYlbsllNfbnCVaSwApoTY/5eiYSf2oMLXJl84=
+
+Name: grammars/Dockerfile.tmLanguage
+SHA-256-Digest: 80UrKyLnQTk7sdMA17Bbfkw+3+8zK+wx5534165Bt9E=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/onbuild.js
+SHA-256-Digest: PSdJxqRM8t83LLCKpM2a1fDR3ClFcUdtHkEokRegGYs=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/workdir.js
+SHA-256-Digest: 2S0M4WcKG6qml6fWyTt6U4V2WT+vkGeAydxnu+pGdBk=
+
+Name: language-server/node_modules/vscode-languageserver-protocol/lib/br
+ owser/main.js
+SHA-256-Digest: 3gGIkIlpOmZ4YbpX6vVUocYlV7gWSzQTrjruIyQXQqQ=
+
+Name: language-server/node_modules/dockerfile-utils/node_modules/dockerf
+ ile-ast/lib/instructions/copy.js
+SHA-256-Digest: 5VECJntelScWjSn/v/7le5sfs6sco/7Dcs5pxwAjkjI=
+
+Name: language-server/node_modules/dockerfile-ast/lib/instructions/volum
+ e.js
+SHA-256-Digest: o6Cjn/xvxWuKxC7NKWIhildj0b5oWFXChZ3kPE3Q3oQ=
+
+Name: language-server/node_modules/dockerfile-language-service/lib/docke
+ rDefinition.js
+SHA-256-Digest: 7mXHlO7YlP8IoMFwIV986jJ3c3Ih+4ydwNWAuNhrcdM=
+

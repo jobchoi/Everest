@@ -1,1 +1,0 @@
-*Required.* The version of the release to use. Version can be `latest`.
