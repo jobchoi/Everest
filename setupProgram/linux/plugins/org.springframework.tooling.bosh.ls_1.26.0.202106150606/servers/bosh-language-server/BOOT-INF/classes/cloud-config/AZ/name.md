@@ -1,1 +1,0 @@
-*Required*. Name of an AZ within the Director.
