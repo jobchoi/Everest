@@ -36,4 +36,14 @@ public class HomeController {
 		return "home";
 	}
 	
+	
+	@RequestMapping(value = "/simpleview", method = RequestMethod.GET)
+	public String simpleview(Locale locale, Model model) {
+		logger.info(".simpleview", locale);
+		
+		return "simpleview";
+	}
+	
+	 
+	
 }
