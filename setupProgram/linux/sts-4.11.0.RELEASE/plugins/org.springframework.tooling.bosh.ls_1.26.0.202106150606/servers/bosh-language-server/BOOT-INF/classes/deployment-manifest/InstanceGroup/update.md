@@ -1,1 +1,0 @@
-*Optional*. Specific update settings for this instance group. Use this to override [global job update settings](https://bosh.io/docs/manifest-v2.html#update) on a per-instance-group basis.

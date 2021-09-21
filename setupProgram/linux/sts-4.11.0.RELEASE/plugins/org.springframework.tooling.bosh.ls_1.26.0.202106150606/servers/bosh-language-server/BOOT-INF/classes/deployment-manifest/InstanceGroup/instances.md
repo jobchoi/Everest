@@ -1,1 +1,0 @@
-*Required*. The number of instances in this group. Each instance is a VM.

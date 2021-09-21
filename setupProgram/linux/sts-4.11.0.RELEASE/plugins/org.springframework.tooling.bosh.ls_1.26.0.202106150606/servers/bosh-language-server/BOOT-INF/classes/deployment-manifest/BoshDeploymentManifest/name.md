@@ -1,1 +1,0 @@
-*Required*. The name of the deployment. A single Director can manage multiple deployments and distinguishes them by name.

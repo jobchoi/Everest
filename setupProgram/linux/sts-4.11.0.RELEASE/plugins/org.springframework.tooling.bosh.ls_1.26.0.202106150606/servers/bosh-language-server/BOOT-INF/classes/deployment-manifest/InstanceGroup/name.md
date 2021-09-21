@@ -1,1 +1,0 @@
-*Required*. A unique name used to identify and reference the instance group.

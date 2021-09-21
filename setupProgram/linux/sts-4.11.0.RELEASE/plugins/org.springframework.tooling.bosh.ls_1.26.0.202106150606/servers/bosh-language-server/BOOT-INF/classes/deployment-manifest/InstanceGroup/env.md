@@ -1,1 +1,0 @@
-*Optional*. Specifies advanced BOSH Agent configuration for each instance in the group. 

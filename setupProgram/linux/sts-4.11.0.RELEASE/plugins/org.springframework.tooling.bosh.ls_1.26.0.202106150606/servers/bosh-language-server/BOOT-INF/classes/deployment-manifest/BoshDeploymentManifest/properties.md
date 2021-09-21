@@ -1,1 +1,0 @@
-*Optional*. Describes global properties. Deprecated in favor of job level properties and links.

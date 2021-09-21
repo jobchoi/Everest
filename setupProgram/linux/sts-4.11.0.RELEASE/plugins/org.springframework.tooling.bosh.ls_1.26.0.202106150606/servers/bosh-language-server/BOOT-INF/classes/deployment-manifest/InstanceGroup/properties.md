@@ -1,1 +1,0 @@
-*Optional*. Specifies instance group properties. Deprecated in favor of job level properties and links.

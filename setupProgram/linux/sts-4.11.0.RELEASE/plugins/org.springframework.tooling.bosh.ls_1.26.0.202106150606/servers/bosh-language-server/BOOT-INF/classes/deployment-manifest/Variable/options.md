@@ -1,1 +1,0 @@
-*Optional*. Specifies generation options used for generating variable value if variable is not found. Example: `{is_ca: true, common_name: some-ca}`

@@ -1,1 +1,0 @@
-*Optional*. A valid disk type name from the cloud config. [Read more about persistent disks](https://bosh.io/docs/persistent-disks.html)

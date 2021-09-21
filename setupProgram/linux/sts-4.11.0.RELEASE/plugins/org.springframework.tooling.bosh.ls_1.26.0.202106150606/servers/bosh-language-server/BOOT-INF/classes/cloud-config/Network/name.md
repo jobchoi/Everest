@@ -1,1 +1,0 @@
-*Required*. Name used to reference this network configuration.

@@ -1,1 +1,0 @@
-*Optional*. Crypted password for `vcap/root` user (will be placed into `/etc/shadow` on Linux).

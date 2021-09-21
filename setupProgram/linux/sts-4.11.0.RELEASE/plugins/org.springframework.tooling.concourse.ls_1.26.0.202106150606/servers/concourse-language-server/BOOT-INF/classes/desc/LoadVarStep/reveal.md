@@ -1,1 +1,0 @@
-*Optional*. *Default: false*. If set to `true`, allow the var's content to be printed in the build output even with secret redaction enabled.
