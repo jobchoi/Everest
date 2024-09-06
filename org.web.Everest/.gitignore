@@ -30,9 +30,12 @@ typings/
 e2e/*.js
 e2e/*.map
 
-
+# Logs
 *.log
 
+# Prisma
+.prisma/
+dev.db
 
 # System Files
 .DS_Store/
