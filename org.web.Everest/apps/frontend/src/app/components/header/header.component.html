@@ -1,0 +1,17 @@
+<div class="bg-uFFEDDC p-10">
+  <div class="w-full flex flex-row bg-white border items-center">
+    <img
+      class="pl-10 py-auto w-36 h-[49px]"
+      src="eco-5465432.svg"
+      alt="Left top logo"
+    />
+    <div class="flex flex-row ml-auto pr-10">
+      <div
+        class="w-auto py-10 text-center leading-u19.97"
+        *ngFor="let item of menuItems"
+      >
+        <a class="headerLMenu" [href]="item.menuUrl">{{ item.menuName }}</a>
+      </div>
+    </div>
+  </div>
+</div>
