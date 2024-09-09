@@ -1,0 +1,26 @@
+
+[2m> [22m[2mnx run[22m backend:build  [2m[existing outputs match the cache, left as is][22m
+
+[2m> [22mwebpack-cli build --node-env=production
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 2.71 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f60f6de829567d37)
+
+
+
+[0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target build for project backend[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+
+[1m[31mDebugger listening on ws://localhost:9229/b71b5699-1154-4da8-abe9-7042e8c33382[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/b71b5699-1154-4da8-abe9-7042e8c33382[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+To exit the process, press Ctrl+C
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[32m[Nest] 2792  - [39m2024. 09. 09. 오후 2:43:21 [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3000/api[39m
+[1m[31mWatch error: Daemon closed the connection[39m[22m

@@ -95,50 +95,6 @@
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
-      "backend-e2e": [
-        {
-          "file": "apps/backend-e2e/.eslintrc.json",
-          "hash": "14921153827776288937"
-        },
-        {
-          "file": "apps/backend-e2e/jest.config.ts",
-          "hash": "14431208338104345705"
-        },
-        {
-          "file": "apps/backend-e2e/project.json",
-          "hash": "7046310521601730827"
-        },
-        {
-          "file": "apps/backend-e2e/src/backend/backend.spec.ts",
-          "hash": "6988925255182087386",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend-e2e/src/support/global-setup.ts",
-          "hash": "18221119270488052961"
-        },
-        {
-          "file": "apps/backend-e2e/src/support/global-teardown.ts",
-          "hash": "17927034305001160425"
-        },
-        {
-          "file": "apps/backend-e2e/src/support/test-setup.ts",
-          "hash": "4165311015569872896",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend-e2e/tsconfig.json",
-          "hash": "1422418700492434985"
-        },
-        {
-          "file": "apps/backend-e2e/tsconfig.spec.json",
-          "hash": "5623794208198348967"
-        }
-      ],
       "backend": [
         {
           "file": "apps/backend/.eslintrc.json",
@@ -219,34 +175,48 @@
           ]
         }
       ],
-      "frontend-e2e": [
+      "backend-e2e": [
         {
-          "file": "apps/frontend-e2e/.eslintrc.json",
-          "hash": "15574607285654336286"
+          "file": "apps/backend-e2e/.eslintrc.json",
+          "hash": "14921153827776288937"
         },
         {
-          "file": "apps/frontend-e2e/playwright.config.ts",
-          "hash": "2416592539312492666",
+          "file": "apps/backend-e2e/jest.config.ts",
+          "hash": "14431208338104345705"
+        },
+        {
+          "file": "apps/backend-e2e/project.json",
+          "hash": "7046310521601730827"
+        },
+        {
+          "file": "apps/backend-e2e/src/backend/backend.spec.ts",
+          "hash": "6988925255182087386",
           "deps": [
-            "npm:@playwright/test",
-            "npm:@nx/playwright",
-            "npm:@nx/devkit"
+            "npm:axios"
           ]
         },
         {
-          "file": "apps/frontend-e2e/project.json",
-          "hash": "4151604100962816948"
+          "file": "apps/backend-e2e/src/support/global-setup.ts",
+          "hash": "18221119270488052961"
         },
         {
-          "file": "apps/frontend-e2e/src/example.spec.ts",
-          "hash": "1909365745453809229",
+          "file": "apps/backend-e2e/src/support/global-teardown.ts",
+          "hash": "17927034305001160425"
+        },
+        {
+          "file": "apps/backend-e2e/src/support/test-setup.ts",
+          "hash": "4165311015569872896",
           "deps": [
-            "npm:@playwright/test"
+            "npm:axios"
           ]
         },
         {
-          "file": "apps/frontend-e2e/tsconfig.json",
-          "hash": "1565227750615847722"
+          "file": "apps/backend-e2e/tsconfig.json",
+          "hash": "1422418700492434985"
+        },
+        {
+          "file": "apps/backend-e2e/tsconfig.spec.json",
+          "hash": "5623794208198348967"
         }
       ],
       "@org.web.everest/source": [
@@ -256,7 +226,7 @@
         },
         {
           "file": ".env",
-          "hash": "2604418711527154440"
+          "hash": "10466553567696646197"
         },
         {
           "file": ".eslintignore",
@@ -386,11 +356,23 @@
         },
         {
           "file": "prisma/schema.prisma",
-          "hash": "4718277908638535431"
+          "hash": "9164665159535132780"
         },
         {
           "file": "tsconfig.base.json",
           "hash": "16936441711144470533"
+        },
+        {
+          "file": "prisma/migrations/20240909061344_init/migration.sql",
+          "hash": "4904166788543842204"
+        },
+        {
+          "file": "prisma/dev.db-journal",
+          "hash": "5463215733519963807"
+        },
+        {
+          "file": "prisma/migrations/migration_lock.toml",
+          "hash": "10997593172930738585"
         }
       ],
       "frontend": [
@@ -594,6 +576,36 @@
         {
           "file": "apps/frontend/tsconfig.spec.json",
           "hash": "1930986853382524452"
+        }
+      ],
+      "frontend-e2e": [
+        {
+          "file": "apps/frontend-e2e/.eslintrc.json",
+          "hash": "15574607285654336286"
+        },
+        {
+          "file": "apps/frontend-e2e/playwright.config.ts",
+          "hash": "2416592539312492666",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "apps/frontend-e2e/project.json",
+          "hash": "4151604100962816948"
+        },
+        {
+          "file": "apps/frontend-e2e/src/example.spec.ts",
+          "hash": "1909365745453809229",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        },
+        {
+          "file": "apps/frontend-e2e/tsconfig.json",
+          "hash": "1565227750615847722"
         }
       ]
     }
