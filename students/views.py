@@ -1,16 +1,22 @@
 from django.shortcuts import render
 from .models import Student_Master  # '학생 모델' import
 
-# '학생 목록' 기능
+# Create your views here.
+from .models import Student_Master  # 1. '항해일지 97번'의 '학생 모델'을 import
+
+# -----------------------------------------------------------------
+# [2. (추가)] '항해일지 134번' (화면 1: 학생 목록 뷰)
+# -----------------------------------------------------------------
 def student_list_view(request):
     
-    # '활성(Active)' 학생만 '이름순'으로 '조회'
+    # 3. [핵심 H-32] '더미(Dummy)'를 제외한 '활성(Active)' 학생 데이터만 조회합니다.
+    #    (이름순으로 정렬)
     students = Student_Master.objects.filter(data_status='Active').order_by('student_name')
     
-    # '조회된' 데이터를 'HTML'로 '전달'
+    # 4. '조회된' 데이터를 'HTML'로 전달하기 위해 '사전(context)'에 담습니다.
+
     context = {
         'students': students,
     }
-    
-    # 'HTML 파일'을 '렌더링'
+
     return render(request, 'students/student_list.html', context)
