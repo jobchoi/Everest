@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}학생 목록 (화면 1){% endblock %}
+
+{% block content %}
+    <h1>학생 목록 (화면 1)</h1>
+    <p>DB에서 '활성(Active)' 상태인 학생 목록을 '이름순'으로 정렬합니다.</p>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">학생 이름</th>
+                <th scope="col">학교 (H-28)</th>
+                <th scope="col">입학년도 (H-46)</th>
+                <th scope="col">생년월일 (H-27)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.student_name }}</td>
+                <td>{{ student.school_id.school_name }}</td>
+                <td>{{ student.admission_year }}</td>
+                <td>{{ student.birthday }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">아직 등록된 학생이 없습니다. (DB 비어있음)</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
