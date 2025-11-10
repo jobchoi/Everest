@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=angular,visualstudiocode,windows
 
+# 1. (추가) Python Bytecode Cache ('.pyc' 파일이 담기는 폴더)
+__pycache__/
+
+# 2. (추가) Python Bytecode Files ('.pyc' 파일 자체)
+*.pyc
+
 ### Angular ###
 ## Angular ##
 # compiled output
