@@ -1,87 +1,76 @@
-# Created by https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=angular,visualstudiocode,windows
+# [수정] /.gitignore (H-141)
+# Python/Django/Security/OS에 최적화된 .gitignore
 
-# 1. (추가) Python Bytecode Cache ('.pyc' 파일이 담기는 폴더)
+# -----------------------------------------------------------------
+# 1. 보안 (Security) - (H-140 '암호' 요청)
+#    (비밀 키, API 키, 로컬 설정)
+# -----------------------------------------------------------------
+.env
+local_settings.py
+*.key
+*.pem
+
+
+# -----------------------------------------------------------------
+# 2. Python 가상 환경 (Virtual Environments) - (H-138 '시행착오' 해결)
+#    (H-118에서 '누락'되었던 '핵심')
+# -----------------------------------------------------------------
+venv/
+*.venv/
+env/
+.env/
+
+
+# -----------------------------------------------------------------
+# 3. Python 캐시 (Bytecode) - (H-115)
+# -----------------------------------------------------------------
 __pycache__/
-
-# 2. (추가) Python Bytecode Files ('.pyc' 파일 자체)
 *.pyc
+*.pyo
+*.pyd
 
-### Angular ###
-## Angular ##
-# compiled output
-dist/
-tmp/
-app/**/*.js
-app/**/*.js.map
 
-# dependencies
-node_modules/
-bower_components/
+# -----------------------------------------------------------------
+# 4. Django 프로젝트 (Project Specific)
+# -----------------------------------------------------------------
+# (우리는 PostgreSQL을 쓰지만, '다른 환경'의 실수를 막기 위함)
+db.sqlite3
+db.sqlite3-journal
 
-# IDEs and editors
-.idea/
+# (Phase 2에서 추가될 '사용자 업로드' 미디어)
+media/
 
-# misc
-.sass-cache/
-connect.lock/
-coverage/
-libpeerconnection.log/
-npm-debug.log
-testem.log
-typings/
-.angular/
+# ('collectstatic' 명령어로 '배포'시 생성되는 정적 파일)
+staticfiles/
 
-# e2e
-e2e/*.js
-e2e/*.map
 
-# System Files
-.DS_Store/
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# Local History for Visual Studio Code
+# -----------------------------------------------------------------
+# 5. IDE / 편집기 (Editor Config) - (H-140 'VSCode' 수정)
+# -----------------------------------------------------------------
+# (H-140의 '위험한' 예외 규칙을 '제거'하고 '전체' 무시)
+.vscode/
 .history/
 
-# Built Visual Studio Code Extensions
-*.vsix
+# (다른 환경: PyCharm)
+.idea/
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
 
-### Windows ###
-# Windows thumbnail cache files
+# -----------------------------------------------------------------
+# 6. 운영 체제 (OS Specific)
+# -----------------------------------------------------------------
+# (macOS)
+.DS_Store
+
+# (Windows)
 Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
 [Dd]esktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
 
-# Windows shortcuts
-*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,windows
+# -----------------------------------------------------------------
+# 7. 로그 및 테스트 (Logs & Testing)
+# -----------------------------------------------------------------
+*.log
+npm-debug.log
+.coverage
+htmlcov/
