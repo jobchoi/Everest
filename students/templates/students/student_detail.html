@@ -113,16 +113,23 @@
                         <div class="row mt-3">
                             <div class="col">
                                 <label for="teacher-select" class="form-label">담당 교사</label>
-                                <select class="form-select" id="teacher-select">
-                                    <option>김철수 교사 (H-172)</option> 
-                                </select>
+                                <!-- 1. [수정] '하드코딩'된 'select'를 '동적'으로 '변경' -->
+                            <select class="form-select" id="teacher-select">
+                                <option value="">--- 교사 선택 ---</option>
+                                {% for teacher in all_teachers %}
+                                    <option value="{{ teacher.teacher_id }}">{{ teacher.teacher_name }}</option>
+                                {% endfor %}
+                            </select>
                             </div>
                             <div class="col">
                                 <label for="category-select" class="form-label">카테고리</label>
-                                <select class="form-select" id="category-select">
-                                    <option>동아리활동 (H-172)</option>
-                                    <option>봉사활동 (H-172)</option>
-                                </select>
+                                <!-- 2. [수정] '하드코딩'된 'select'를 '동적'으로 '변경' -->
+                            <select class="form-select" id="category-select">
+                                <option value="">--- 카테고리 선택 ---</option>
+                                {% for category in all_categories %}
+                                    <option value="{{ category.category_id }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
                             </div>
                         </div>
                         

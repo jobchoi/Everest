@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 # [수정] 'AI'가 '분석'할 '모든' 모델을 'import'
-from .models import Student_Master, Activity_Log, Goal_History
+from .models import (
+    Student_Master, Activity_Log, 
+    Goal_History, Teacher_Master, Category_Master
+)
+
 
 # 'JSON' 응답(JsonResponse)과 'JSON' 파싱(json)을 'import' 합니다.
 from django.http import JsonResponse
@@ -39,16 +43,19 @@ def student_detail_view(request, student_id): # 'URL'로부터 'student_id'를 �
     # 3. [추가] '학생'과 '연관된' '활동 로그'를 '모두' 조회.
     #    (최신순으로 정렬)
     activities = Activity_Log.objects.filter(student_uuid=student).order_by('-activity_date')
-
-    # 4. [추가] '학생'과 '연관된' '목표 이력'을 '모두' 조회.
-    #    (최신순으로 정렬)
     goals = Goal_History.objects.filter(student_uuid=student).order_by('-record_date')
+
+    # 4. [추가] '하드코딩'을 '해결'하기 위해, '모든' 교사와 '모든' 카테고리를 'DB'에서 '조회'
+    all_teachers = Teacher_Master.objects.all()
+    all_categories = Category_Master.objects.all()
 
     # 5. [수정] '조회된' '모든' 정보를 'HTML'로 '전달'
     context = {
         'student': student,
-        'activities': activities, # (추가)
-        'goals': goals            # (추가)
+        'activities': activities,   
+        'goals': goals,             
+        'all_teachers': all_teachers,       # (추가)
+        'all_categories': all_categories,   # (추가)
     }
 
     # 6. 'HTML 파일'을 '렌더링'
