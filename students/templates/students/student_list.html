@@ -18,10 +18,16 @@
         <tbody>
             {% for student in students %}
             <tr>
-                <td>{{ student.student_name }}</td>
+                <td>
+                    <a href="{% url 'student_detail' student.student_uuid %}">
+                        {{ student.student_name }}
+                    </a>
+                </td>
+                
                 <td>{{ student.school_id.school_name }}</td>
                 <td>{{ student.admission_year }}</td>
 
+                <td>{{ student.birthday }}</td>
             </tr>
             {% empty %}
             <tr>
