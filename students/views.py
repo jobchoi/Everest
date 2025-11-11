@@ -1,6 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 # [수정] 'AI'가 '분석'할 '모든' 모델을 'import'
-from .models import Student_Master, Activity_Log, Goal_History
+from .models import (
+    Student_Master, Activity_Log, 
+    Goal_History, Teacher_Master, Category_Master, Department_Master
+)
+
 
 # 'JSON' 응답(JsonResponse)과 'JSON' 파싱(json)을 'import' 합니다.
 from django.http import JsonResponse
@@ -36,19 +40,52 @@ def student_detail_view(request, student_id): # 'URL'로부터 'student_id'를 �
     #    (만약 'ID'가 '없으면' '자동'으로 '404 오류'를 띄웁니다.)
     student = get_object_or_404(Student_Master, pk=student_id)
 
+
+    # 4. [신규] 'POST' (저장) 요청을 '처리'하는 '로직' (AI 워크플로우 '완성')
+    if request.method == 'POST':
+        # 5. 'JavaScript'가 '보낸' '모든' 데이터를 '추출'합니다.
+        data = json.loads(request.body)
+        
+        # 6. 'DB'에 '저장'할 '데이터'를 '가져옵니다'.
+        content = data.get('content_text', '')
+        tags = data.get('tags', []) # (검증된 #태그 목록)
+        teacher_id = data.get('teacher_id')
+        category_id = data.get('category_id')
+        activity_date = data.get('activity_date') # (날짜도 '추가'합니다)
+
+        # 7. '참조(FK)' 데이터를 'DB'에서 '조회'합니다.
+        teacher = get_object_or_404(Teacher_Master, pk=teacher_id)
+        category = get_object_or_404(Category_Master, pk=category_id)
+
+        # 8. [핵심] '새로운' 'Activity_Log' 객체를 'DB'에 '생성(Create)'합니다.
+        Activity_Log.objects.create(
+            student_uuid=student,
+            teacher_id=teacher,
+            category_id=category,
+            activity_date=activity_date,
+            content_text=content,
+            activity_tags=tags # (AI가 '검증'한 태그를 '저장')
+        )
+        
+        # 9. '저장' '성공'을 'JSON'으로 '반환'합니다.
+        return JsonResponse({'status': 'success', 'message': '활동 로그가 성공적으로 저장되었습니다.'})
+
     # 3. [추가] '학생'과 '연관된' '활동 로그'를 '모두' 조회.
     #    (최신순으로 정렬)
     activities = Activity_Log.objects.filter(student_uuid=student).order_by('-activity_date')
-
-    # 4. [추가] '학생'과 '연관된' '목표 이력'을 '모두' 조회.
-    #    (최신순으로 정렬)
     goals = Goal_History.objects.filter(student_uuid=student).order_by('-record_date')
+
+    # 4. [추가] '하드코딩'을 '해결'하기 위해, '모든' 교사와 '모든' 카테고리를 'DB'에서 '조회'
+    all_teachers = Teacher_Master.objects.all()
+    all_categories = Category_Master.objects.all()
 
     # 5. [수정] '조회된' '모든' 정보를 'HTML'로 '전달'
     context = {
         'student': student,
-        'activities': activities, # (추가)
-        'goals': goals            # (추가)
+        'activities': activities,   
+        'goals': goals,             
+        'all_teachers': all_teachers,       # (추가)
+        'all_categories': all_categories,   # (추가)
     }
 
     # 6. 'HTML 파일'을 '렌더링'
