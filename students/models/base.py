@@ -29,7 +29,8 @@ class Student_Master(models.Model):
     birthday = models.DateField()
     
     # (학생 분야)
-    student_field = models.CharField(max_length=50)
+    # student_field = models.CharField(max_length=50)
+    student_field = models.CharField(max_length=50, blank=True, null=True)
 
     # (더미 데이터 격리)
     DATA_STATUS_CHOICES = [

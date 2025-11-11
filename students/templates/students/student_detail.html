@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <!-- 1. [기존 H-161] '기본 정보' 카드 -->
+    <!-- 1. 기본 정보 카드 -->
     <div class="d-flex justify-content-between align-items-center">
         <h1>{{ student.student_name }}</h1>
         <a href="{% url 'student_list' %}" class="btn btn-outline-primary">
@@ -25,11 +25,11 @@
         </ul>
     </div>
 
-    <!-- 2. [기존 H-178] '활동 로그' 카드 -->
+    <!-- 2. 활동 로그 카드 (조회) -->
     <h2>활동 로그 (Activity_Log)</h2>
-    <p>'항해일지 57번'의 'B-an(AI)' 워크플로우의 '핵심' 데이터입니다.</p>
+    <p>'B-an(AI)' 워크플로우의 '핵심' 데이터입니다.</p>
     
-    <div class="card mb-4"> <!-- (mb-4 클래스 '추가'로 아래 카드와 '간격' 부여) -->
+    <div class="card mb-4">
         <div class="card-header">
             '{{ student.student_name }}' 학생의 활동 이력 (최신순)
         </div>
@@ -42,18 +42,13 @@
                     <small>{{ activity.activity_date }}</small>
                 </div>
                 <p class="mb-1">{{ activity.content_text }}</p>
-                <!-- <small class="text-muted">
-                    담당 교사: {{ activity.teacher_id.teacher_name }} | 
-                    태그: {{ activity.activity_tags | join:", " }}
-                </small> -->
-                <!-- 2. [추가] 'B-an' '검증부'와 '동일'한 '뱃지(Badge)' UI로 '표시' -->
+                
                 <div class="mt-2">
                     <small class="text-muted">담당 교사: {{ activity.teacher_id.teacher_name }}</small>
                     <br>
                     <small class="text-muted">
                         태그:
                         {% for tag in activity.activity_tags %}
-                            <!-- (H-195의 '검증부' UI와 '통일') -->
                             <span class="badge bg-primary m-1">#{{ tag }}</span>
                         {% empty %}
                             <span class="badge bg-secondary m-1">태그 없음</span>
@@ -69,9 +64,7 @@
         </div>
     </div>
 
-    <!-- ----------------------------------------------------------------- -->
-    <!-- 3. [H-187 '신규 삽입'] '목표 이력' 카드 -->
-    <!-- ----------------------------------------------------------------- -->
+    <!-- 3. 목표 이력 카드 (조회) -->
     <h2 class="mt-4">목표 이력 (Goal_History)</h2>
     <p>'학생'이 '설정'한 '목표 학과'의 '이력'입니다.</p>
     
@@ -80,19 +73,13 @@
             '{{ student.student_name }}' 학생의 목표 이력 (최신순)
         </div>
         <div class="list-group list-group-flush">
-            
-            <!-- 'views.py'가 전달한 'goals' 변수를 '반복(loop)'합니다. -->
             {% for goal in goals %}
             <div class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
-                    <!-- 'H-172' (JSON)의 '목표 학과' -->
                     <h5 class="mb-1">{{ goal.goal_dept_id.dept_name }}</h5>
-                    <!-- 'H-172' (JSON)의 '기록 날짜' -->
                     <small>{{ goal.record_date }}</small>
                 </div>
             </div>
-            
-            <!-- (DB가 비어있을 때) -->
             {% empty %}
             <div class="list-group-item">
                 <p class="text-center text-muted mb-0">아직 등록된 '목표 이력'이 없습니다.</p>
@@ -102,236 +89,260 @@
     </div>
 
     <!-- ----------------------------------------------------------------- -->
-    <!-- 4. [기존 H-184] 'B-an(AI)' 워크플로우 (JS ID 추가됨) -->
+    <!-- 4. 'B-an(AI)' 2-Step 워크플로우 (입력/검증/저장) -->
     <!-- ----------------------------------------------------------------- -->
     <hr class="my-4">
     
     <h2>AI(B-an) 기반 활동 '검증'</h2>
-    <p>'새로운' 활동 로그를 '입력'하고 'B-an'의 '검증(#태그)'을 '받는' 영역입니다.</p>
+    <p>'[1] 분석'으로 '추천'을 받고, '[2] 검증(A-an)' 후 '[3] 저장'합니다.</p>
 
     <div class="row mt-4">
 
-    <!-- 3.1 (좌측) '입력부' -->
-    <div class="col-md-7">
-        <div class="card shadow-sm">
-            <div class="card-header">
-                (A-an) 교사 입력부
+        <!-- 4.1 (좌측) '입력부' -->
+        <div class="col-md-7">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    (A-an) 교사 입력부
+                </div>
+                <div class="card-body">
+                    
+                    <div id="ai-analysis-form">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="activity-date-input" class="form-label">활동일</label>
+                            <input type="date" class="form-control" id="activity-date-input" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="activity-content-input" class="form-label">활동 내용 (원본)</label>
+                            <textarea class="form-control" rows="10" placeholder="여기에 '새로운' 활동 로그를 입력하십시오..." id="activity-content-input"></textarea>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="teacher-select" class="form-label">담당 교사</label>
+                                <select class="form-select" id="teacher-select">
+                                    <option value="">--- 교사 선택 ---</option>
+                                    {% for teacher in all_teachers %}
+                                        <option value="{{ teacher.teacher_id }}">{{ teacher.teacher_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="category-select" class="form-label">카테고리</label>
+                                <select class="form-select" id="category-select">
+                                    <option value="">--- 카테고리 선택 ---</option>
+                                    {% for category in all_categories %}
+                                        <option value="{{ category.category_id }}">{{ category.category_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- '2-Step' 버튼 -->
+                        <button type="button" class="btn btn-success" id="ai-analysis-btn">
+                            [1] AI(B-an) 태그 추출
+                        </button>
+                        
+                        <!-- [H-205 'UI 결함' 수정] 'disabled' 속성 '추가' (기본 비활성화) -->
+                        <button type="button" class="btn btn-primary" id="save-activity-btn" disabled>
+                            [3] 최종 저장
+                        </button>
+                        
+                        <div id="save-status-message" class="mt-3" style="display: none;"></div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                
-                <!-- [1. 수정] 'form' 태그를 '제거'하고 'div'로 '변경' (submit 방지) -->
-                <div id="ai-analysis-form">
-                    {% csrf_token %}
+        </div>
+
+        <!-- 4.2 (우측) 'B-an(AI)' '검증부' (#태그) -->
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    (B-an) AI 검증부 (#태그)
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">'[1] AI 태그 추출' 버튼을 누르면, '아래'에 '추천' 태그가 '표시'됩니다.</p>
                     
-                    <!-- (H-192에서 '추가'한 '날짜' 입력창을 '상단'으로 '이동') -->
-                    <div class="mb-3">
-                        <label for="activity-date-input" class="form-label">활동일</label>
-                        <input type="date" class="form-control" id="activity-date-input" required>
+                    <div class="p-3 bg-light rounded mb-3" id="tag-recommendation-area">
+                        <!-- (AI가 '결과'를 '그리는' 곳) -->
                     </div>
 
-                    <div class="mb-3">
-                        <label for="activity-content-input" class="form-label">활동 내용 (원본)</label>
-                        <textarea class="form-control" rows="10" placeholder="여기에 '새로운' 활동 로그를 입력하십시오..." id="activity-content-input"></textarea>
+                    <div class="form-group">
+                        <label for="verified-tags-input" class="form-label">
+                            <strong>[2] (A-an) 교사 최종 검증 (GIGO 방지)</strong>
+                        </label>
+                        <textarea class="form-control" id="verified-tags-input" rows="4" placeholder="AI 추천 태그가 여기에 '복사'됩니다. (수동 수정/입력 가능)"></textarea>
+                        <small class="form-text text-muted">태그는 쉼표(,)로 구분하십시오. (예: 리더십, 알고리즘)</small>
                     </div>
-                    
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="teacher-select" class="form-label">담당 교사</label>
-                            <select class="form-select" id="teacher-select">
-                                <option value="">--- 교사 선택 ---</option>
-                                {% for teacher in all_teachers %}
-                                    <option value="{{ teacher.teacher_id }}">{{ teacher.teacher_name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="category-select" class="form-label">카테고리</label>
-                            <select class="form-select" id="category-select">
-                                <option value="">--- 카테고리 선택 ---</option>
-                                {% for category in all_categories %}
-                                    <option value="{{ category.category_id }}">{{ category.category_name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- [2. 수정] 'AI 분석' 버튼 (Type: 'submit' -> 'button') -->
-                    <button type="button" class="btn btn-success" id="ai-analysis-btn">
-                        [1] AI(B-an) 태그 추출
-                    </button>
-
-                    <!-- [3. 신규] '최종 저장' 버튼 '추가' (P2 문제 해결) -->
-                    <button type="button" class="btn btn-primary" id="save-activity-btn">
-                        [2] 최종 저장
-                    </button>
-                    
-                    <!-- [4. 신규] '비차단' 알림창 (A 문제 해결) -->
-                    <div id="save-status-message" class="mt-3" style="display: none;"></div>
 
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- (Row '끝') -->
 
-    <!-- 3.2 (우측) 'B-an(AI)' '검증부' (#태그) -->
-    <div class="col-md-5">
-        <div class="card shadow-sm">
-            <div class="card-header">
-                (B-an) AI 검증부 (#태그)
-            </div>
-            <div class="card-body">
-                <p class="text-muted">'[1] AI 태그 추출' 버튼을 누르면, '아래'에 '추천' 태그가 '표시'됩니다.</p>
-                <p class="text-muted small">'H-193'의 '선택/수정' 기능은 'Sprint 3'에서 '구현'될 '예정'입니다.</p>
-                
-                <div class="p-3 bg-light rounded" id="tag-recommendation-area">
-                    <!-- (초기에는 '비어있음') -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- ----------------------------------------------------------------- -->
+    <!-- 5. 'JavaScript' (GIGO/UX '해결') -->
+    <!-- ----------------------------------------------------------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-
-<!-- [H-195 'JavaScript' (2-Step 워크플로우) '수정본'] -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-
-        // 1. [연결] (H-194의 '새' HTML ID에 '연결')
-        const aiButton = document.getElementById('ai-analysis-btn');         // [1] AI 추출 버튼
-        const saveButton = document.getElementById('save-activity-btn');     // [2] 최종 저장 버튼
-        const statusMessageDiv = document.getElementById('save-status-message'); // (비차단 알림창)
-        
-        // (입력 요소들)
-        const textArea = document.getElementById('activity-content-input');
-        const teacherSelect = document.getElementById('teacher-select');
-        const categorySelect = document.getElementById('category-select');
-        const dateInput = document.getElementById('activity-date-input');
-        
-        // (결과 영역)
-        const tagArea = document.getElementById('tag-recommendation-area');
-
-        // (H-195 신규) 'AI'와 '저장' 간에 '태그'를 '전달'하기 위한 '임시 저장소'
-        let lastAiTags = []; 
-
-        // -----------------------------------------------------------------
-        // [워크플로우 1] '[1] AI 태그 추출' 버튼 '클릭' 이벤트
-        // -----------------------------------------------------------------
-        aiButton.addEventListener('click', async function() {
+            // 1. [연결]
+            const aiButton = document.getElementById('ai-analysis-btn');         // [1] AI 추출
+            const saveButton = document.getElementById('save-activity-btn');     // [3] 최종 저장
+            const statusMessageDiv = document.getElementById('save-status-message');
             
-            // 1.1 (데이터 수집) '텍스트'만 '수집'
-            const textToAnalyze = textArea.value;
-            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            const textArea = document.getElementById('activity-content-input');
+            const teacherSelect = document.getElementById('teacher-select');
+            const categorySelect = document.getElementById('category-select');
+            const dateInput = document.getElementById('activity-date-input');
+            
+            const tagArea = document.getElementById('tag-recommendation-area');
+            const verifiedTagsInput = document.getElementById('verified-tags-input');
 
-            if (!textToAnalyze) {
-                tagArea.innerHTML = '<span class="text-danger">오류: 분석할 텍스트를 먼저 입력해야 합니다.</span>';
-                return;
-            }
-
-            // 1.2 (UI) 'AI 버튼'만 '로딩' 상태로 '변경'
-            aiButton.disabled = true;
-            aiButton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> B-an 분석 중...';
-            tagArea.innerHTML = '';
-            statusMessageDiv.style.display = 'none'; // (상태 메시지 숨김)
-
-            try {
-                // 1.3 [Fetch] (H-183) 'AI API' '호출'
-                const response = await fetch("{% url 'api_extract_tags' %}", {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
-                    body: JSON.stringify({ 'text': textToAnalyze })
-                });
-
-                const data = await response.json();
-
-                if (data.status === 'success') {
-                    // 1.4 [성공] '결과'를 '임시 저장소'에 '저장' (GIGO '수정' 전)
-                    lastAiTags = data.tags || []; 
-                    
-                    // 1.5 [UI] '결과'를 '화면'에 '표시'
-                    if (lastAiTags.length > 0) {
-                        lastAiTags.forEach(tag => {
-                            const tagElement = document.createElement('span');
-                            tagElement.className = 'badge bg-primary m-1';
-                            tagElement.innerText = `#${tag}`;
-                            tagArea.appendChild(tagElement);
-                        });
-                    } else {
-                        tagArea.innerText = "추천 태그가 없습니다.";
-                    }
-                } else {
-                    throw new Error(data.message); // (AI 오류)
-                }
-
-            } catch (error) {
-                // 1.6 [실패]
-                tagArea.innerHTML = `<span class="text-danger">AI 분석 오류: ${error.message}</span>`;
-            } finally {
-                // 1.7 [UI 복구] 'AI 버튼' '복구'
-                aiButton.disabled = false;
-                aiButton.innerHTML = '[1] AI(B-an) 태그 추출';
-            }
-        });
-
-        // -----------------------------------------------------------------
-        // [워크플로우 2] '[2] 최종 저장' 버튼 '클릭' 이벤트
-        // -----------------------------------------------------------------
-        saveButton.addEventListener('click', async function() {
-
-            // 2.1 (데이터 수집) '모든' '입력값' '수집'
-            const payload = {
-                content_text: textArea.value,
-                teacher_id: teacherSelect.value,
-                category_id: categorySelect.value,
-                activity_date: dateInput.value,
-                tags: lastAiTags // (AI가 '분석'한 '검증 안 된' 태그, H-193의 '시행착오' 지점)
-            };
-
-            // 2.2 '필수' 입력 '검증'
-            if (!payload.content_text || !payload.teacher_id || !payload.category_id || !payload.activity_date) {
-                statusMessageDiv.innerHTML = '<div class="alert alert-danger">오류: 모든 필드(내용, 교사, 카테고리, 날짜)를 입력해야 합니다.</div>';
-                statusMessageDiv.style.display = 'block';
-                return;
-            }
-
-            // 2.3 (UI) '저장 버튼'만 '로딩' 상태로 '변경'
-            saveButton.disabled = true;
-            saveButton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> DB 저장 중...';
-            statusMessageDiv.style.display = 'none';
-
-            try {
-                // 2.4 [Fetch] (H-191) 'DB 저장 API' '호출'
+            // -----------------------------------------------------------------
+            // [워크플로우 1] '[1] AI 태그 추출'
+            // -----------------------------------------------------------------
+            aiButton.addEventListener('click', async function() {
+                
+                const textToAnalyze = textArea.value;
                 const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-                const response = await fetch(window.location.href, { // (H-191)
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
-                    body: JSON.stringify(payload)
-                });
-                
-                const data = await response.json();
-                
-                if (data.status === 'success') {
-                    // 2.5 [성공] (H-193 '새로고침' '수정') '비차단' '알림'
-                    alert('성공: ' + data.message + '\n\n(참고: 새 활동 로그가 목록에 보이도록 페이지를 새로고침합니다.)');
-                    window.location.reload(); // (새로고침은 '유지'하되, 'alert'으로 '인지'시킴)
-                } else {
-                    throw new Error(data.message); // (DB 오류)
+
+                if (!textToAnalyze) {
+                    tagArea.innerHTML = '<span class="text-danger">오류: 분석할 텍스트를 먼저 입력해야 합니다.</span>';
+                    return;
                 }
 
-            } catch (error) {
-                // 2.6 [실패]
-                statusMessageDiv.innerHTML = `<div class="alert alert-danger">저장 실패: ${error.message}</div>`;
-                statusMessageDiv.style.display = 'block';
-            } finally {
-                // 2.7 [UI 복구] '저장 버튼' '복구'
-                saveButton.disabled = false;
-                saveButton.innerHTML = '[2] 최종 저장';
-            }
+                // (UI 로딩)
+                aiButton.disabled = true;
+                aiButton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> B-an 분석 중...';
+                tagArea.innerHTML = '';
+                verifiedTagsInput.value = '';
+                statusMessageDiv.style.display = 'none';
+                
+                // [H-205 '신규'] 'AI'를 '재실행'하면 '저장' 버튼을 '다시' '비활성화'
+                saveButton.disabled = true;
+
+                try {
+                    // (AI API '호출')
+                    const response = await fetch("{% url 'api_extract_tags' %}", {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
+                        body: JSON.stringify({ 'text': textToAnalyze })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.status === 'success') {
+                        const tags = data.tags || []; 
+                        
+                        if (tags.length > 0) {
+                            // ('시각용' UI '생성')
+                            tags.forEach(tag => {
+                                const tagElement = document.createElement('span');
+                                tagElement.className = 'badge bg-primary m-1';
+                                tagElement.innerText = `#${tag}`;
+                                tagArea.appendChild(tagElement);
+                            });
+                            // ('편집창'에 '자동 복사')
+                            verifiedTagsInput.value = tags.join(', '); 
+                            
+                            // [H-205 '신규'] 'AI'가 '성공'했으므로 '저장 버튼'을 '활성화'
+                            saveButton.disabled = false;
+
+                        } else {
+                            tagArea.innerText = "추천 태그가 없습니다.";
+                            verifiedTagsInput.value = "";
+                            // (H-205) 'AI'가 '실패'했으므로 '저장 버튼'은 '계속 비활성화'
+                        }
+                    } else {
+                        throw new Error(data.message);
+                    }
+
+                } catch (error) {
+                    tagArea.innerHTML = `<span class="text-danger">AI 분석 오류: ${error.message}</span>`;
+                } finally {
+                    aiButton.disabled = false;
+                    aiButton.innerHTML = '[1] AI(B-an) 태그 추출';
+                }
+            });
+
+            // -----------------------------------------------------------------
+            // [워크플로우 2] '[3] 최종 저장' ('검증' 로직 '추가')
+            // -----------------------------------------------------------------
+            saveButton.addEventListener('click', async function() {
+
+                // 2.1 ('교사'가 '검증'한 '편집창'의 '값'을 '수집')
+                const verifiedTagsText = verifiedTagsInput.value;
+                const finalTags = verifiedTagsText.split(',')
+                                      .map(tag => tag.trim())
+                                      .filter(tag => tag.length > 0); 
+
+                // 2.2 (데이터 수집)
+                const payload = {
+                    content_text: textArea.value,
+                    teacher_id: teacherSelect.value,
+                    category_id: categorySelect.value,
+                    activity_date: dateInput.value,
+                    tags: finalTags // ('검증된' 태그 '배열')
+                };
+
+                // 2.3 ('필수' 검증)
+                if (!payload.content_text || !payload.teacher_id || !payload.category_id || !payload.activity_date) {
+                    statusMessageDiv.innerHTML = '<div class="alert alert-danger">오류: 모든 필드(내용, 교사, 카테고리, 날짜)를 입력해야 합니다.</div>';
+                    statusMessageDiv.style.display = 'block';
+                    return;
+                }
+                
+                // 2.4 ('태그 없음' '경고' / H-200 '시행착오' 해결)
+                if (finalTags.length === 0) {
+                    const confirmed = confirm("경고: (A-an) 교사 검증 태그가 '없습니다'.\n'태그 없음' 상태로 저장하시겠습니까?");
+                    if (!confirmed) {
+                        return; // '저장' '취소'
+                    }
+                }
+
+                // 2.5 (UI '로딩' 시작)
+                saveButton.disabled = true;
+                saveButton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> DB 저장 중...';
+                statusMessageDiv.style.display = 'none';
+
+                try {
+                    // 2.6 (DB 저장 API '호출')
+                    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                    const response = await fetch(window.location.href, { 
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.status === 'success') {
+                        // 2.7 ('성공' / '비차단' 알림)
+                        statusMessageDiv.innerHTML = '<div class="alert alert-success">성공! 활동 로그가 저장되었습니다. (3초 후 새로고침)</div>';
+                        statusMessageDiv.style.display = 'block';
+                        
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 3000); 
+
+                    } else {
+                        throw new Error(data.message); // (DB 오류)
+                    }
+
+                } catch (error) {
+                    // 2.8 ('실패')
+                    statusMessageDiv.innerHTML = `<div class="alert alert-danger">저장 실패: ${error.message}</div>`;
+                    statusMessageDiv.style.display = 'block';
+                    saveButton.disabled = false;
+                    saveButton.innerHTML = '[3] 최종 저장';
+                }
+            });
+
         });
-
-    });
-</script>
-<!-- [H-195 'JavaScript' '대체' 끝] -->
-
-
+    </script>
+    <!-- [JavaScript '대체' 끝] -->
 
 {% endblock %}
