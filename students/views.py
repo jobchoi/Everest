@@ -41,34 +41,42 @@ def student_detail_view(request, student_id): # 'URL'로부터 'student_id'를 �
     student = get_object_or_404(Student_Master, pk=student_id)
 
 
-    # 4. [신규] 'POST' (저장) 요청을 '처리'하는 '로직' (AI 워크플로우 '완성')
+    # 4. [수정] 'POST' (저장) 로직 (H-191)
     if request.method == 'POST':
-        # 5. 'JavaScript'가 '보낸' '모든' 데이터를 '추출'합니다.
         data = json.loads(request.body)
         
-        # 6. 'DB'에 '저장'할 '데이터'를 '가져옵니다'.
         content = data.get('content_text', '')
-        tags = data.get('tags', []) # (검증된 #태그 목록)
+        tags = data.get('tags', []) 
         teacher_id = data.get('teacher_id')
         category_id = data.get('category_id')
-        activity_date = data.get('activity_date') # (날짜도 '추가'합니다)
+        activity_date = data.get('activity_date') 
 
-        # 7. '참조(FK)' 데이터를 'DB'에서 '조회'합니다.
         teacher = get_object_or_404(Teacher_Master, pk=teacher_id)
         category = get_object_or_404(Category_Master, pk=category_id)
 
-        # 8. [핵심] '새로운' 'Activity_Log' 객체를 'DB'에 '생성(Create)'합니다.
-        Activity_Log.objects.create(
+        # 8. [H-207 수정] '새' 로그를 '변수'에 '저장'합니다.
+        new_activity = Activity_Log.objects.create(
             student_uuid=student,
             teacher_id=teacher,
             category_id=category,
             activity_date=activity_date,
             content_text=content,
-            activity_tags=tags # (AI가 '검증'한 태그를 '저장')
+            activity_tags=tags
         )
         
-        # 9. '저장' '성공'을 'JSON'으로 '반환'합니다.
-        return JsonResponse({'status': 'success', 'message': '활동 로그가 성공적으로 저장되었습니다.'})
+        # 9. [H-207 수정] '단순 성공' '대신', '방금' '생성'한 '객체'의 '정보'를 'JSON'으로 '반환'합니다.
+        #    (JS가 'AJAX 확인'에 '사용'할 '재료')
+        return JsonResponse({
+            'status': 'success', 
+            'message': '활동 로그가 성공적으로 저장되었습니다.',
+            'new_activity': {
+                'category_name': new_activity.category_id.category_name,
+                'activity_date': new_activity.activity_date,
+                'content_text': new_activity.content_text,
+                'teacher_name': new_activity.teacher_id.teacher_name,
+                'activity_tags': new_activity.activity_tags
+            }
+        })
 
     # 3. [추가] '학생'과 '연관된' '활동 로그'를 '모두' 조회.
     #    (최신순으로 정렬)
