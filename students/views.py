@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Student_Master  # '학생 모델' import
 
 # Create your views here.
-from .models import Student_Master  # 1. '항해일지 97번'의 '학생 모델'을 import
+
 
 # -----------------------------------------------------------------
 # [2. (추가)] '항해일지 134번' (화면 1: 학생 목록 뷰)
