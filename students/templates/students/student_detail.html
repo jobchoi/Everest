@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}학생 상세 정보 (화면 2){% endblock %}
+
+{% block content %}
+
+    <h1>{{ student.student_name }}</h1>
+    <p class="lead">학생 상세 정보 (화면 2)</p>
+
+    <div class="card">
+        <div class="card-header">
+            기본 정보 (H-97)
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>UUID:</b> {{ student.student_uuid }}</li>
+            <li class="list-group-item"><b>학교:</b> {{ student.school_id.school_name }}</li>
+            <li class="list-group-item"><b>입학년도:</b> {{ student.admission_year }}</li>
+            <li class="list-group-item"><b>생년월일:</b> {{ student.birthday }}</li>
+            <li class="list-group-item"><b>데이터 상태:</b> {{ student.data_status }}</li>
+        </ul>
+    </div>
+
+    <a href="{% url 'student_list' %}" class="btn btn-primary mt-3">
+        &laquo; 학생 목록으로 돌아가기
+    </a>
+
+{% endblock %}
