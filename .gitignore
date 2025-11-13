@@ -1,7 +1,5 @@
 # [수정] /.gitignore (H-141)
 # Python/Django/Security/OS에 최적화된 .gitignore
-
-<<<<<<< HEAD
 # -----------------------------------------------------------------
 # 1. 보안 (Security) - (H-140 '암호' 요청)
 #    (비밀 키, API 키, 로컬 설정)
@@ -25,13 +23,10 @@ env/
 # -----------------------------------------------------------------
 # 3. Python 캐시 (Bytecode) - (H-115)
 # -----------------------------------------------------------------
-__pycache__/
-=======
 venv/
 # 1. (추가) Python Bytecode Cache ('.pyc' 파일이 담기는 폴더)
 __pycache__/
 # 2. (추가) Python Bytecode Files ('.pyc' 파일 자체)
->>>>>>> feature/bootstrapSetup
 *.pyc
 *.pyo
 *.pyd
