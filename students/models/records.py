@@ -42,10 +42,10 @@ class Activity_Log(models.Model):
     activity_date = models.DateField() # 활동 일자
     
     # (B안 워크플로우 - 원본 텍스트)
-    content_text = models.TextField() # '교사가 입력한 원본'
+    content_text = models.TextField(blank=True, null=True)
     
     #    (AI 분석 결과)
-    activity_tags = models.JSONField(default=list) # (예: ['#리더십', '#알고리즘'])
+    activity_tags = models.JSONField(default=list,blank=True) # (예: ['#리더십', '#알고리즘'])
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
