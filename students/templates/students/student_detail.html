@@ -297,10 +297,13 @@
                 
                 // 2.4 ('태그 없음' '경고' / H-200 '시행착오' 해결)
                 if (finalTags.length === 0) {
-                    const confirmed = confirm("경고: (A-an) 교사 검증 태그가 '없습니다'.\n'태그 없음' 상태로 저장하시겠습니까?");
-                    if (!confirmed) {
-                        return; // '저장' '취소'
-                    }
+                    statusMessageDiv.innerHTML = '<div class="alert alert-warning">경고: (A-an) 교사 검증 태그가 없습니다. 저장을 "취소"합니다.</div>';
+                    statusMessageDiv.style.display = 'block';
+            
+                    saveButton.disabled = false;
+                    saveButton.innerHTML = '[3] 최종 저장';
+
+                    return;
                 }
 
                 // 2.5 (UI '로딩' 시작)
