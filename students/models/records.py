@@ -62,7 +62,7 @@ class Goal_History(models.Model):
     student_uuid = models.ForeignKey(Student_Master, on_delete=models.CASCADE)
     
     #  (GIGO 방지용 '참조')
-    goal_dept_id = models.ForeignKey(Department_Master, on_delete=models.PROTECT) # 희망 전공
+    goal_dept_id = models.ForeignKey(Department_Master, on_delete=models.PROTECT, null=True, blank=True) # 희망 전공
 
     record_date = models.DateField() # 기록 일자
     
