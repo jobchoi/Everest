@@ -341,6 +341,34 @@
                 }
             });
 
+            verifiedTagsInput.addEventListener('input', function() {
+                // (H-206의 '[3] 최종 저장' '로직'을 '재사용')
+                
+                // 3.1 (A-an) '편집창'의 '현재' '텍스트'를 '읽음'
+                const currentTagsText = verifiedTagsInput.value;
+                
+                // 3.2 (GIGO 방지) '쉼표'로 '분리', '공백' '제거', '빈 값' '제거'
+                const tags = currentTagsText.split(',')
+                                            .map(tag => tag.trim())
+                                            .filter(tag => tag.length > 0);
+
+                // 3.3 (B-an) '시각용' 뱃지 '영역'을 '초기화'
+                tagArea.innerHTML = ''; 
+
+                // 3.4 (B-an) '편집창'의 '내용'을 '기반'으로 '뱃지'를 '다시 그림(Re-render)'
+                if (tags.length > 0) {
+                    tags.forEach(tag => {
+                        const tagElement = document.createElement('span');
+                        tagElement.className = 'badge bg-primary m-1';
+                        tagElement.innerText = `#${tag}`;
+                        tagArea.appendChild(tagElement);
+                    });
+                } else {
+                    tagArea.innerText = "(A-an 편집창에 태그가 없습니다)";
+                }
+            });
+
+        
         });
     </script>
     <!-- [JavaScript '대체' 끝] -->
