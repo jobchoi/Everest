@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
 
 {% block title %}{{ student.student_name }} 상세 정보 (화면 2){% endblock %}
-
 {% block content %}
 
     <!-- 1. 기본 정보 카드 -->
@@ -12,6 +14,28 @@
         </a>
     </div>
     <p class="lead">{{ student.student_field }} ({{ student.admission_year }}년 입학)</p>
+
+    <!-- [H-353 신규] 데이터 시각화 (역량 차트) -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">📊 {{ student.student_name }} 학생의 핵심 역량 (Top 5)</h5>
+                </div>
+                <div class="card-body">
+                    <!-- [사라] 차트 높이를 적절히 고정 -->
+                    <div style="height: 250px;">
+                        <canvas id="competencyChart"></canvas>
+                    </div>
+                    <!-- 데이터 없을 때 안내 문구 (JS로 제어) -->
+                    <p id="no-data-msg" class="text-center text-muted mt-3" style="display:none;">
+                        아직 분석할 태그 데이터가 충분하지 않습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="card mb-4">
         <div class="card-header">
@@ -200,6 +224,51 @@
             
             const tagArea = document.getElementById('tag-recommendation-area');
             const verifiedTagsInput = document.getElementById('verified-tags-input');
+
+// --- [차트 그리기 로직] ---
+        const ctx = document.getElementById('competencyChart').getContext('2d');
+        
+        // Django에서 보낸 데이터 받기 (|safe 필터 필수!)
+        const chartLabels = JSON.parse('{{ chart_labels|safe }}');
+        const chartData = JSON.parse('{{ chart_data|safe }}');
+
+        if (chartLabels.length > 0) {
+            new Chart(ctx, {
+                type: 'bar', // [사라] 가로형 차트를 위해 indexAxis 설정 사용
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: '활동 빈도수',
+                        data: chartData,
+                        // [사라] 전문적인 느낌의 파란색 그라데이션
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // [핵심] 이걸 넣으면 '가로 막대'가 됩니다!
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false } // 범례 숨김 (깔끔하게)
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1 }, // 정수로만 표시
+                            grid: { display: false } // 배경 격자 제거 (깔끔하게)
+                        }
+                    }
+                }
+            });
+        } else {
+            // 데이터 없으면 차트 숨기고 메시지 표시
+            document.getElementById('competencyChart').style.display = 'none';
+            document.getElementById('no-data-msg').style.display = 'block';
+        }
+        // ------------------------
 
             // -----------------------------------------------------------------
             // [워크플로우 1] '[1] AI 태그 추출'

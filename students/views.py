@@ -1,3 +1,4 @@
+from collections import Counter
 from django.shortcuts import render, get_object_or_404, redirect
 # [수정] 'AI'가 '분석'할 '모든' 모델을 'import'
 from .models import (
@@ -87,6 +88,30 @@ def student_detail_view(request, student_id): # 'URL'로부터 'student_id'를 �
     all_teachers = Teacher_Master.objects.all()
     all_categories = Category_Master.objects.all()
 
+
+    all_tags = []
+    for activity in activities:
+        tags = activity.activity_tags
+        
+        # [핵심] tags가 만약 문자열로 들어왔다면 리스트로 변환 시도 (방어 코딩)
+        if isinstance(tags, str):
+            try:
+                tags = json.loads(tags.replace("'", '"')) # 혹시 모를 작은따옴표 처리
+            except:
+                tags = [] # 변환 실패 시 빈 리스트
+
+        # 리스트인 경우에만 합치기
+        if tags and isinstance(tags, list):
+            all_tags.extend(tags)
+            
+    # 3. 빈도수 계산
+    tag_counts = Counter(all_tags).most_common(5)
+    
+    # 4. 차트 데이터 생성
+    # (데이터가 없으면 빈 리스트가 들어가서 차트가 숨겨짐 -> JS 로직)
+    chart_labels = [item[0] for item in tag_counts]
+    chart_data = [item[1] for item in tag_counts]
+
     # 5. [수정] '조회된' '모든' 정보를 'HTML'로 '전달'
     context = {
         'student': student,
@@ -94,6 +119,8 @@ def student_detail_view(request, student_id): # 'URL'로부터 'student_id'를 �
         'goals': goals,             
         'all_teachers': all_teachers,       # (추가)
         'all_categories': all_categories,   # (추가)
+        'chart_labels': json.dumps(chart_labels, ensure_ascii=False),
+        'chart_data': json.dumps(chart_data)
     }
 
     # 6. 'HTML 파일'을 '렌더링'
