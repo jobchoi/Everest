@@ -29,6 +29,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.ngrok-free.app',  # ngrok 주소 패턴
     'http://127.0.0.1',
     'http://localhost',
+    'https://*.ngrok-free.dev',  # ngrok이 .dev로 끝날 때 (이번 로그의 원인!)
 ]
 
 ALLOWED_HOSTS = ['*']

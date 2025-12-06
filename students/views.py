@@ -160,3 +160,8 @@ def api_extract_tags_view(request):
         # 9. [오류] 'B-an' 엔진이 '죽거나' '오류'가 나면, '서버 오류'를 '반환'합니다.
         return JsonResponse({'status': 'error', 'message': f'AI 분석 중 오류 발생: {e}'}, status=500)
 
+
+
+
+def temp_page_view(request):
+    return render(request, 'students/temp_page.html')

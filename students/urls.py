@@ -13,4 +13,5 @@ urlpatterns = [
     # 3. [추가] 'AI(B-an)' 태그 추출을 위한 'API' 엔드포인트
     #    (JavaScript가 'POST' 요청을 '보낼' 주소)
     path('api/extract-tags/', views.api_extract_tags_view, name='api_extract_tags'),
+    path('temp/', views.temp_page_view, name='temp_page'),
 ]

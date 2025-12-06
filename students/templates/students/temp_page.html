@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🥕 건강 레이스 보드게임 🍉</title>
+<style>
+:root { --cell:70px; --gap:8px; }
+body { margin:0; height:100vh; display:flex; justify-content:center; align-items:center; background:#fff6b3; font-family:'Arial Rounded MT Bold', Arial, sans-serif;}
+.wrap { display:flex; flex-direction:column; align-items:center; }
+h1 { font-size:28px; color:#ff8c42; margin-bottom:12px; text-shadow:1px 1px 2px #fff; }
+#board { width: calc(var(--cell)*4 + var(--gap)*3); height: calc(var(--cell)*4 + var(--gap)*3); display:grid; grid-template-columns: repeat(4, var(--cell)); grid-template-rows: repeat(4, var(--cell)); gap: var(--gap); position: relative; border-radius:16px; padding:10px; background:linear-gradient(135deg, #ffd9b3, #fff1a8); box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.cell { width:var(--cell); height:var(--cell); border-radius:14px; display:flex; justify-content:center; align-items:center; font-size:32px; box-shadow:0 2px 5px rgba(0,0,0,0.15); background:#fff; transition: background 0.3s; }
+.cell:nth-child(odd){ background:#ffe0b2; }
+.cell:nth-child(even){ background:#ffd699; }
+#cat { position:absolute; font-size:36px; width:40px; height:40px; transition: transform 0.3s cubic-bezier(.2,.9,.2,1); pointer-events:none; z-index:5;}
+button { margin-top:14px; padding:12px 22px; background:#ffcf33; border:none; border-radius:12px; font-size:18px; cursor:pointer; box-shadow:0 3px 6px rgba(0,0,0,0.15);}
+#quizBox { display:none; position:fixed; left:50%; top:50%; transform:translate(-50%, -50%); background:#fff; padding:20px; border-radius:18px; box-shadow:0 6px 20px rgba(0,0,0,0.25); text-align:center; max-width:360px; z-index:999;}
+#quizBox button { margin:6px; padding:8px 14px; border-radius:10px; }
+#answerBox { display:none; position:fixed; left:50%; top:20%; transform:translateX(-50%); background:#fff; padding:14px 24px; border-radius:16px; font-size:20px; font-weight:bold; color:#ff6f61; box-shadow:0 6px 20px rgba(0,0,0,0.25); z-index:999;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🥕 건강 레이스 보드게임 🍉</h1>
+  <div id="board"></div>
+  <div id="cat">🐰</div>
+  <button id="rollBtn">🎲 주사위</button>
+</div>
+<div id="quizBox">
+  <h3 id="quizText"></h3>
+  <button onclick="submitAnswer(true)">⭕ 맞다</button>
+  <button onclick="submitAnswer(false)">❌ 아니다</button>
+</div>
+<div id="answerBox"></div>
+<script>
+const emojis = ["🥕","🍋","🍓","🥒","🍆","🌶️","🥦","🍉","💧","🍇"];
+const pathCells = [0,1,2,3,7,11,15,14,13,12,8,4]; // 12칸
+const quizData = [
+  {q:"아침을 챙기면 혈당이 안정되어 집중력이 좋아진다.", a:true},
+  {q:"간식을 먹을 때 성분표를 확인하면 건강에 도움된다.", a:true},
+  {q:"설탕이 많은 음료는 하루 권장 수분에 포함된다.", a:false},
+  {q:"과일과 채소에는 비타민이 풍부하다.", a:true},
+  {q:"충치 예방을 위해 단 음식은 많이 먹지 않는다.", a:true},
+  {q:"충분한 수면은 호르몬 조절에 중요하다.", a:true},
+  {q:"아침을 거르면 집중력이 떨어질 수 있다.", a:true},
+  {q:"하루 수분은 조금씩 나누어 마시는 것이 좋다.", a:true},
+  {q:"채소는 생으로만 먹어야 한다.", a:false},
+  {q:"간식은 과자보다 과일로 선택하는 것이 좋다.", a:true},
+  {q:"잠을 충분히 자야 성장 호르몬 분비가 원활하다.", a:true},
+  {q:"설탕이 많은 음료는 피하는 것이 좋다.", a:true}
+];
+let posIndex = 0;
+let quizCount = 0;
+const board = document.getElementById('board');
+const cat = document.getElementById('cat');
+const rollBtn = document.getElementById('rollBtn');
+const quizBox = document.getElementById('quizBox');
+const quizText = document.getElementById('quizText');
+const answerBox = document.getElementById('answerBox');
+
+function createBoard(){
+  board.innerHTML='';
+  for(let i=0;i<16;i++){
+    const c = document.createElement('div');
+    c.className='cell';
+    const idx = pathCells.indexOf(i);
+    if(idx!==-1){ c.textContent = emojis[idx % emojis.length]; }
+    else { c.textContent=''; c.style.background='rgba(255,255,255,0.6)'; }
+    board.appendChild(c);
+  }
+  updateCat();
+}
+
+function updateCat(){
+  const cellIndex = pathCells[posIndex];
+  const cell = board.children[cellIndex];
+  if(!cell) return;
+  // 토끼 위치: 가로 -2칸, 세로 +1칸
+  const x = cell.offsetLeft + (cell.offsetWidth - cat.offsetWidth)/2 - 2*cell.offsetWidth;
+  const y = cell.offsetTop + (cell.offsetHeight - cat.offsetHeight)/2 + 1*cell.offsetHeight;
+  cat.style.transform = `translate(${x}px,${y}px)`;
+}
+
+function rollDice(){
+  if(posIndex >= pathCells.length-1 && quizCount >= quizData.length){
+    answerBox.textContent='🎉 GAME CLEAR! 🎉';
+    answerBox.style.display='block';
+    return;
+  }
+  if(quizCount >= quizData.length) return;
+  rollBtn.disabled=true;
+  posIndex = Math.min(posIndex+1, pathCells.length-1);
+  updateCat();
+  setTimeout(showQuiz, 350);
+}
+
+let currentAnswer=null;
+function showQuiz(){
+  if(quizCount >= quizData.length){ rollBtn.disabled=false; return; }
+  const q = quizData[quizCount];
+  currentAnswer = q.a;
+  quizText.textContent = q.q;
+  quizBox.style.display='block';
+}
+
+function submitAnswer(userAnswer){
+  quizBox.style.display='none';
+  if(userAnswer!==currentAnswer){
+    answerBox.textContent='오답! ❌ 1칸 뒤로 이동';
+    answerBox.style.display='block';
+    posIndex = Math.max(0,posIndex-1);
+    updateCat();
+  } else {
+    answerBox.textContent='정답! 👍';
+    answerBox.style.display='block';
+  }
+  quizCount++;
+  setTimeout(()=>{ answerBox.style.display='none'; },1000);
+  rollBtn.disabled=false;
+}
+
+window.addEventListener('resize',updateCat);
+rollBtn.addEventListener('click',rollDice);
+createBoard();
+</script>
+</body>
+</html>
