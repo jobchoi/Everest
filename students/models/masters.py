@@ -39,6 +39,7 @@ class Department_Master(models.Model):
     
     # (GIGO 방지용 '표준화' 필드)
     dept_name = models.CharField(max_length=100, unique=True) # (예: '컴퓨터공학과')
+    dept_keywords = models.JSONField(default=dict, blank=True, null=True)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
