@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>어린이 마트 (카메라 버전)</title>
+    <!-- 바코드 인식 라이브러리 로드 (CDN) -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <style>
+        body { font-family: 'Jua', sans-serif; background: #f0f4f8; margin: 0; padding: 0; }
+        
+        header { background: #3f51b5; color: white; padding: 15px; text-align: center; font-weight: bold; }
+
+        /* 카메라 영역 스타일 */
+        #reader { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: black;
+        }
+        
+        /* 라이브러리 UI 커스텀 (불필요한 요소 숨김) */
+        #reader__dashboard_section_csr span { display: none; } 
+
+        #result-area {
+            padding: 20px; text-align: center; background: white;
+            border-radius: 20px 20px 0 0; margin-top: -20px; position: relative; z-index: 10;
+        }
+        .item-info { font-size: 1.5rem; margin: 10px 0; }
+        .price-info { font-size: 2rem; color: #3f51b5; font-weight: bold; }
+        .cart-info { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+        
+        button {
+            width: 100%; padding: 15px; margin-top: 10px;
+            background: #ff4081; color: white; border: none; border-radius: 10px;
+            font-size: 1.2rem; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>📷 스마트 카메라 마트</header>
+
+<!-- 카메라가 표시될 영역 -->
+<div id="reader"></div>
+
+<div id="result-area">
+    <div id="msg">상품 바코드를 카메라에 비춰주세요!</div>
+    <div class="item-info" id="p-name">-</div>
+    <div class="price-info" id="p-price">₩0</div>
+    
+    <div class="cart-info">
+        총 합계: <span id="total">₩0</span>
+    </div>
+    <button onclick="resetCart()">계산 완료 (리셋)</button>
+</div>
+
+<script>
+    // === 1. 데이터베이스 ===
+    const productDB = {
+        "8801111222233": { name: "맛있는 우유", price: 1200 },
+        "12345678": { name: "로봇 장난감", price: 5000 },
+        "8801062638363": { name: "캔디", price: 500 },
+        // 테스트용: QR코드나 바코드를 생성해서 테스트해보세요.
+    };
+
+    let total = 0;
+    let isScanning = true; // 중복 스캔 방지 플래그
+    let lastCode = "";
+
+    // === 2. 스캔 성공 시 콜백 함수 ===
+    function onScanSuccess(decodedText, decodedResult) {
+        if (!isScanning) return; // 처리 중이면 무시
+        if (decodedText === lastCode) return; // 방금 찍은 거 또 찍힘 방지 (디바운싱)
+
+        // 삑! 소리
+        playBeep();
+
+        lastCode = decodedText;
+        
+        // 상품 검색
+        if (productDB[decodedText]) {
+            const p = productDB[decodedText];
+            document.getElementById('msg').innerText = "인식 성공!";
+            document.getElementById('p-name').innerText = p.name;
+            document.getElementById('p-price').innerText = "₩" + p.price.toLocaleString();
+            
+            total += p.price;
+            document.getElementById('total').innerText = "₩" + total.toLocaleString();
+            
+            // 시각적 피드백을 위해 잠시 멈춤 효과
+            pauseScanning();
+        } else {
+            document.getElementById('msg').innerText = "등록되지 않은 상품 (" + decodedText + ")";
+            pauseScanning();
+        }
+    }
+
+    // 연속 스캔 방지를 위한 잠시 멈춤
+    function pauseScanning() {
+        isScanning = false;
+        setTimeout(() => {
+            isScanning = true;
+            document.getElementById('msg').innerText = "다음 상품을 찍어주세요";
+            lastCode = ""; // 같은 상품 다시 찍을 수 있게 초기화
+        }, 1500); // 1.5초 딜레이
+    }
+
+    // === 3. 카메라 라이브러리 초기화 ===
+    // html5-qrcode 설정
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", 
+        { 
+            fps: 10, // 초당 스캔 횟수 (너무 높으면 폰 발열)
+            qrbox: { width: 250, height: 250 } // 인식 영역 크기
+        },
+        /* verbose= */ false
+    );
+    
+    html5QrcodeScanner.render(onScanSuccess, (error) => {
+        // 인식 실패/대기 중 에러는 무시 (콘솔 로그 오염 방지)
+    });
+
+    // === 4. 유틸리티 ===
+    function resetCart() {
+        total = 0;
+        document.getElementById('p-name').innerText = "-";
+        document.getElementById('p-price').innerText = "₩0";
+        document.getElementById('total').innerText = "₩0";
+        document.getElementById('msg').innerText = "새 손님 받으세요~";
+        lastCode = "";
+    }
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep() {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.1);
+    }
+</script>
+
+</body>
+</html>
