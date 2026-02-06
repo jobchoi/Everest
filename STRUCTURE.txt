@@ -1,0 +1,52 @@
+.
+├── STRUCTURE.txt
+├── config
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── developmkdir
+├── manage.py
+├── requirements.txt
+├── students
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── views.cpython-310.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── fixtures
+│   │   └── dummy_data.json
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_category_master_teacher_master_grade_sheet.py
+│   │   ├── 0003_department_master_goal_history_activity_log.py
+│   │   ├── 0004_alter_student_master_student_field.py
+│   │   ├── 0005_alter_goal_history_goal_dept_id.py
+│   │   ├── 0006_alter_activity_log_activity_tags_and_more.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── base.py
+│   │   ├── masters.py
+│   │   └── records.py
+│   ├── templates
+│   │   └── students
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── templates
+    └── base.html
+
+13 directories, 37 files
