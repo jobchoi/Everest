@@ -3,123 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카메라 정밀 진단 V8</title>
+    <title>카메라 수동 진단 V9</title>
+    <!-- 라이브러리 로드 -->
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <style>
-        body { background: #111; color: #0f0; font-family: monospace; padding: 15px; word-break: break-all; }
-        h2 { border-bottom: 1px solid #0f0; padding-bottom: 10px; }
-        .box { border: 1px solid #555; padding: 10px; margin-bottom: 15px; background: #222; }
-        .error { color: #ff5252; font-weight: bold; }
-        .success { color: #69f0ae; font-weight: bold; }
-        button { width: 100%; padding: 15px; font-size: 1.2rem; background: #004d40; color: #fff; border: 1px solid #0f0; margin-bottom: 20px; cursor: pointer;}
-        #reader { width: 100%; background: #000; margin-bottom: 20px; }
+        body { background: #eee; color: #333; font-family: sans-serif; padding: 20px; text-align: center; }
+        h2 { color: #3f51b5; }
+        #log-area { 
+            background: #222; color: #0f0; padding: 10px; 
+            height: 150px; overflow-y: scroll; text-align: left; 
+            font-family: monospace; font-size: 0.8rem; margin-bottom: 20px; border-radius: 5px;
+        }
+        .cam-btn {
+            display: block; width: 100%; padding: 15px; margin: 10px 0;
+            background: white; border: 2px solid #3f51b5; color: #3f51b5;
+            font-size: 1.1rem; font-weight: bold; border-radius: 10px; cursor: pointer;
+        }
+        .cam-btn:active { background: #3f51b5; color: white; }
+        #reader { width: 100%; height: 300px; background: black; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<h2>🕵️ 시스템 진단 로그</h2>
+<h2>📸 카메라 수동 선택 V9</h2>
 
-<div id="status-box" class="box">준비됨</div>
+<!-- 로그창 -->
+<div id="log-area">로그 대기중...</div>
 
-<button onclick="startDiagnosis()">🚀 진단 및 카메라 시작</button>
+<!-- 카메라 목록 버튼이 여기에 생김 -->
+<div id="cam-list">
+    <button class="cam-btn" onclick="getCameras()">📡 1. 카메라 목록 가져오기 (터치)</button>
+</div>
 
-<div id="camera-list" class="box">카메라 목록 대기중...</div>
+<!-- 카메라 화면 -->
 <div id="reader"></div>
 
 <script>
-    function log(msg, type = 'normal') {
-        const box = document.getElementById('status-box');
-        const color = type === 'error' ? 'red' : (type === 'success' ? '#69f0ae' : '#0f0');
-        const time = new Date().toTimeString().split(' ')[0];
-        box.innerHTML += `<div style="color:${color}">[${time}] ${msg}</div>`;
+    const html5QrCode = new Html5Qrcode("reader");
+
+    function log(msg) {
+        const area = document.getElementById('log-area');
+        const time = new Date().toLocaleTimeString();
+        area.innerHTML = `[${time}] ${msg}<br>` + area.innerHTML;
+        console.log(msg);
     }
 
-    async function startDiagnosis() {
-        document.getElementById('status-box').innerHTML = ""; // 로그 초기화
-        log("진단 시작...");
-
-        // 1. 보안 컨텍스트 확인
-        if (window.isSecureContext) {
-            log("✅ Secure Context (HTTPS): OK", 'success');
-        } else {
-            log("❌ Secure Context Fail! (HTTP임)", 'error');
-            log("👉 HTTPS 주소나 localhost를 사용하세요.", 'error');
-            return;
-        }
-
-        // 2. 브라우저 지원 확인
-        if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
-            log("❌ 이 브라우저는 카메라 API를 지원하지 않습니다.", 'error');
-            return;
-        }
-
-        // 3. 카메라 권한 및 장치 검색
-        try {
-            log("장치 권한 요청 중...");
-            // 일단 스트림을 요청해야 권한 팝업이 뜸
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            log("✅ 권한 획득 성공!", 'success');
-            
-            // 스트림 잠시 끄기 (스캐너 라이브러리와 충돌 방지)
-            stream.getTracks().forEach(track => track.stop());
-
-            // 장치 목록 나열
-            const devices = await navigator.mediaDevices.enumerateDevices();
-            const cameras = devices.filter(d => d.kind === 'videoinput');
-            
-            if (cameras.length === 0) {
-                log("❌ 연결된 카메라가 없습니다.", 'error');
-                document.getElementById('camera-list').innerText = "발견된 카메라 없음";
-            } else {
-                log(`✅ 카메라 ${cameras.length}개 발견됨`, 'success');
-                let camListText = "";
-                cameras.forEach((cam, idx) => {
-                    camListText += `[${idx}] ${cam.label || '알 수 없는 카메라'} (ID: ${cam.deviceId.substring(0,10)}...)\n`;
-                });
-                document.getElementById('camera-list').innerText = camListText;
-            }
-
-            // 4. 스캐너 라이브러리 구동
-            startLibrary();
-
-        } catch (err) {
-            handleError(err);
-        }
-    }
-
-    function handleError(err) {
-        log(`❌ 에러 발생: ${err.name}`, 'error');
-        log(`메시지: ${err.message}`, 'error');
-
-        if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
-            log("👉 [해결책] 브라우저 주소창 옆 자물쇠를 눌러 '권한 재설정' 하세요.", 'error');
-        } else if (err.name === 'NotFoundError') {
-            log("👉 [해결책] 카메라 장치를 찾을 수 없습니다. 하드웨어를 확인하세요.", 'error');
-        } else if (err.name === 'NotReadableError') {
-            log("👉 [해결책] 다른 앱이 카메라를 쓰고 있습니다. 모든 앱을 닫고 다시 시도하세요.", 'error');
-        }
-    }
-
-    function startLibrary() {
-        log("라이브러리 초기화 중...");
-        const html5QrCode = new Html5Qrcode("reader");
+    // 1. 카메라 목록 가져오기 (핵심)
+    function getCameras() {
+        log("카메라 목록 요청 중...");
         
-        // 후면 카메라 우선, 실패시 아무거나
-        const config = { fps: 10, qrbox: 250 };
+        Html5Qrcode.getCameras().then(devices => {
+            if (devices && devices.length) {
+                log(`성공! 카메라 ${devices.length}개 발견됨.`);
+                
+                const listDiv = document.getElementById('cam-list');
+                listDiv.innerHTML = ""; // 기존 버튼 지우기
+
+                devices.forEach((device, index) => {
+                    // 버튼 생성
+                    const btn = document.createElement("button");
+                    btn.className = "cam-btn";
+                    // 카메라 이름 출력 (후면/전면 구분용)
+                    btn.innerText = `📷 카메라 ${index+1}: ${device.label || "이름없음"}`;
+                    btn.onclick = () => startSpecificCamera(device.id);
+                    listDiv.appendChild(btn);
+                });
+            } else {
+                log("목록은 가져왔으나 카메라가 0개입니다.");
+            }
+        }).catch(err => {
+            log("❌ 목록 가져오기 실패!");
+            // 에러 객체를 문자열로 풀어서 보여줌 (undefined 방지)
+            log("에러 내용: " + JSON.stringify(err, Object.getOwnPropertyNames(err)));
+            alert("카메라 권한이 차단되었거나, HTTPS가 아닙니다.");
+        });
+    }
+
+    // 2. 특정 카메라 시작하기
+    function startSpecificCamera(cameraId) {
+        log(`카메라 ID 로 시작 시도...`);
         
         html5QrCode.start(
-            { facingMode: { ideal: "environment" } }, 
-            config,
-            (decodedText) => {
-                log(`🎉 스캔 성공: ${decodedText}`, 'success');
-                html5QrCode.stop(); // 성공하면 멈춤
+            cameraId, // 선택한 그 카메라 ID 사용
+            {
+                fps: 10,
+                qrbox: { width: 250, height: 250 }
+            },
+            (decodedText, decodedResult) => {
+                log(`✅ 스캔 성공: ${decodedText}`);
+                alert(`인식됨: ${decodedText}`);
+                html5QrCode.stop();
             },
             (errorMessage) => {
-                // 스캔 중 에러는 무시 (로그 오염 방지)
+                // 스캔 중 에러는 무시
             }
         ).catch(err => {
-            log("라이브러리 구동 실패", 'error');
-            handleError(err);
+            log("❌ 카메라 시작 실패!");
+            log("상세 에러: " + JSON.stringify(err, Object.getOwnPropertyNames(err)));
+            
+            // 혹시 또 undefined가 뜰까봐 강제 출력
+            if (!err) log("에러 객체가 null/undefined 입니다.");
         });
     }
 </script>
