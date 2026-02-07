@@ -2,200 +2,125 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>어린이 마트 카메라 V7</title>
-    <!-- 바코드 인식 라이브러리 로드 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카메라 정밀 진단 V8</title>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <style>
-        :root {
-            --primary-color: #3f51b5;
-            --accent-color: #ff4081;
-            --overlay-bg: rgba(0, 0, 0, 0.6); /* 반투명 검은색 배경 */
-        }
-        body {
-            font-family: 'Jua', sans-serif; margin: 0; padding: 0;
-            background: #000; color: white;
-            display: flex; flex-direction: column; height: 100vh;
-        }
-
-        /* 1. 상단 정보 오버레이 (핵심 수정) */
-        #info-overlay {
-            position: absolute; top: 0; left: 0; width: 100%;
-            background: var(--overlay-bg);
-            padding: 15px; box-sizing: border-box;
-            z-index: 20; /* 카메라보다 위에 표시 */
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-        #msg { font-size: 1rem; color: #ffeb3b; text-align: center; margin-bottom: 10px; }
-        .product-info-row { display: flex; justify-content: space-between; align-items: baseline; }
-        #p-name { font-size: 1.5rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
-        #p-price { font-size: 1.8rem; color: var(--accent-color); font-weight: 900; }
-
-        /* 2. 메인 카메라 영역 */
-        main {
-            flex: 1; display: flex; justify-content: center; align-items: center;
-            position: relative; overflow: hidden;
-        }
-        #reader { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* 라이브러리 기본 UI 숨김 및 커스텀 */
-        #reader__dashboard { display: none !important; }
-        #reader__dashboard_section_csr span { display: none !important; }
-        /* 노란색 인식 가이드라인 스타일 강화 */
-        #reader__scan_region {
-            border: 4px solid #ffeb3b !important;
-            box-shadow: 0 0 15px #ffeb3b, inset 0 0 15px #ffeb3b;
-        }
-
-        /* 3. 하단 컨트롤 바 (별도 분리) */
-        #bottom-bar {
-            background: #222; padding: 15px;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 20;
-        }
-        .total-info { font-size: 1.2rem; }
-        #total { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); }
-        .btn-reset {
-            background: var(--accent-color); color: white; border: none;
-            padding: 12px 24px; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
-        }
-
-        /* 잠시 멈춤 효과 */
-        .paused::after {
-            content: "✅ 인식 성공! 잠시 대기...";
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: rgba(63, 81, 181, 0.9); color: white; padding: 20px;
-            border-radius: 10px; font-size: 1.2rem; z-index: 30;
-            animation: fadeIn 0.2s ease;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body { background: #111; color: #0f0; font-family: monospace; padding: 15px; word-break: break-all; }
+        h2 { border-bottom: 1px solid #0f0; padding-bottom: 10px; }
+        .box { border: 1px solid #555; padding: 10px; margin-bottom: 15px; background: #222; }
+        .error { color: #ff5252; font-weight: bold; }
+        .success { color: #69f0ae; font-weight: bold; }
+        button { width: 100%; padding: 15px; font-size: 1.2rem; background: #004d40; color: #fff; border: 1px solid #0f0; margin-bottom: 20px; cursor: pointer;}
+        #reader { width: 100%; background: #000; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-<!-- 1. 상단 정보 오버레이 -->
-<div id="info-overlay">
-    <div id="msg">💡 노란색 네모 안에 바코드를 맞춰주세요. (밝은 곳에서!)</div>
-    <div class="product-info-row">
-        <span id="p-name">준비됨</span>
-        <span id="p-price">---</span>
-    </div>
-</div>
+<h2>🕵️ 시스템 진단 로그</h2>
 
-<!-- 2. 메인 카메라 영역 -->
-<main id="main-container">
-    <div id="reader"></div>
-</main>
+<div id="status-box" class="box">준비됨</div>
 
-<!-- 3. 하단 컨트롤 바 -->
-<div id="bottom-bar">
-    <div class="total-info">
-        합계: <span id="total">₩0</span>
-    </div>
-    <button class="btn-reset" onclick="resetCart()">새 손님 받기 🔄</button>
-</div>
+<button onclick="startDiagnosis()">🚀 진단 및 카메라 시작</button>
+
+<div id="camera-list" class="box">카메라 목록 대기중...</div>
+<div id="reader"></div>
 
 <script>
-    // === 1. 데이터베이스 ===
-    const productDB = {
-        "8801111222233": { name: "맛있는 우유", price: 1200 },
-        "12345678": { name: "로봇 장난감", price: 5000 },
-        "8801062638363": { name: "캔디", price: 500 },
-        // 실제 책 바코드(EAN-13) 예시: 978로 시작하는 번호
-        "9791162245423": { name: "예시: 코딩 책", price: 25000 } 
-    };
+    function log(msg, type = 'normal') {
+        const box = document.getElementById('status-box');
+        const color = type === 'error' ? 'red' : (type === 'success' ? '#69f0ae' : '#0f0');
+        const time = new Date().toTimeString().split(' ')[0];
+        box.innerHTML += `<div style="color:${color}">[${time}] ${msg}</div>`;
+    }
 
-    let total = 0;
-    let isScanning = true;
-    let lastCode = "";
-    let html5QrcodeScanner = null;
-    const mainContainer = document.getElementById('main-container');
+    async function startDiagnosis() {
+        document.getElementById('status-box').innerHTML = ""; // 로그 초기화
+        log("진단 시작...");
 
-    // === 2. 스캔 성공 시 콜백 ===
-    function onScanSuccess(decodedText, decodedResult) {
-        if (!isScanning || decodedText === lastCode) return;
-
-        playBeep();
-        lastCode = decodedText;
-        
-        if (productDB[decodedText]) {
-            const p = productDB[decodedText];
-            updateInfo("🎉 인식 성공!", p.name, "₩" + p.price.toLocaleString());
-            total += p.price;
-            document.getElementById('total').innerText = "₩" + total.toLocaleString();
-            
-            pauseScanning(2000); // 성공 시 2초 대기
+        // 1. 보안 컨텍스트 확인
+        if (window.isSecureContext) {
+            log("✅ Secure Context (HTTPS): OK", 'success');
         } else {
-            updateInfo("⚠️ 미등록 상품", "바코드: " + decodedText, "가격 미정");
-            pauseScanning(1500); // 실패 시 1.5초 대기
+            log("❌ Secure Context Fail! (HTTP임)", 'error');
+            log("👉 HTTPS 주소나 localhost를 사용하세요.", 'error');
+            return;
+        }
+
+        // 2. 브라우저 지원 확인
+        if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+            log("❌ 이 브라우저는 카메라 API를 지원하지 않습니다.", 'error');
+            return;
+        }
+
+        // 3. 카메라 권한 및 장치 검색
+        try {
+            log("장치 권한 요청 중...");
+            // 일단 스트림을 요청해야 권한 팝업이 뜸
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            log("✅ 권한 획득 성공!", 'success');
+            
+            // 스트림 잠시 끄기 (스캐너 라이브러리와 충돌 방지)
+            stream.getTracks().forEach(track => track.stop());
+
+            // 장치 목록 나열
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const cameras = devices.filter(d => d.kind === 'videoinput');
+            
+            if (cameras.length === 0) {
+                log("❌ 연결된 카메라가 없습니다.", 'error');
+                document.getElementById('camera-list').innerText = "발견된 카메라 없음";
+            } else {
+                log(`✅ 카메라 ${cameras.length}개 발견됨`, 'success');
+                let camListText = "";
+                cameras.forEach((cam, idx) => {
+                    camListText += `[${idx}] ${cam.label || '알 수 없는 카메라'} (ID: ${cam.deviceId.substring(0,10)}...)\n`;
+                });
+                document.getElementById('camera-list').innerText = camListText;
+            }
+
+            // 4. 스캐너 라이브러리 구동
+            startLibrary();
+
+        } catch (err) {
+            handleError(err);
         }
     }
 
-    function updateInfo(msg, name, price) {
-        document.getElementById('msg').innerText = msg;
-        document.getElementById('p-name').innerText = name;
-        document.getElementById('p-price').innerText = price;
+    function handleError(err) {
+        log(`❌ 에러 발생: ${err.name}`, 'error');
+        log(`메시지: ${err.message}`, 'error');
+
+        if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+            log("👉 [해결책] 브라우저 주소창 옆 자물쇠를 눌러 '권한 재설정' 하세요.", 'error');
+        } else if (err.name === 'NotFoundError') {
+            log("👉 [해결책] 카메라 장치를 찾을 수 없습니다. 하드웨어를 확인하세요.", 'error');
+        } else if (err.name === 'NotReadableError') {
+            log("👉 [해결책] 다른 앱이 카메라를 쓰고 있습니다. 모든 앱을 닫고 다시 시도하세요.", 'error');
+        }
     }
 
-    function pauseScanning(duration) {
-        isScanning = false;
-        html5QrcodeScanner.pause();
-        mainContainer.classList.add('paused'); // 화면에 대기 메시지 오버레이
-
-        setTimeout(() => {
-            isScanning = true;
-            html5QrcodeScanner.resume();
-            mainContainer.classList.remove('paused');
-            document.getElementById('msg').innerText = "💡 다음 상품을 찍어주세요.";
-            lastCode = ""; // 연속 스캔 허용
-        }, duration);
-    }
-
-    // === 3. 카메라 초기화 및 실행 ===
-    window.onload = function() {
-        // 화면 너비에 맞춰 인식 박스 크기 조절
-        const screenWidth = window.innerWidth;
-        const qrboxSize = Math.min(screenWidth * 0.7, 300); // 화면의 70% 혹은 최대 300px
-
-        html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", 
-            { 
-                fps: 30, 
-                qrbox: { width: qrboxSize, height: qrboxSize },
-                // 모바일 후면 카메라 우선 시도 (실패 시 자동 fallback)
-                videoConstraints: { facingMode: { ideal: "environment" } },
-                // EAN-13 (책, 공산품 바코드) 명시적 지원 설정
-                formatsToSupport: [ Html5QrcodeSupportedFormats.EAN_13 ]
-            },
-            /* verbose= */ false
-        );
+    function startLibrary() {
+        log("라이브러리 초기화 중...");
+        const html5QrCode = new Html5Qrcode("reader");
         
-        html5QrcodeScanner.render(onScanSuccess, (error) => {
-            // 인식 실패 시 로그 (너무 자주 뜨니 주석 처리)
-            // console.warn(error);
+        // 후면 카메라 우선, 실패시 아무거나
+        const config = { fps: 10, qrbox: 250 };
+        
+        html5QrCode.start(
+            { facingMode: { ideal: "environment" } }, 
+            config,
+            (decodedText) => {
+                log(`🎉 스캔 성공: ${decodedText}`, 'success');
+                html5QrCode.stop(); // 성공하면 멈춤
+            },
+            (errorMessage) => {
+                // 스캔 중 에러는 무시 (로그 오염 방지)
+            }
+        ).catch(err => {
+            log("라이브러리 구동 실패", 'error');
+            handleError(err);
         });
-    };
-
-    // === 4. 유틸리티 ===
-    function resetCart() {
-        total = 0;
-        updateInfo("💡 노란색 네모 안에 바코드를 맞춰주세요.", "준비됨", "---");
-        document.getElementById('total').innerText = "₩0";
-        lastCode = "";
-    }
-
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    function playBeep() {
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.1);
     }
 </script>
 
