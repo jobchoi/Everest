@@ -3,56 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>어린이 마트 (카메라 버전)</title>
-    <!-- 바코드 인식 라이브러리 로드 (CDN) -->
+    <title>어린이 마트 카메라 V7</title>
+    <!-- 바코드 인식 라이브러리 로드 -->
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <style>
-        body { font-family: 'Jua', sans-serif; background: #f0f4f8; margin: 0; padding: 0; }
-        
-        header { background: #3f51b5; color: white; padding: 15px; text-align: center; font-weight: bold; }
+        :root {
+            --primary-color: #3f51b5;
+            --accent-color: #ff4081;
+            --overlay-bg: rgba(0, 0, 0, 0.6); /* 반투명 검은색 배경 */
+        }
+        body {
+            font-family: 'Jua', sans-serif; margin: 0; padding: 0;
+            background: #000; color: white;
+            display: flex; flex-direction: column; height: 100vh;
+        }
 
-        /* 카메라 영역 스타일 */
-        #reader { 
-            width: 100%; 
-            max-width: 500px; 
-            margin: 0 auto; 
-            background: black;
+        /* 1. 상단 정보 오버레이 (핵심 수정) */
+        #info-overlay {
+            position: absolute; top: 0; left: 0; width: 100%;
+            background: var(--overlay-bg);
+            padding: 15px; box-sizing: border-box;
+            z-index: 20; /* 카메라보다 위에 표시 */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
-        
-        /* 라이브러리 UI 커스텀 (불필요한 요소 숨김) */
-        #reader__dashboard_section_csr span { display: none; } 
+        #msg { font-size: 1rem; color: #ffeb3b; text-align: center; margin-bottom: 10px; }
+        .product-info-row { display: flex; justify-content: space-between; align-items: baseline; }
+        #p-name { font-size: 1.5rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
+        #p-price { font-size: 1.8rem; color: var(--accent-color); font-weight: 900; }
 
-        #result-area {
-            padding: 20px; text-align: center; background: white;
-            border-radius: 20px 20px 0 0; margin-top: -20px; position: relative; z-index: 10;
+        /* 2. 메인 카메라 영역 */
+        main {
+            flex: 1; display: flex; justify-content: center; align-items: center;
+            position: relative; overflow: hidden;
         }
-        .item-info { font-size: 1.5rem; margin: 10px 0; }
-        .price-info { font-size: 2rem; color: #3f51b5; font-weight: bold; }
-        .cart-info { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+        #reader { width: 100%; height: 100%; object-fit: cover; }
         
-        button {
-            width: 100%; padding: 15px; margin-top: 10px;
-            background: #ff4081; color: white; border: none; border-radius: 10px;
-            font-size: 1.2rem; font-weight: bold;
+        /* 라이브러리 기본 UI 숨김 및 커스텀 */
+        #reader__dashboard { display: none !important; }
+        #reader__dashboard_section_csr span { display: none !important; }
+        /* 노란색 인식 가이드라인 스타일 강화 */
+        #reader__scan_region {
+            border: 4px solid #ffeb3b !important;
+            box-shadow: 0 0 15px #ffeb3b, inset 0 0 15px #ffeb3b;
         }
+
+        /* 3. 하단 컨트롤 바 (별도 분리) */
+        #bottom-bar {
+            background: #222; padding: 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 20;
+        }
+        .total-info { font-size: 1.2rem; }
+        #total { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); }
+        .btn-reset {
+            background: var(--accent-color); color: white; border: none;
+            padding: 12px 24px; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+        }
+
+        /* 잠시 멈춤 효과 */
+        .paused::after {
+            content: "✅ 인식 성공! 잠시 대기...";
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(63, 81, 181, 0.9); color: white; padding: 20px;
+            border-radius: 10px; font-size: 1.2rem; z-index: 30;
+            animation: fadeIn 0.2s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-<header>📷 스마트 카메라 마트</header>
-
-<!-- 카메라가 표시될 영역 -->
-<div id="reader"></div>
-
-<div id="result-area">
-    <div id="msg">상품 바코드를 카메라에 비춰주세요!</div>
-    <div class="item-info" id="p-name">-</div>
-    <div class="price-info" id="p-price">₩0</div>
-    
-    <div class="cart-info">
-        총 합계: <span id="total">₩0</span>
+<!-- 1. 상단 정보 오버레이 -->
+<div id="info-overlay">
+    <div id="msg">💡 노란색 네모 안에 바코드를 맞춰주세요. (밝은 곳에서!)</div>
+    <div class="product-info-row">
+        <span id="p-name">준비됨</span>
+        <span id="p-price">---</span>
     </div>
-    <button onclick="resetCart()">계산 완료 (리셋)</button>
+</div>
+
+<!-- 2. 메인 카메라 영역 -->
+<main id="main-container">
+    <div id="reader"></div>
+</main>
+
+<!-- 3. 하단 컨트롤 바 -->
+<div id="bottom-bar">
+    <div class="total-info">
+        합계: <span id="total">₩0</span>
+    </div>
+    <button class="btn-reset" onclick="resetCart()">새 손님 받기 🔄</button>
 </div>
 
 <script>
@@ -61,73 +102,86 @@
         "8801111222233": { name: "맛있는 우유", price: 1200 },
         "12345678": { name: "로봇 장난감", price: 5000 },
         "8801062638363": { name: "캔디", price: 500 },
-        // 테스트용: QR코드나 바코드를 생성해서 테스트해보세요.
+        // 실제 책 바코드(EAN-13) 예시: 978로 시작하는 번호
+        "9791162245423": { name: "예시: 코딩 책", price: 25000 } 
     };
 
     let total = 0;
-    let isScanning = true; // 중복 스캔 방지 플래그
+    let isScanning = true;
     let lastCode = "";
+    let html5QrcodeScanner = null;
+    const mainContainer = document.getElementById('main-container');
 
-    // === 2. 스캔 성공 시 콜백 함수 ===
+    // === 2. 스캔 성공 시 콜백 ===
     function onScanSuccess(decodedText, decodedResult) {
-        if (!isScanning) return; // 처리 중이면 무시
-        if (decodedText === lastCode) return; // 방금 찍은 거 또 찍힘 방지 (디바운싱)
+        if (!isScanning || decodedText === lastCode) return;
 
-        // 삑! 소리
         playBeep();
-
         lastCode = decodedText;
         
-        // 상품 검색
         if (productDB[decodedText]) {
             const p = productDB[decodedText];
-            document.getElementById('msg').innerText = "인식 성공!";
-            document.getElementById('p-name').innerText = p.name;
-            document.getElementById('p-price').innerText = "₩" + p.price.toLocaleString();
-            
+            updateInfo("🎉 인식 성공!", p.name, "₩" + p.price.toLocaleString());
             total += p.price;
             document.getElementById('total').innerText = "₩" + total.toLocaleString();
             
-            // 시각적 피드백을 위해 잠시 멈춤 효과
-            pauseScanning();
+            pauseScanning(2000); // 성공 시 2초 대기
         } else {
-            document.getElementById('msg').innerText = "등록되지 않은 상품 (" + decodedText + ")";
-            pauseScanning();
+            updateInfo("⚠️ 미등록 상품", "바코드: " + decodedText, "가격 미정");
+            pauseScanning(1500); // 실패 시 1.5초 대기
         }
     }
 
-    // 연속 스캔 방지를 위한 잠시 멈춤
-    function pauseScanning() {
-        isScanning = false;
-        setTimeout(() => {
-            isScanning = true;
-            document.getElementById('msg').innerText = "다음 상품을 찍어주세요";
-            lastCode = ""; // 같은 상품 다시 찍을 수 있게 초기화
-        }, 1500); // 1.5초 딜레이
+    function updateInfo(msg, name, price) {
+        document.getElementById('msg').innerText = msg;
+        document.getElementById('p-name').innerText = name;
+        document.getElementById('p-price').innerText = price;
     }
 
-    // === 3. 카메라 라이브러리 초기화 ===
-    // html5-qrcode 설정
-    let html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader", 
-        { 
-            fps: 10, // 초당 스캔 횟수 (너무 높으면 폰 발열)
-            qrbox: { width: 250, height: 250 } // 인식 영역 크기
-        },
-        /* verbose= */ false
-    );
-    
-    html5QrcodeScanner.render(onScanSuccess, (error) => {
-        // 인식 실패/대기 중 에러는 무시 (콘솔 로그 오염 방지)
-    });
+    function pauseScanning(duration) {
+        isScanning = false;
+        html5QrcodeScanner.pause();
+        mainContainer.classList.add('paused'); // 화면에 대기 메시지 오버레이
+
+        setTimeout(() => {
+            isScanning = true;
+            html5QrcodeScanner.resume();
+            mainContainer.classList.remove('paused');
+            document.getElementById('msg').innerText = "💡 다음 상품을 찍어주세요.";
+            lastCode = ""; // 연속 스캔 허용
+        }, duration);
+    }
+
+    // === 3. 카메라 초기화 및 실행 ===
+    window.onload = function() {
+        // 화면 너비에 맞춰 인식 박스 크기 조절
+        const screenWidth = window.innerWidth;
+        const qrboxSize = Math.min(screenWidth * 0.7, 300); // 화면의 70% 혹은 최대 300px
+
+        html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", 
+            { 
+                fps: 30, 
+                qrbox: { width: qrboxSize, height: qrboxSize },
+                // 모바일 후면 카메라 우선 시도 (실패 시 자동 fallback)
+                videoConstraints: { facingMode: { ideal: "environment" } },
+                // EAN-13 (책, 공산품 바코드) 명시적 지원 설정
+                formatsToSupport: [ Html5QrcodeSupportedFormats.EAN_13 ]
+            },
+            /* verbose= */ false
+        );
+        
+        html5QrcodeScanner.render(onScanSuccess, (error) => {
+            // 인식 실패 시 로그 (너무 자주 뜨니 주석 처리)
+            // console.warn(error);
+        });
+    };
 
     // === 4. 유틸리티 ===
     function resetCart() {
         total = 0;
-        document.getElementById('p-name').innerText = "-";
-        document.getElementById('p-price').innerText = "₩0";
+        updateInfo("💡 노란색 네모 안에 바코드를 맞춰주세요.", "준비됨", "---");
         document.getElementById('total').innerText = "₩0";
-        document.getElementById('msg').innerText = "새 손님 받으세요~";
         lastCode = "";
     }
 
